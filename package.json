@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "next build && wrangler deploy"
+    "deploy": "next build && wrangler pages deploy out --project-name kinetiq"
   },
   "dependencies": {
     "clsx": "^2.1.1",

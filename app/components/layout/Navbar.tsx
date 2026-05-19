@@ -14,11 +14,11 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navItems = [
-    "Physiotherapy",
-    "KinetiQ Sessions",
-    "Treatment",
-    "About Us",
-    "Contact Us",
+    { label: "Physiotherapy", href: "#" },
+    { label: "KinetiQ Sessions", href: "#" },
+    { label: "Treatment", href: "#" },
+    { label: "About Us", href: "/about" },
+    { label: "Contact Us", href: "#" },
   ]
 
   return (
@@ -86,8 +86,8 @@ export default function Navbar() {
         >
           {navItems.map((item) => (
             <Link
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               className="
                 text-sm
                 xl:text-[15px]
@@ -102,7 +102,7 @@ export default function Navbar() {
                 transition-colors duration-300
               "
             >
-              {item}
+              {item.label}
             </Link>
           ))}
         </nav>
@@ -198,8 +198,8 @@ export default function Navbar() {
 
           {navItems.map((item) => (
             <Link
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className="
                 py-3
@@ -214,7 +214,7 @@ export default function Navbar() {
                 transition-colors duration-300
               "
             >
-              {item}
+              {item.label}
             </Link>
           ))}
 

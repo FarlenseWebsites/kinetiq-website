@@ -9,7 +9,7 @@ export default function AboutIntro() {
       {/* Top: light background header */}
       <div
         className="flex flex-col items-center text-center px-6 pt-6 pb-16"
-        style={{ background: "#FAFAFC" }}
+        style={{ background: "rgba(254, 254, 254, 0.97)" }}
       >
         <ButtonWithTwoDots label="Clinical Excellence" />
         <h1

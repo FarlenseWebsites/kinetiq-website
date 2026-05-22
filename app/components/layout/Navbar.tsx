@@ -10,15 +10,113 @@ import BookConsultationButton from "../ui/bookConsulationButton"
 
 import KinetiQLogo from "../../../public/KinetiQLogo.png"
 
+// --- Mega Menu Data ---
+const physiotherapyMegaMenu = [
+  // Column 1
+  [
+    "Orthopedic Physiotherapy",
+    "Sports Physiotherapy",
+    "Posture Correction & Ergonomics",
+    "Neurological Physiotherapy",
+    "Geriatric Physiotherapy",
+  ],
+  // Column 2
+  [
+    "Pediatric Physiotherapy",
+    "Women’s Health Physiotherapy",
+    "Post-Surgical Rehabilitation",
+    "Palliative Physiotherapy",
+    "Cardiopulmonary Physiotherapy",
+  ],
+  // Column 3
+  [
+    "Postnatal Physiotherapy",
+    "Nerve & Radiating Pain Conditions",
+    "Sciatic Nerve Pain",
+    "Cervical Radiculopathy",
+    "Lumbar Radiculopathy",
+  ],
+  // Column 4
+  [
+    "Neuropathic Pain",
+    "Lifestyle & Postural Conditions",
+    "Muscle Tightness & Imbalances",
+    "Repetitive Strain Injuries",
+  ],
+]
+
+const treatmentMegaMenu = [
+  {
+    title: "Manual Therapy",
+    items: [
+      "Joint Mobilization",
+      "Myofascial Release",
+      "Trigger Point Therapy",
+    ],
+  },
+  {
+    title: "Advanced Clinical Technologies",
+    items: [
+      "ANF Therapy",
+      "Electrotherapy",
+      "Class IV Laser Therapy",
+      "Shockwave Therapy",
+      "Dry Needling",
+      "BlazePod Training",
+      "Boba Pro Training",
+      "EMG Biofeedback",
+    ],
+  },
+  {
+    title: "Recovery & Performance Therapies",
+    items: [
+      "Kinesio Taping",
+      "Cupping Therapy",
+      "Sports Recovery Therapy",
+      "Mobility & Corrective Exercise Therapy",
+    ],
+  },
+  {
+    title: "Recovery & Performance Therapies",
+    items: [
+      "Lymphatic Drainage Therapy",
+      "Postural Correction Programs",
+      "Breathing & Respiratory Therapy",
+      "Vibration Plate Therapy",
+      "Ergonomic Assessment\n& Workplace Therapy",
+    ],
+  },
+]
+
+const sessionsMenu = [
+  "In Centre Treatment",
+  "Home Visits",
+  "Online Physiotherapy",
+  "Corporate",
+]
+
+const aboutMenu = [
+  "Clinical Excellence",
+  "The KinetiQ Foundation",
+  "About KinetiQ",
+  "KinetiQ Community",
+]
+
+const contactMenu = [
+  "Visit KinetiQ",
+  "Lorem Ipsum",
+]
+
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
+  // Added isMega property to determine layout behavior dynamically
   const navItems = [
-    { label: "Physiotherapy", href: "#" },
-    { label: "KinetiQ Sessions", href: "#" },
-    { label: "Treatment", href: "#" },
-    { label: "About Us", href: "/about" },
-    { label: "Contact Us", href: "#" },
+    { label: "Specialties", href: "/physiotherapy", menuType: "physio", isMega: true },
+    { label: "KinetiQ Sessions", href: "#", menuType: "sessions", isMega: false },
+    { label: "Treatment", href: "#", menuType: "treatment", isMega: true },
+    { label: "About", href: "/about", menuType: "about", isMega: false },
+    { label: "Contact", href: "#", menuType: "contact", isMega: false },
   ]
 
   return (
@@ -26,18 +124,9 @@ export default function Navbar() {
       className={cn(`
         absolute top-0 left-0 right-0 z-50
         w-full
-
-        px-4
-        sm:px-6
-        md:px-8
-        lg:px-12
-        xl:px-16
-
-        py-4
-        md:py-5
-
+        px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16
+        py-[clamp(0.75rem,1.8svh,1.25rem)]
         bg-transparent
-
         transition-all duration-300
       `)}
     >
@@ -45,185 +134,287 @@ export default function Navbar() {
         className="
           max-w-7xl
           mx-auto
-
           flex items-center justify-between
           gap-4
+          relative
         "
       >
-
         {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-center flex-shrink-0"
-        >
+        <Link href="/" className="flex items-center shrink-0">
           <Image
             src={KinetiQLogo}
             alt="KinetiQ Logo"
             priority
-            className="
-              w-28
-              sm:w-32
-              md:w-36
-              lg:w-44
-              xl:w-48
-              h-auto
-            "
+            className="h-auto w-[clamp(7rem,18vw,12rem)]"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav
-          className="
-            hidden
-            lg:flex
-
-            items-center
-            gap-6
-            xl:gap-8
-
-            min-w-0
-          "
-        >
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 min-w-0">
           {navItems.map((item) => (
-            <Link
+            <div
               key={item.label}
-              href={item.href}
-              className="
-                text-sm
-                xl:text-[15px]
-
-                font-medium
-                whitespace-nowrap
-
-                text-[#373355]
-
-                hover:text-[#986c55]
-
-                transition-colors duration-300
-              "
+              // If it's a mega menu, use 'static' so the absolute child targets the main navbar width.
+              // If it's a small menu, use 'relative' so it drops straight down from the text.
+              className={cn(
+                "group flex items-center h-full",
+                item.isMega ? "static" : "relative"
+              )}
             >
-              {item.label}
-            </Link>
+              <Link
+                href={item.href}
+                className="
+                  inline-block
+                  py-4
+                  text-sm
+                  xl:text-[15px]
+                  font-medium
+                  whitespace-nowrap
+                  text-[#373355]
+                  hover:text-[#986c55]
+                  transition-colors duration-300
+                "
+              >
+                {item.label}
+              </Link>
+
+              {/* ------------------------------------------------ */}
+              {/* LARGE MEGA MENUS (Centered to max-w-7xl Wrapper) */}
+              {/* ------------------------------------------------ */}
+
+              {/* Physiotherapy Mega Menu */}
+              {item.menuType === "physio" && (
+                <div
+                  className="
+                    absolute top-full left-0 right-0
+                    pt-6
+                    opacity-0 invisible translate-y-2
+                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                    transition-all duration-300 ease-in-out
+                    z-50 cursor-default
+                  "
+                >
+                  <div className="mx-auto w-full max-w-275 bg-white rounded-2xl shadow-xl border border-slate-100 p-8 cursor-auto">
+                    <div className="grid grid-cols-4 gap-8">
+                      {physiotherapyMegaMenu.map((column, colIdx) => (
+                        <div key={colIdx}>
+                          <ul className="space-y-4">
+                            {column.map((subItem, itemIdx) => (
+                              <li key={itemIdx}>
+                                <Link
+                                  href="#"
+                                  className="text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors block"
+                                >
+                                  {subItem}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Treatment Mega Menu */}
+              {item.menuType === "treatment" && (
+                <div
+                  className="
+                    absolute top-full left-0 right-0
+                    pt-6
+                    opacity-0 invisible translate-y-2
+                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                    transition-all duration-300 ease-in-out
+                    z-50 cursor-default
+                  "
+                >
+                  <div className="mx-auto w-full max-w-275 bg-white rounded-2xl shadow-xl border border-slate-100 p-8 cursor-auto">
+                    <div className="grid grid-cols-4 gap-8">
+                      {treatmentMegaMenu.map((group, idx) => (
+                        <div key={idx}>
+                          <h3 className="text-[#88849F] text-[1.15rem] font-medium mb-6 leading-tight">
+                            {group.title}
+                          </h3>
+                          <ul className="space-y-4">
+                            {group.items.map((subItem, subIdx) => (
+                              <li key={subIdx}>
+                                <Link
+                                  href="#"
+                                  className="text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-pre-line block"
+                                >
+                                  {subItem}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* ------------------------------------------------ */}
+              {/* SMALL DROPDOWNS (Left-aligned straight down)     */}
+              {/* ------------------------------------------------ */}
+
+              {/* Sessions Simple Dropdown */}
+              {item.menuType === "sessions" && (
+                <div
+                  className="
+                    absolute top-full left-0
+                    pt-6
+                    min-w-55
+                    opacity-0 invisible translate-y-2
+                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                    transition-all duration-300 ease-in-out
+                    z-50 cursor-default
+                  "
+                >
+                  <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 cursor-auto">
+                    <ul className="space-y-4">
+                      {sessionsMenu.map((subItem, idx) => (
+                        <li key={idx}>
+                          <Link
+                            href="#"
+                            className="block text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-nowrap"
+                          >
+                            {subItem}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* About Us Simple Dropdown */}
+              {item.menuType === "about" && (
+                <div
+                  className="
+                    absolute top-full left-0
+                    pt-6
+                    min-w-55
+                    opacity-0 invisible translate-y-2
+                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                    transition-all duration-300 ease-in-out
+                    z-50 cursor-default
+                  "
+                >
+                  <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 cursor-auto">
+                    <ul className="space-y-4">
+                      {aboutMenu.map((subItem, idx) => (
+                        <li key={idx}>
+                          <Link
+                            href="#"
+                            className="block text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-nowrap"
+                          >
+                            {subItem}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Contact Us Simple Dropdown */}
+              {item.menuType === "contact" && (
+                <div
+                  className="
+                    absolute top-full left-0
+                    pt-6
+                    min-w-50
+                    opacity-0 invisible translate-y-2
+                    group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                    transition-all duration-300 ease-in-out
+                    z-50 cursor-default
+                  "
+                >
+                  <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 cursor-auto">
+                    <ul className="space-y-4">
+                      {contactMenu.map((subItem, idx) => (
+                        <li key={idx}>
+                          <Link
+                            href="#"
+                            className="block text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-nowrap"
+                          >
+                            {subItem}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </nav>
 
         {/* Right Side */}
-        <div
-          className="
-            flex items-center
-            gap-2
-            sm:gap-4
-
-            flex-shrink-0
-          "
-        >
-
+        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
           {/* CTA Button */}
-         <BookConsultationButton
-  className="
-    hidden lg:inline-flex
-
-    bg-[#ff914d]
-
-    border-none
-
-    hover:bg-[#68638E]
-    hover:text-white
-
-    active:bg-[#373355]
-  "
-/>
+          <BookConsultationButton
+            className="
+              hidden lg:inline-flex
+              bg-[#ff914d] text-white border-none
+              hover:bg-[#68638E] hover:text-white
+              active:bg-[#373355]
+            "
+          />
 
           {/* Mobile Menu Toggle */}
           <button
             aria-label="Toggle Menu"
             className="
-              lg:hidden
-
-              p-2
-
-              flex items-center justify-center
-
-              text-[#373355]
-
-              hover:text-[#ff914d]
-
+              lg:hidden p-2 flex items-center justify-center
+              text-[#373355] hover:text-[#ff914d]
               transition-colors duration-300
             "
-            onClick={() =>
-              setIsMobileMenuOpen(!isMobileMenuOpen)
-            }
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={cn(`
+        className={cn(
+          `
           lg:hidden
-
           absolute top-full left-0 right-0
-
           overflow-hidden
-
-          bg-white/95
-          backdrop-blur-md
-
-          border-t border-slate-200
-
-          shadow-xl
-
+          bg-white/95 backdrop-blur-md
+          border-t border-slate-200 shadow-xl
           transition-all duration-300 ease-in-out
         `,
           isMobileMenuOpen
-            ? "max-h-[500px] opacity-100 py-6"
+            ? "max-h-125 opacity-100 py-6"
             : "max-h-0 opacity-0 py-0 pointer-events-none"
         )}
       >
-        <div
-          className="
-            px-6
-
-            flex flex-col
-
-            gap-1
-          "
-        >
-
+        <div className="px-6 flex flex-col gap-1">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
               onClick={() => setIsMobileMenuOpen(false)}
               className="
-                py-3
-
-                text-sm
-                font-medium
-
-                text-[#373355]
-
-                hover:text-[#986c55]
-
+                py-3 text-sm font-medium
+                text-[#373355] hover:text-[#986c55]
                 transition-colors duration-300
               "
             >
               {item.label}
             </Link>
           ))}
-
           <div className="pt-3 mt-1 border-t border-slate-100">
             <BookConsultationButton
               className="
-                w-full justify-center
-                bg-[#ff914d]
-                border-none
+                w-full justify-center text-white
+                bg-[#ff914d] border-none
                 hover:bg-[#68638E] hover:text-white
                 active:bg-[#373355]
               "

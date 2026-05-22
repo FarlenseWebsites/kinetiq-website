@@ -2,11 +2,11 @@
 
 export default function RehabFeature() {
     return (
-        <section className="w-full ">
+        <section className="w-full">
             <div id="rehab-carousel" className="relative w-full" data-carousel="slide" data-carousel-interval="4000">
 
                 {/* Slides */}
-                <div className="relative w-full aspect-8/5 overflow-hidden">
+                <div className="relative w-full aspect-[5/3] overflow-hidden">
                     <div className="hidden duration-700 ease-in-out" data-carousel-item="active">
                         <img
                             src="/rehabbanner.png"

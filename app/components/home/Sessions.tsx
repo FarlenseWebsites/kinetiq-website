@@ -44,7 +44,7 @@ export default function Spaces() {
             className="text-[#373355] font-semibold text-center"
             style={{ marginTop: "32px", fontSize: "42px" }}
           >
-            We also offer
+          Multiple Access Points
           </h1>
         </div>
       

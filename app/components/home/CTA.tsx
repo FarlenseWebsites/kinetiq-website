@@ -31,9 +31,7 @@ export default function CTA() {
           We&apos;re ready<br />when you are.
         </h2>
         <BookConsultationButton />
-        <p className="mt-1 text-sm  italic text-[#373355]/90">
-          Takes less then 30 seconds
-        </p>
+        
       </div>
     </section>
   )

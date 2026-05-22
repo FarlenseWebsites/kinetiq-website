@@ -4,37 +4,38 @@ import { motion } from "framer-motion"
 
 export default function OrangeCircles() {
   return (
-    <div className="flex items-center justify-center pt-4 pb-8 px-8 sm:p-8 w-full overflow-hidden">
-      <div className="flex flex-row gap-0">
+    <div
+      className="flex w-full items-center justify-center overflow-hidden"
+      style={{
+        paddingInline: "clamp(0.5rem, 2vw, 2rem)",
+        paddingBlock: "clamp(0.75rem, 2svh, 1.5rem)",
+      }}
+    >
+      <div
+        className="flex w-full max-w-[min(42rem,100%)] flex-wrap items-center justify-center"
+        style={{
+          gap: "clamp(0rem, 0.45vw, 0.35rem)",
+        }}
+      >
         {[...Array(7)].map((_, index) => (
           <motion.div
             key={index}
-            // STATIC STATE: Locked at the ideal light orange
             initial={{ backgroundColor: "#FF914D" }}
             animate={{ backgroundColor: "#FF914D" }}
-            
-            // HOVER STATE: 0% -> 50% -> 100% transition that STOPS at the end
             whileHover={{
-              // 0% (Orange) -> 50% (Mid Purple) -> 100% (Dark Purple)
-              backgroundColor: ["#FF914D", "#68628E", "#373355","#68628E"],
+              backgroundColor: ["#FF914D", "#68628E", "#373355", "#68628E"],
               scale: 1.05,
-              transition: { 
+              transition: {
                 duration: 0.4,
                 times: [0, 0.33, 0.66, 1],
-                ease: "easeInOut" 
+                ease: "easeInOut",
               }
             }}
-            
-            className="
-              w-8 h-8
-              sm:w-6 sm:h-6 
-              md:w-10 md:h-10
-              lg:w-12 lg:h-12
-              xl:w-14 xl:h-14
-              rounded-full 
-              cursor-pointer
-              flex-shrink-0
-            "
+            className="shrink-0 rounded-full cursor-pointer"
+            style={{
+              width: "clamp(1rem, 2.6vw + 0.35vh, 3rem)",
+              height: "clamp(1rem, 2.6vw + 0.35vh, 3rem)",
+            }}
           />
         ))}
       </div>

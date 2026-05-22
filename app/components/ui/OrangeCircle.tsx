@@ -9,7 +9,7 @@ interface OrangeCircleProps extends MotionProps {
 }
 
 export default function OrangeCircle({
-  size = "90px",
+  size = "clamp(1.75rem, 4vw, 5.625rem)",
   className,
   // pull out any motion props passed from outside (initial, whileInView, transition, etc.)
   ...motionProps

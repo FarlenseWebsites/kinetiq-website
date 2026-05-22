@@ -11,13 +11,13 @@ const services = [
     activeDots: 1,
   },
   {
-    title: "Athletes / Professional Sportspersons",
-    description: "Injury management, performance training, and recovery optimization",
+    title: "Professional Sportspersons",
+    description: "Injury management and performance training",
     activeDots: 2,
   },
   {
     title: "Children & Teens",
-    description: "Posture correction, developmental delays, scoliosis care",
+    description: "Posture correction and developmental delays",
     activeDots: 3,
   },
   {
@@ -26,19 +26,15 @@ const services = [
     activeDots: 4,
   },
   {
-    title: "Geriatric Care / Seniors",
+    title: "Geriatric Care",
     description: "Fall prevention, joint stability and mobility restoration",
     activeDots: 5,
   },
-  {
-    title: "Corporate Teams",
-    description: "Workplace wellness, pain prevention and productivity enhancement",
-    activeDots: 6,
-  },
+  
   {
     title: "Schools & Academies",
-    description: "Fitness program curation & implementation, posture screening",
-    activeDots: 7,
+    description: "Curated fitness program and posture screening",
+    activeDots: 6,
   },
 ]
 

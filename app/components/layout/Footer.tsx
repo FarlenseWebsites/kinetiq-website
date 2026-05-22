@@ -27,7 +27,13 @@ export default function Footer() {
                 href="/physiotherapy"
                 className="hover:opacity-70 transition-opacity"
               >
-                Physiotherapy
+                Specialties
+              </Link>
+              <Link
+                href="/treatment"
+                className="hover:opacity-70 transition-opacity"
+              >
+                Treatment
               </Link>
 
               <Link
@@ -41,14 +47,14 @@ export default function Footer() {
                 href="/contact"
                 className="hover:opacity-70 transition-opacity"
               >
-                Contact Us
+                Contact
               </Link>
 
               <Link
                 href="/about"
                 className="hover:opacity-70 transition-opacity"
               >
-                About Us
+                About
               </Link>
             </nav>
 

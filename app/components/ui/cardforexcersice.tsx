@@ -13,12 +13,11 @@ interface FeatureCardProps {
 const dotRows: [number | null, number][] = [
   [4, 0],
   [5, 1],
-  [6, 2],
-  [null, 3],
+  [3, 2],
 ];
 
 // Fill order: row 0 left→right, then each row fills right→left (col2 first, then col1)
-const dotOrder = [4, 0, 1, 5, 2, 6, 3];
+const dotOrder = [4, 0, 1, 5, 2, 3];
 
 const dotClass =
   "w-3.75 h-3.75 sm:w-4.25 sm:h-4.25 md:w-4.75 md:h-4.75 lg:w-6 lg:h-6 xl:w-7 xl:h-7 rounded-full";

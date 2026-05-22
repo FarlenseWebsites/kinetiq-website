@@ -1,10 +1,10 @@
 import HeroLanding from "./components/home/HeroLanding"
-import RehabIntro from "./components/home/RehabIntro"
+import RehabIntro from "./components/home/RehabFitness"
 import Services from "./components/home/Services"
-import RehabFeature from "./components/home/RehabFeature"
-import Spaces from "./components/home/Spaces"
-import EquipmentGallery from "./components/home/EquipmentGallery"
+import Spaces from "./components/home/Sessions"
+import EquipmentGallery from "./components/home/VideoGallery"
 import CTA from "./components/home/CTA"
+import BannerFeature from "./components/home/BannerFeature"
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <HeroLanding />
       <RehabIntro />
       <Services />
-      <RehabFeature />
+      <BannerFeature />
       <Spaces />
       <EquipmentGallery />
       <CTA />

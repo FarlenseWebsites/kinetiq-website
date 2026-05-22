@@ -66,7 +66,7 @@ export default function FormMethod() {
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{
                   duration: 0.7,
-                  delay: i * 0.08,
+                  delay: i * 0.3,
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className="inline-block"

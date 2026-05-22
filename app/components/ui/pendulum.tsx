@@ -27,9 +27,9 @@ export default function Pendulum() {
       <div
         className="absolute top-1/2 left-1/2 pointer-events-none -z-10"
         style={{
-          width: "900px",
-          height: "500px",
-          transform: "translate(-50%, -40%) scaleX(1.35)", 
+          width: "min(1000px, 100vw)",
+          height: "clamp(300px, 45vw, 550px)",
+          transform: "translate(-50%, -40%) scaleX(1.35)",
           borderRadius: "50%",
           background: `
             radial-gradient(circle at center,
@@ -44,7 +44,7 @@ export default function Pendulum() {
 
       {/* 3. Ball 1 — swings left */}
       <motion.div
-        className="relative w-[60px] sm:w-[70px] md:w-[74px] h-[180px] sm:h-[220px] md:h-[260px] origin-top flex flex-col items-center z-10"
+        className="relative w-[68px] sm:w-[88px] md:w-[106px] h-[200px] sm:h-[250px] md:h-[290px] origin-top flex flex-col items-center z-10"
         animate={{ rotate: [35, 0, 0, 0, 35] }}
         transition={{
           duration: 2.2,
@@ -54,20 +54,20 @@ export default function Pendulum() {
         }}
       >
         <div className="w-[2px] flex-1" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.85) 55%)' }} />
-        <div className="w-[56px] h-[56px] sm:w-[66px] sm:h-[66px] md:w-[70px] md:h-[70px] bg-white rounded-full shrink-0 -mt-px shadow-md" />
+        <div className="w-[62px] h-[62px] sm:w-[82px] sm:h-[82px] md:w-[98px] md:h-[98px] bg-white rounded-full shrink-0 -mt-px shadow-md" />
       </motion.div>
 
       {/* 4. Balls 2-4 — stationary */}
       {[1, 2, 3].map((i) => (
-        <div key={i} className="relative w-[60px] sm:w-[70px] md:w-[74px] h-[180px] sm:h-[220px] md:h-[260px] flex flex-col items-center z-10">
+        <div key={i} className="relative w-[68px] sm:w-[88px] md:w-[106px] h-[200px] sm:h-[250px] md:h-[290px] flex flex-col items-center z-10">
           <div className="w-[2px] flex-1" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.85) 55%)' }} />
-          <div className="w-[56px] h-[56px] sm:w-[66px] sm:h-[66px] md:w-[70px] md:h-[70px] bg-white rounded-full shrink-0 -mt-px shadow-md" />
+          <div className="w-[62px] h-[62px] sm:w-[82px] sm:h-[82px] md:w-[98px] md:h-[98px] bg-white rounded-full shrink-0 -mt-px shadow-md" />
         </div>
       ))}
 
       {/* 5. Ball 5 — swings right */}
       <motion.div
-        className="relative w-[60px] sm:w-[70px] md:w-[74px] h-[180px] sm:h-[220px] md:h-[260px] origin-top flex flex-col items-center z-10"
+        className="relative w-[68px] sm:w-[88px] md:w-[106px] h-[200px] sm:h-[250px] md:h-[290px] origin-top flex flex-col items-center z-10"
         animate={{ rotate: [0, 0, -35, 0, 0] }}
         transition={{
           duration: 2.2,
@@ -77,7 +77,7 @@ export default function Pendulum() {
         }}
       >
         <div className="w-[2px] flex-1" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.85) 55%)' }} />
-        <div className="w-[56px] h-[56px] sm:w-[66px] sm:h-[66px] md:w-[70px] md:h-[70px] bg-white rounded-full shrink-0 -mt-px shadow-md" />
+        <div className="w-[62px] h-[62px] sm:w-[82px] sm:h-[82px] md:w-[98px] md:h-[98px] bg-white rounded-full shrink-0 -mt-px shadow-md" />
       </motion.div>
 
     </div>

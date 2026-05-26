@@ -63,13 +63,13 @@ export default function PhysioServiceCard({
       >
         <h3
           className="mb-2 font-bold leading-tight"
-          style={{ fontSize: "clamp(13px, 1.6vw, 20px)", color: "#373355" }}
+          style={{ fontSize: "clamp(10px, 1.6vw, 20px)", color: "#373355" }}
         >
           {title}
         </h3>
         <p
           className="leading-relaxed"
-          style={{ fontSize: "clamp(10px, 1.1vw, 13px)", color: "#68628E" }}
+          style={{ fontSize: "clamp(5px, 1.1vw, 13px)", color: "#68628E" }}
         >
           {description}
         </p>

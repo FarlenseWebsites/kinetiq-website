@@ -116,7 +116,7 @@ export default function Navbar() {
     { label: "KinetiQ Sessions", href: "/kinetiqSessions", menuType: "sessions", isMega: false },
     { label: "Treatment", href: "#", menuType: "treatment", isMega: true },
     { label: "About", href: "/about", menuType: "about", isMega: false },
-    { label: "Contact", href: "#", menuType: "contact", isMega: false },
+    { label: "Contact", href: "/contact", menuType: "contact", isMega: false },
   ]
 
   return (

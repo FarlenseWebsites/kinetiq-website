@@ -1,84 +1,127 @@
 "use client"
 
 import { motion } from "framer-motion"
-import PhysioServiceCard from "../ui/PhysioServiceCard"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
+import TreatmentCard from "../ui/kinetiqsessionCard"
 
 const sessions = [
   {
     title: "In-Centre Treatment",
     description:
-      "Experience hands-on physiotherapy at our KinetiQ centers with access to advanced therapies and specialised equipment. Each session is guided by expert clinicians to ensure proper treatment, faster recovery, and measurable results in a structured environment.",
+      "Experience hands-on physiotherapy at our KinetiQ centers with access to advanced therapies and specialised equipment. Each session is guided by expert clinicians to ensure precise treatment, faster recovery, and measurable results in a structured environment.",
+
+    images: [
+      "/sessions/incentre-1.jpg",
+      "/sessions/incentre-2.jpg",
+      "/sessions/incentre-3.jpg",
+    ],
   },
+
   {
     title: "Home Visits",
     description:
       "Receive personalised physiotherapy care in the comfort of your home. Ideal for post-surgical recovery, elderly care, or convenience-led treatment, our therapists deliver the same clinical expertise with focused, one-on-one attention.",
+
+    images: [
+      "/sessions/home-1.jpg",
+      "/sessions/home-2.jpg",
+      "/sessions/home-3.jpg",
+    ],
   },
+
   {
     title: "Online Physiotherapy",
     description:
-      "Access guided consultations and guided rehabilitation from anywhere. Our online sessions ensure continuity of care with structured programs, real-time guidance, and progress tracking tailored to your needs.",
+      "Access expert consultations and guided rehabilitation from anywhere. Our online sessions ensure continuity of care with structured programs, real-time guidance, and progress tracking tailored to your needs.",
+
+    images: [
+      "/sessions/online-1.jpg",
+      "/sessions/online-2.jpg",
+      "/sessions/online-3.jpg",
+    ],
   },
+
   {
     title: "Corporate",
     description:
-      "Comprehensive workplace wellness solutions designed to reduce pain, improve posture, and enhance employee productivity. From on-site sessions to ergonomic assessments, we help build healthier, more resilient teams.",
+      "Comprehensive workplace wellness solutions designed to reduce pain, improve posture, and enhance employee productivity. From on-site sessions to ergonomic assessments, we help build healthier and more resilient teams.",
+
+    images: [
+      "/sessions/corporate-1.jpg",
+      "/sessions/corporate-2.jpg",
+      "/sessions/corporate-3.jpg",
+    ],
   },
 ]
 
 const containerVariants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+
   show: {
     opacity: 1,
     y: 0,
+
     transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1] as [
+        number,
+        number,
+        number,
+        number
+      ],
     },
   },
 }
 
 export default function SessionsServices() {
   return (
-    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-transparent border-t-2 border-[#D2D0DD]">
-      <div className="max-w-5xl mx-auto">
+    <section className="relative overflow-hidden border-t  bg-[#F4f4f4] py-14 sm:py-16 lg:py-24">
+      
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        <div className="justify-center mb-8 sm:mb-10">
-          <ButtonWithTwoDots label="We offer" />
-          <h1 className="text-center text-2xl sm:text-3xl font-medium bg-gradient-to-r from-[#ff914d] to-[#e07030] bg-clip-text text-transparent mt-7">
-            Session Types
-          </h1>
-          <p className="text-center text-[#68628E] text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5">
-            Choose the format that fits your life — we bring the care to you.
-          </p>
+        {/* HEADING */}
+        <div className="mb-14 flex flex-col items-center text-center sm:mb-20">
+          
+          <ButtonWithTwoDots label="We Offer" />
+
+          <h2 className="mt-5 text-[28px] font-light tracking-[-0.03em] text-[#68628E] sm:text-[40px]">
+           Lorem Ipsum
+          </h2>
+
+          
         </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid gap-12"
+        {/* CARDS */}
+        <div
+         
+          className="grid gap-8 lg:gap-10"
         >
-          {sessions.map((session, idx) => (
-            <motion.div key={idx} variants={itemVariants}>
-              <PhysioServiceCard
+          {sessions.map((session, index) => (
+            <div
+              key={index}
+              className="flex justify-center"
+            >
+              <TreatmentCard
                 title={session.title}
                 description={session.description}
-                mainImageAlt={session.title}
-                stackImageTopAlt={`${session.title} detail`}
-                stackImageBottomAlt={`${session.title} exercise`}
+                images={session.images}
               />
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-
+        </div>
       </div>
     </section>
   )

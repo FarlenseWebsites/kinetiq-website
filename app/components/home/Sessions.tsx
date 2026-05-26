@@ -52,7 +52,7 @@ export default function Spaces() {
         {/* Explore All — top right */}
         <div className="flex justify-end mb-8">
           <button
-            className="px-6 py-2 rounded-lg border border-[#000000] font-semibold text-[#373355] text-sm font-medium bg-[#d2d0dd] hover:bg-slate-100 transition-colors"
+            className="px-6 py-2 rounded-lg border border-[#000000] font-semibold text-[#373355] text-sm font-medium bg-[#f4f4f4] hover:bg-slate-100 transition-colors"
             style={{ boxShadow: "0 1px 4px rgba(0,0,0,0.07)" }}
           >
             Explore All

@@ -30,7 +30,7 @@ export default function HeroLanding() {
  	const shouldReduceMotion = useReducedMotion()
 
  	return (
- 		<section className="relative isolate min-h-[80vh] md:min-h-[80vh] lg:h-full overflow-hidden bg-[#F4F4F4]">
+ 		<section className="relative isolate min-h-[80vh] md:min-h-[80vh] lg:min-h-screen overflow-hidden bg-[#F4F4F4]">
  			{/* Background */}
  			<HeroBackground />
  			{/* Darken background slightly for reliable contrast */}

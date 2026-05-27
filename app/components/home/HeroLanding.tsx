@@ -30,7 +30,7 @@ export default function HeroLanding() {
  	const shouldReduceMotion = useReducedMotion()
 
  	return (
- 		<section className="relative isolate min-h-[80vh] md:min-h-[80vh] lg:min-h-screen overflow-hidden bg-[#F4F4F4]">
+ 		<section className="relative isolate min-h-[80vh] md:min-h-[80vh] lg:h-[100svh] overflow-hidden bg-[#F4F4F4]">
  			{/* Background */}
  			<HeroBackground />
  			{/* Darken background slightly for reliable contrast */}
@@ -78,7 +78,7 @@ export default function HeroLanding() {
  			</div>
 
  			{/* Bottom Decoration */}
- 			<motion.div initial={shouldReduceMotion ? undefined : { y: 120, opacity: 0 }} animate={shouldReduceMotion ? undefined : { y: 0, opacity: 1 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }} className="absolute inset-x-0 bottom-10 md:bottom-10 lg:bottom-0  z-20 pointer-events-none">
+ 			<motion.div initial={shouldReduceMotion ? undefined : { y: 120, opacity: 0 }} animate={shouldReduceMotion ? undefined : { y: 0, opacity: 1 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }} className="absolute inset-x-0 bottom-10 md:bottom-0 lg:bottom-0  z-20 pointer-events-none">
  				<OrangeCircles7 />
  			</motion.div>
  		</section>

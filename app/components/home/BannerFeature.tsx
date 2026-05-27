@@ -43,7 +43,7 @@ export default function RehabFeature() {
                             src={banner.src}
                             alt={banner.alt}
                             fill
-                            className="object-cover object-center"
+                            className="object-contain object-center"
                             priority={index === 0} // Only preload the very first image to boost page speed
                         />
                     </div>

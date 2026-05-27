@@ -28,7 +28,7 @@ export default function RehabFeature() {
     return (
         <section className="w-full">
             {/* Changed from aspect-[5/3] to aspect-[21/9] for a wider, uncropped banner look */}
-            <div className="relative w-full aspect-[16/9] overflow-hidden bg-[#f4f4f4]">
+            <div className="relative w-full aspect-[21/9] overflow-hidden bg-[#f4f4f4]">
 
                 {/* Slides - Mapped from array */}
                 {banners.map((banner, index) => (

@@ -48,20 +48,20 @@ export default function HeroLanding() {
 
  					{/* Heading */}
  					<div className="overflow-hidden">
- 						<motion.h2 variants={revealItem} className="font-bold italic leading-tight tracking-tight" style={{ fontSize: "clamp(1.75rem, 5vw + 0.5rem, 4.5rem)" }}>
+ 						<motion.h2 variants={revealItem} className="font-bold  leading-tight tracking-tight" style={{ fontSize: "clamp(1.75rem, 5vw + 0.5rem, 4.5rem)" }}>
  							Pain is not permanent,
  						</motion.h2>
  					</div>
 
  					<div className="mt-2 overflow-hidden sm:mt-3">
- 						<motion.h1 variants={revealItem} className="font-bold italic leading-tight tracking-tight" style={{ fontSize: "clamp(1.75rem, 5vw + 0.5rem, 4.5rem)" }}>
+ 						<motion.h1 variants={revealItem} className="font-bold leading-tight tracking-tight" style={{ fontSize: "clamp(1.75rem, 5vw + 0.5rem, 4.5rem)" }}>
  							It&apos;s a message.
  						</motion.h1>
  					</div>
 
  					{/* Subtitle */}
  					<div className="mt-6 overflow-hidden sm:mt-8">
- 						<motion.p variants={revealItem} className="max-w-2xl px-2 font-light italic leading-relaxed text-slate-100" style={{ fontSize: "clamp(0.813rem, 1.5vw + 0.25rem, 1.125rem)" }}>
+ 						<motion.p variants={revealItem} className="max-w-2xl px-2 font-light leading-relaxed text-slate-100" style={{ fontSize: "clamp(0.813rem, 1.5vw + 0.25rem, 1.125rem)" }}>
  							We combine movement science, hands-on physiotherapy and
  							<br className="hidden sm:block" />
  							personalized care to treat the root cause, not just the symptoms.

@@ -26,9 +26,8 @@ export default function RehabFeature() {
     const prevSlide = () => setCurrentIndex((prev) => (prev === 0 ? banners.length - 1 : prev - 1))
 
     return (
-        <section className="w-full">
-            {/* Changed from aspect-[5/3] to aspect-[21/9] for a wider, uncropped banner look */}
-            <div className="relative w-full aspect-[21/9] overflow-hidden bg-[#f4f4f4]">
+        <section className="w-full border-0 bg-[#F4F4F4]">
+            <div className="relative w-full aspect-[21/9] overflow-hidden">
 
                 {/* Slides - Mapped from array */}
                 {banners.map((banner, index) => (

@@ -38,82 +38,84 @@ export default function EquipmentGallery() {
         </defs>
       </svg>
 
-      <section
-        className="relative bg-[#F4F4F4]"
-        style={{ clipPath: "url(#eq-concave)" }}
-      >
-        {/* DESKTOP — 3 images filling the shape, no cards */}
-        <div
-          className="hidden md:flex w-full"
-          style={{ height: "clamp(380px, 52vw, 620px)" }}
-        >
-          {/* LEFT */}
-          <div className="relative flex-1 h-full">
-            <Image
-              src={videoimg}
-              alt="Equipment"
-              fill
-              sizes="33vw"
-              className="object-cover"
-            />
-          </div>
-
-          {/* divider */}
-          <div className="w-5 shrink-0 bg-[#F4F4F4] z-10" />
-
-          {/* CENTER */}
-          <div className="relative flex-1 h-full">
-            <Image
-              src={videoimg}
-              alt="Equipment"
-              fill
-              priority
-              sizes="33vw"
-              className="object-cover"
-            />
-          </div>
-
-          {/* divider */}
-          <div className="w-5 shrink-0 bg-[#F4F4F4] z-10" />
-
-          {/* RIGHT */}
-          <div className="relative flex-1 h-full">
-            <Image
-              src={videoimg}
-              alt="Equipment"
-              fill
-              sizes="33vw"
-              className="object-cover"
-            />
-          </div>
+      <section className="relative  bg-[#F4F4F4]">
+        <div className="flex items-center justify-center pb-10">
+          <ButtonWithTwoDots label="Testimonial" />
         </div>
 
-        {/* MOBILE — single full-width image, swipeable */}
-        <div
-          className="md:hidden w-full overflow-x-auto snap-x snap-mandatory flex hide-scrollbar"
-          style={{ height: "clamp(260px, 72vw, 420px)" }}
-        >
-          {[1, 2, 3].map((id) => (
-            <div
-              key={id}
-              className="relative shrink-0 w-full h-full snap-center"
-            >
+        {/* Images wrapped in the concave clip */}
+        <div style={{ clipPath: "url(#eq-concave)" }}>
+          {/* DESKTOP — 3 images filling the shape, no cards */}
+          <div
+            className="hidden md:flex w-full"
+            style={{ height: "clamp(380px, 52vw, 620px)" }}
+          >
+            {/* LEFT */}
+            <div className="relative flex-1 h-full">
               <Image
                 src={videoimg}
                 alt="Equipment"
                 fill
-                sizes="100vw"
+                sizes="33vw"
                 className="object-cover"
               />
             </div>
-          ))}
+
+            {/* divider */}
+            <div className="w-5 shrink-0 bg-[#F4F4F4] z-10" />
+
+            {/* CENTER */}
+            <div className="relative flex-1 h-full">
+              <Image
+                src={videoimg}
+                alt="Equipment"
+                fill
+                priority
+                sizes="33vw"
+                className="object-cover"
+              />
+            </div>
+
+            {/* divider */}
+            <div className="w-5 shrink-0 bg-[#F4F4F4] z-10" />
+
+            {/* RIGHT */}
+            <div className="relative flex-1 h-full">
+              <Image
+                src={videoimg}
+                alt="Equipment"
+                fill
+                sizes="33vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* MOBILE — single full-width image, swipeable */}
+          <div
+            className="md:hidden w-full overflow-x-auto snap-x snap-mandatory flex hide-scrollbar"
+            style={{ height: "clamp(260px, 72vw, 420px)" }}
+          >
+            {[1, 2, 3].map((id) => (
+              <div
+                key={id}
+                className="relative shrink-0 w-full h-full snap-center"
+              >
+                <Image
+                  src={videoimg}
+                  alt="Equipment"
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA — outside the clipped section so it's never cut off */}
-      <div className="mb-16">
-        <ButtonWithTwoDots />
-      </div>
+     
     </div>
   )
 }

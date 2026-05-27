@@ -1,3 +1,7 @@
+"use client"
+
+import Image from "next/image"
+
 interface SpaceCardProps {
   number: string
   title: string
@@ -12,27 +16,20 @@ export default function SpaceCard({
   image,
 }: SpaceCardProps) {
   return (
-    <div
-      className="overflow-hidden rounded-tr-[60px] bg-white"
-      style={{
-        boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
-      }}
-    >
-      {/* ── Photo area ── */}
-      <div className="relative w-full aspect-[4/3] sm:aspect-[4/4.5] lg:aspect-[4/3]">
+    <div className="flex flex-col h-full overflow-hidden rounded-tr-[60px] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.08)]">
+      
+      
+      <div className="relative w-full aspect-[4/3]">
         
-        {/* Clipped Image */}
-        <img
+        <Image
           src={image || "/spaceimg.png"}
           alt={title}
-          className="h-full w-full object-cover"
-          style={{
-            clipPath: "ellipse(65% 78% at 60% 18%)",
-          }}
+          fill
+          className="object-cover [clip-path:ellipse(65%_78%_at_60%_18%)]"
         />
 
         {/* Circle number badge */}
-        <div
+       <div
           className="absolute right-5 top-5 flex items-center justify-center sm:right-6 sm:top-6"
           style={{
             width: "clamp(58px, 7vw, 72px)",
@@ -83,27 +80,16 @@ export default function SpaceCard({
       </div>
 
       {/* ── Text area ── */}
-      <div className="bg-white px-5 pt-5 pb-7 sm:px-6 sm:pb-8">
-        <h3
-          className="mb-2 font-bold leading-tight"
-          style={{
-            fontSize: "clamp(24px, 2.3vw, 38px)",
-            color: "#373355",
-          }}
-        >
+      <div className="flex flex-col flex-grow bg-white px-5 pt-5 pb-7 sm:px-6 sm:pb-8">
+        <h3 className="mb-2 font-bold leading-tight text-[#373355] text-[clamp(24px,2.3vw,38px)]">
           {title}
         </h3>
 
-        <p
-          className="leading-relaxed text-[#68628e]"
-          style={{
-            fontSize: "clamp(13px, 1.2vw, 16px)",
-            fontStyle: "italic",
-          }}
-        >
+        <p className="leading-relaxed italic text-[#68628e] text-[clamp(13px,1.2vw,16px)]">
           {subtitle}
         </p>
       </div>
+      
     </div>
   )
 }

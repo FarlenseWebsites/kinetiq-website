@@ -1,6 +1,5 @@
 "use client"
 
-import { ChevronLeft, ChevronRight } from "lucide-react"
 import FeatureCard from "../ui/cardforexcersice"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
@@ -40,7 +39,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-[#F9F9F9] border-t-2 border-[#D2D0DD]">
+    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-[#F4F4F4]">
       <div className="max-w-5xl mx-auto">
         {/* Grid Layout for Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-2 sm:gap-y-4 mb-10 sm:mb-14 md:mb-16">

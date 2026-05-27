@@ -23,29 +23,7 @@ interface EventCard {
 
 // ─── Data — swap src/type to add images or videos anytime ────────────────────
 
-const pastEvents: EventCard[] = [
-  {
-    id: 1,
-    title: "KinetiQ Fitness Event",
-    date: "March 2025",
-    media: { type: "image", src: "/videoimg.png", alt: "KinetiQ fitness event" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
-  },
-  {
-    id: 2,
-    title: "Posture Workshop",
-    date: "January 2025",
-    media: { type: "image", src: "/videoimg.png", alt: "KinetiQ posture workshop" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
-  },
-  {
-    id: 3,
-    title: "Rehab Recovery Session",
-    date: "November 2024",
-    media: { type: "image", src: "/videoimg.png", alt: "KinetiQ rehab session" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
-  },
-]
+
 
 const upcomingEvents: EventCard[] = [
   {
@@ -241,37 +219,6 @@ function EventCarousel({ events }: { events: EventCard[] }) {
   )
 }
 
-// ─── Subsection header ────────────────────────────────────────────────────────
-
-function SubsectionHeader({
-  label,
-  badge,
-}: {
-  label: string
-  badge?: "past" | "upcoming"
-}) {
-  return (
-    <div className="flex items-center gap-4 mb-8">
-      <div className="flex-1 h-px bg-linear-to-r from-transparent via-[#FF914D]/30 to-[#FF914D]/50" />
-      <div className="flex items-center gap-2 shrink-0">
-        {badge === "upcoming" && (
-          <span className="inline-block w-2 h-2 rounded-full bg-[#FF914D] animate-pulse" />
-        )}
-        <span className="text-[#373355] font-bold text-lg sm:text-xl tracking-wide px-5 py-1.5 rounded-full border border-[#FF914D]/40 bg-white shadow-sm">
-          {label}
-        </span>
-                  <span className="inline-block w-2 h-2 rounded-full bg-[#FF914D] animate-pulse" />
-
-        {badge === "past" && (
-          <span className="text-xs text-[#8681a5] font-medium px-2 py-0.5 bg-[#8681a5]/10 rounded-full">
-            archived
-          </span>
-        )}
-      </div>
-      <div className="flex-1 h-px bg-linear-to-l from-transparent via-[#FF914D]/30 to-[#FF914D]/50" />
-    </div>
-  )
-}
 
 // ─── Main section ─────────────────────────────────────────────────────────────
 
@@ -281,34 +228,17 @@ export default function EventsSection() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+        <div
           className="flex flex-col items-center mb-14"
         >
           <ButtonWithTwoDots label="Our Events" />
           <h2
             className="mt-8 text-[#373355] font-medium text-center"
-            style={{ fontSize: "clamp(1.75rem, 4vw + 0.25rem, 3rem)" }}
+            style={{ fontSize: "clamp(1.75rem, 3vw + 0.25rem, 3rem)" }}
           >
-            Past Events
+            Upcoming Events
           </h2>
-          
-        </motion.div>
-
-        {/* Past Events */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-16"
-        >
-          <EventCarousel events={pastEvents} />
-        </motion.div>
-
+        </div>
         {/* Upcoming Events */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -316,12 +246,6 @@ export default function EventsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-           <h2
-            className="my-8 text-[#373355] font-medium text-center"
-            style={{ fontSize: "clamp(1.75rem, 4vw + 0.25rem, 3rem)" }}
-          >
-            Upcoming Events
-          </h2>
           <EventCarousel events={upcomingEvents} />
         </motion.div>
 

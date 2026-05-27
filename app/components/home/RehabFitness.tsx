@@ -78,7 +78,7 @@ const RIGHT: CircleDef[] = [
 
 export default function RehabIntro() {
   return (
-    <section className="relative flex w-full flex-col overflow-hidden bg-[#f5efe4]">
+    <section className="relative flex w-full flex-col overflow-hidden bg-[#f5efe4] border-0">
 
       {/* Top Decorative Circles */}
       

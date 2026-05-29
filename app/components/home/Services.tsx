@@ -58,7 +58,7 @@ export default function Services() {
         <div className="flex flex-col items-center">
           <ButtonWithTwoDots label="One Stop for" />
           <h1
-            className="text-[#373355] font-semibold text-center"
+            className="text-[#373355] font-medium text-center"
             style={{ marginTop: "32px", fontSize: "42px" }}
           >
             Rehab | Posture | Fitness

@@ -8,25 +8,29 @@ const spaces = [
     number: "01",
     title: "In-Centre Treatment",
     subtitle: "Hands-on physiotherapy at our centers with access to advanced treatments.",
-    image: "/spaceimg.png",
+    image: "/incenter.png",
+    flip: true,
   },
   {
     number: "02",
     title: "Home Visits",
-    subtitle: "Hands-on physiotherapy at our centers with access to advanced treatments.",
-    image: "/spaceimg.png",
+    subtitle: "A combination of in-clinic sessions and online support.",
+    image: "/home.png",
+    flip: false,
   },
   {
     number: "03",
     title: "Online Physiotherapy",
-    subtitle: "Consultations and guided rehab programs from anywhere.",
-    image: "/spaceimg.png",
+    subtitle: "Consultations and guided rehab programs from wherever you are.",
+    image: "/online.png",
+    flip: false,
   },
   {
     number: "04",
     title: "Corporate",
     subtitle: "On-site and customized physiotherapy solutions for modern workplaces.",
-    image: "/spaceimg.png",
+    image: "/corporate.png",
+    flip: false,
   },
 ]
 
@@ -40,7 +44,7 @@ export default function Spaces() {
         <div className="flex flex-col items-center text-center">
           <ButtonWithTwoDots label="KinetiQ Sessions" />
           
-          <h1 className="text-[#373355] font-semibold text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
             Multiple Access Points
           </h1>
         </div>
@@ -48,7 +52,7 @@ export default function Spaces() {
         {/* ── ACTION BAR ── */}
         <div className="flex justify-end mt-6 mb-6">
           <button
-            className="px-6 py-2 rounded-lg border border-gray-300 font-semibold text-[#373355] text-sm bg-transparent hover:bg-black/5 transition-colors shadow-sm"
+            className="px-6 py-2 rounded-lg bg-[#D2D0DD] border border-[#373355] font-medium text-[#373355] text-sm  hover:bg-black/5 "
           >
             Explore All
           </button>
@@ -63,6 +67,7 @@ export default function Spaces() {
               title={space.title}
               subtitle={space.subtitle}
               image={space.image}
+              flip={space.flip}
             />
           ))}
         </div>

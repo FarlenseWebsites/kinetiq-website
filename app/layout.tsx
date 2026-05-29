@@ -42,7 +42,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} scroll-smooth`}
     >
-      <body className="min-h-screen overflow-x-hidden bg-[#F8F8FA] font-[family:var(--font-inter)] text-[#2F295C] antialiased">
+      <body className="min-h-screen overflow-x-hidden bg-[#F8F8FA] text-[#2F295C] antialiased">
         <FlowbiteInit />
         
         {/* subtle background grid */}

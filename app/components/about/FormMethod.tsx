@@ -101,7 +101,7 @@ export default function FormMethod() {
                 </span>
 
                 <h3
-                  className="font-semibold text-white leading-tight"
+                  className="font-medium text-white leading-tight"
                   style={{ fontSize: "clamp(1rem, 1.5vw + 0.15rem, 1.2rem)" }}
                 >
                   {step.title}

@@ -6,7 +6,7 @@ import kinetiqLogoWhiteCenter from "../../../public/KinetiQ Logo (white center).
 
 export default function Footer() {
   return (
-    <footer className="bg-[#68628E] text-[#f8f8fe] font-['Inter',_sans-serif] pt-16">
+    <footer className="bg-[#68628E] text-[#f8f8fe] pt-16">
       
       {/* Main Footer Content */}
       <div className="px-6 md:px-12">

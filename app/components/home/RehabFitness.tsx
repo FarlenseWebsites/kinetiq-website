@@ -105,7 +105,7 @@ export default function RehabIntro() {
           <p className="mb-1 bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text text-base italic tracking-wider text-transparent sm:mb-2 sm:text-lg md:text-xl lg:text-2xl">
             One stop for all your
           </p>
-          <h2 className="bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text pb-1 text-4xl font-light leading-tight tracking-tight text-transparent sm:pb-2 sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5rem]">
+          <h2 className="bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text pb-1 text-4xl font-Regular leading-tight tracking-tight text-transparent sm:pb-2 sm:text-5xl md:text-6xl lg:text-7xl">
             Rehab and
             <br />
             Fitness Needs

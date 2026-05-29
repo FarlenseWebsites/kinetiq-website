@@ -177,7 +177,7 @@ export default function ValuesSection() {
                   {v.number}
                 </span>
                 <h3
-                  className="font-semibold text-[#4A4572] tracking-tight"
+                  className="font-medium text-[#4A4572] tracking-tight"
                   style={{ fontSize: "clamp(1.25rem, 2.2vw + 0.25rem, 1.875rem)" }}
                 >
                   {v.title}

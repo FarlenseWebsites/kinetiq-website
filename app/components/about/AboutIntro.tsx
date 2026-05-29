@@ -13,7 +13,7 @@ export default function AboutIntro() {
       >
         <ButtonWithTwoDots label="Clinical Excellence" />
         <h1
-          className="font-semibold text-[#373355] mt-6 leading-tight"
+          className="font-medium text-[#373355] mt-6 leading-tight"
           style={{ fontSize: "clamp(1.75rem, 4vw + 0.25rem, 3rem)" }}
         >
           Expert Care,

@@ -29,11 +29,17 @@ export default function HeroLanding() {
  				initial={{ y: "-30%", opacity: 0 }}
  				animate={{ y: "0%", opacity: 1 }}
  				transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
- 				className="absolute inset-0 [clip-path:ellipse(75%_92%_at_50%_-30%)] md:[clip-path:ellipse(72%_68%_at_50%_-10%)] lg:[clip-path:ellipse(72%_86%_at_50%_0%)] xl:[clip-path:ellipse(58%_86%_at_50%_0%)]"
+ 				className="absolute inset-0 [clip-path:ellipse(75%_92%_at_50%_-30%)] md:[clip-path:ellipse(72%_68%_at_50%_-10%)] lg:[clip-path:ellipse(52%_86%_at_50%_0%)] xl:[clip-path:ellipse(58%_86%_at_50%_0%)]"
  				style={{
- 					background: "linear-gradient(180deg, #ffffff 0%, #dcd8e8 20%, #68628E 90%, #373355 100%)",
- 					filter: "drop-shadow(0 30px 100px rgba(126, 121, 153, 0.4))",
- 				}}
+				background: `
+					linear-gradient(
+					180deg,
+					#68628E2E 0%,
+					#68628E 66%,
+					#1D1C28 100%
+					)
+				`,
+				}}
  			/>
  		</div>
 

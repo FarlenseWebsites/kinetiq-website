@@ -14,7 +14,7 @@ const BookConsultationButton = ({ className, ...props }: Props) => {
   px-6
   py-2
 
-  font-semibold
+  font-medium
   border border-black
   shadow-md
   hover:bg-[#68628e] hover:text-white hover:shadow-xl hover:border-0

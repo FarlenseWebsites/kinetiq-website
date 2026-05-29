@@ -120,7 +120,7 @@ function TeamCard({
 
 export default function TeamSection() {
   return (
-    <section className="relative overflow-hidden bg-[#F4f4f4] py-20 px-5 font-sans">
+    <section className="relative overflow-hidden bg-[#F4f4f4] py-20 px-5">
 
       <style>{`
         @keyframes cardReveal {

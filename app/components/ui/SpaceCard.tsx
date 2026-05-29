@@ -7,6 +7,7 @@ interface SpaceCardProps {
   title: string
   subtitle: string
   image?: string
+  flip?: boolean
 }
 
 export default function SpaceCard({
@@ -14,6 +15,7 @@ export default function SpaceCard({
   title,
   subtitle,
   image,
+  flip = false,
 }: SpaceCardProps) {
   return (
     <div className="flex flex-col h-full overflow-hidden rounded-tr-[60px] bg-white shadow-[0_2px_16px_rgba(0,0,0,0.08)]">
@@ -25,7 +27,11 @@ export default function SpaceCard({
           src={image || "/spaceimg.png"}
           alt={title}
           fill
-          className="object-cover [clip-path:ellipse(65%_78%_at_60%_18%)]"
+         className={`
+          object-cover
+          ${flip ? "-scale-x-100" : ""}
+          [clip-path:ellipse(65%_78%_at_60%_18%)]
+        `}
         />
 
         {/* Circle number badge */}
@@ -80,12 +86,12 @@ export default function SpaceCard({
       </div>
 
       {/* ── Text area ── */}
-      <div className="flex flex-col flex-grow bg-white px-5 pt-5 pb-7 sm:px-6 sm:pb-8">
-        <h3 className="mb-2 font-bold leading-tight text-[#373355] text-[clamp(24px,2.3vw,38px)]">
+      <div className=" relative z-10 -mt-2 bg-white px-5 pb-7 ">
+        <h3 className="mb-2  font-medium leading-tight text-[#373355] text-[clamp(24px,2.3vw,38px)]">
           {title}
         </h3>
 
-        <p className="leading-relaxed italic text-[#68628e] text-[clamp(13px,1.2vw,16px)]">
+        <p className=" pr-30 leading-relaxed italic text-[#68628e] text-[clamp(13px,1.0vw,16px)]">
           {subtitle}
         </p>
       </div>

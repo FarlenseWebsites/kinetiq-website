@@ -113,7 +113,7 @@ export default function Navbar() {
   // Added isMega property to determine layout behavior dynamically
   const navItems = [
     { label: "Specialties", href: "/physiotherapy", menuType: "physio", isMega: true },
-    { label: "KinetiQ Sessions", href: "/kinetiqSessions", menuType: "sessions", isMega: false },
+    { label: "Sessions", href: "/kinetiqSessions", menuType: "sessions", isMega: false },
     { label: "Treatment", href: "#", menuType: "treatment", isMega: true },
     { label: "About", href: "/about", menuType: "about", isMega: false },
     { label: "Contact", href: "/contact", menuType: "contact", isMega: false },

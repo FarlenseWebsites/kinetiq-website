@@ -5,7 +5,7 @@ import Pendulum from "../ui/pendulum" // Adjust import path if needed
 
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-[#FAFAFC] flex flex-col items-center justify-start pt-24 sm:pt-28 md:pt-32 pb-40 md:pb-54 font-sans">
+    <section className="relative overflow-hidden bg-[#FAFAFC] flex flex-col items-center justify-start pt-24 sm:pt-28 md:pt-32 pb-40 md:pb-54">
 
       {/* Bottom Section Fade */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -62,7 +62,7 @@ export default function AboutHero() {
 
       {/* Main Quote Block — forced to two lines */}
       <div className="relative z-10 text-center px-6 sm:px-10 w-[90vw] max-w-[640px]">
-        <span className="absolute left-0 top-[-10px] text-[#FF914D] font-serif text-[36px] sm:text-[52px] leading-none select-none">
+        <span className="absolute left-1 top-[-10px] text-[#FF914D] font-serif text-[36px] sm:text-[52px] leading-none select-none">
           &ldquo;
         </span>
 

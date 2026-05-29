@@ -114,7 +114,7 @@ export default function Navbar() {
   const navItems = [
     { label: "Specialties", href: "/physiotherapy", menuType: "physio", isMega: true },
     { label: "Sessions", href: "/kinetiqSessions", menuType: "sessions", isMega: false },
-    { label: "Treatment", href: "#", menuType: "treatment", isMega: true },
+    { label: "Treatment", href: "/treatments", menuType: "treatment", isMega: true },
     { label: "About", href: "/about", menuType: "about", isMega: false },
     { label: "Contact", href: "/contact", menuType: "contact", isMega: false },
   ]

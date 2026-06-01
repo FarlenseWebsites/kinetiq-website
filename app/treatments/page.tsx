@@ -202,16 +202,15 @@ export default function TreatmentsPage() {
       <TreatmentSection
         label="Assessment"
         title="Core Assessment & Corrective Care"
-        subtitle="Foundational evaluation and targeted corrective interventions to restore optimal posture, alignment, and movement efficiency."
         treatments={coreAssessment}
         variant="purple"
       />
 
 
+
       <TreatmentSection
         label="Hands-On"
         title="Manual Therapy"
-        subtitle="Hands-on techniques to relieve pain, restore mobility, and improve joint and soft tissue function."
         treatments={manualTherapy}
         variant="purple"
       />
@@ -219,15 +218,13 @@ export default function TreatmentsPage() {
       <TreatmentSection
         label="Advanced Modalities"
         title="Pain & Injury Areas"
-        subtitle="Advanced clinical technologies targeting acute and chronic pain, tissue healing, and neuromuscular rehabilitation."
         treatments={painAndInjury}
-        variant="orange"
+        variant="purple"
       />
 
       <TreatmentSection
         label="Performance"
         title="Recovery & Performance"
-        subtitle="Targeted recovery and performance therapies to enhance resilience, accelerate healing, and optimise physical capacity."
         treatments={recoveryPerformance}
         variant="purple"
       />
@@ -235,15 +232,13 @@ export default function TreatmentsPage() {
       <TreatmentSection
         label="Women's Health"
         title="Women's Health & Prenatal Care"
-        subtitle="Specialised physiotherapy care throughout pregnancy, postpartum recovery, and women's specific health needs."
         treatments={womensHealth}
-        variant="orange"
+        variant="purple"
       />
 
       <TreatmentSection
         label="Wellness"
         title="Specialised Wellness Therapies"
-        subtitle="Holistic and specialised therapies that complement clinical rehabilitation and support whole-body health."
         treatments={specialisedWellness}
         variant="purple"
       />

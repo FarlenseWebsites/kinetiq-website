@@ -32,7 +32,7 @@ const leftCards  = womenServices.filter((_, i) => i % 2 === 0)
 const rightCards = womenServices.filter((_, i) => i % 2 === 1)
 export default function PhysioWomenSection() {
   return (
-    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-transparent border-t-2 border-[#D2D0DD]">
+    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-transparent">
       <div className="max-w-6xl mx-auto">
 
         <div className="justify-center mb-8 sm:mb-10">

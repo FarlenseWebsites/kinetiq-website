@@ -11,7 +11,7 @@ interface Treatment {
 interface TreatmentSectionProps {
   label: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   treatments: Treatment[];
   variant?: "purple" | "orange";
 }
@@ -31,7 +31,7 @@ export default function TreatmentSection({
     variant === "orange" ? "text-[#7a4020]" : "text-[#373355]";
 
   return (
-    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-8 md:px-12 border-t-2 border-[#D2D0DD]">
+    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-8 md:px-12">
       <div className="max-w-6xl mx-auto">
         <div className="mb-8 sm:mb-12">
           <ButtonWithTwoDots label={label} />
@@ -40,11 +40,13 @@ export default function TreatmentSection({
           >
             {title}
           </h2>
-          <p
-            className={`text-center text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5 ${subtitleColor}`}
-          >
-            {subtitle}
-          </p>
+          {subtitle && (
+            <p
+              className={`text-center text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5 ${subtitleColor}`}
+            >
+              {subtitle}
+            </p>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">

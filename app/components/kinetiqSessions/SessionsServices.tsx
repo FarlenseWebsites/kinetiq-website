@@ -48,7 +48,7 @@ const sessions = [
 
 export default function SessionsServices() {
   return (
-    <section className="relative overflow-hidden border-t  bg-[#F4f4f4] py-14 sm:py-16 lg:py-14">
+    <section className="relative overflow-hidden bg-[#F4f4f4] py-14 sm:py-16 lg:py-14">
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 

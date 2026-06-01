@@ -14,6 +14,9 @@ const ORANGE = "#FF914D";
 // D-shape: flat left, semicircular bump right
 // Center (435, 300), radius 200 — two quarter-arcs form a perfect semicircle
 // strokeWidth = 8, so inset = 4
+// D-shape: flat left, semicircular bump right
+// Center (435, 300), radius 200 — two quarter-arcs form a perfect semicircle
+// strokeWidth = 8, so inset = 4
 const NORMAL_PATH = `
   M 4 104
   H 435
@@ -39,7 +42,7 @@ export default function TreatmentCard({
   mirrored = false,
 }: TreatmentCardProps) {
   return (
-    <div className="relative w-full aspect-700/500">
+    <div className="relative w-full aspect-700/500 @container">
       {/* Card Shape */}
       <svg
         viewBox="0 0 700 500"
@@ -49,7 +52,7 @@ export default function TreatmentCard({
           d={mirrored ? MIRRORED_PATH : NORMAL_PATH}
           fill="#F4F4F4"
           stroke={ORANGE}
-          strokeWidth="8"
+          strokeWidth="6"
         />
       </svg>
 
@@ -61,7 +64,7 @@ export default function TreatmentCard({
           aspectRatio: "1",
           top: "0%",
           ...(mirrored ? { left: "0%" } : { right: "0%" }),
-          border: `8px solid ${ORANGE}`,
+          border: `clamp(3px, 1.4cqw, 6px) solid ${ORANGE}`,
         }}
       >
         <Image src={imageSrc} alt={title} fill className="object-cover" />
@@ -69,29 +72,44 @@ export default function TreatmentCard({
 
       {/* Content */}
       <div
-        className="absolute flex flex-col justify-center"
+        className="absolute overflow-hidden"
         style={{
-          ...(mirrored ? { right: "10%" } : { left: "10%" }),
-          top: "28%",
-          width: "42%",
+          ...(mirrored ? { right: "6%" } : { left: "6%" }),
+          top: "22%",
+          bottom: "5%",
+          width: "46%",
         }}
       >
-        <h3
-          className="font-semibold text-[#373355] leading-tight"
-          style={{ fontSize: "clamp(13px, 1.35vw, 20px)", marginBottom: "8px" }}
-        >
-          {title}
-        </h3>
-        <p
-          className="text-[#373355]"
+        <div
+          className="absolute w-full"
           style={{
-            fontSize: "clamp(10px, 0.82vw, 13px)",
-            lineHeight: 1.5,
-            opacity: 0.85,
+            top: "50%",
+            transform: "translateY(-50%)",
+            textAlign: mirrored ? "right" : "left",
           }}
         >
-          {description}
-        </p>
+          <h3
+            className="font-medium text-[#373355] leading-tight"
+            style={{
+             
+              fontSize: "clamp(12px, 5.8cqw, 25px)",
+              marginBottom: "clamp(6px, 1.5cqw, 10px)",
+            }}
+          >
+            {title}
+          </h3>
+          <p
+            className="text-[#373355]"
+            style={{
+              
+              fontSize: "clamp(9px, 3cqw, 16px)",
+              lineHeight: 1.5,
+              opacity: 0.85,
+            }}
+          >
+            {description}
+          </p>
+        </div>
       </div>
     </div>
   );

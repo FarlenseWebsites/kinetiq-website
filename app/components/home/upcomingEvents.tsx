@@ -227,7 +227,7 @@ export default function EventsSection() {
         <div
           className="flex flex-col items-center mb-14"
         >
-          <ButtonWithTwoDots label="Our Events" />
+          <ButtonWithTwoDots label="KinetiQ Community" />
           <h2
             className="mt-8 text-[#373355] font-medium text-center"
             style={{ fontSize: "clamp(1.75rem, 3vw + 0.25rem, 3rem)" }}

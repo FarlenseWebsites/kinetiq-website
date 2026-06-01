@@ -1,5 +1,5 @@
 import HeroLanding from "./components/home/HeroLanding"
-import RehabFitness from "./components/home/RehabFitness"
+import RehabFitness from "./components/home/onestopBanner"
 import Services from "./components/home/Services"
 import Spaces from "./components/home/Sessions"
 import CTA from "./components/home/CTA"

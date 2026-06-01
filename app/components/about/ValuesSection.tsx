@@ -162,7 +162,7 @@ export default function ValuesSection() {
               }}
               onMouseEnter={() => setHoveredIndex(i)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="flex flex-col gap-2 py-10 sm:py-12 border-b border-[#D2D0DD] last:border-b-0 cursor-default group"
+              className="flex flex-col gap-2 py-10 sm:py-12 cursor-default group"
             >
               {/* Number + title row */}
               <div className="flex items-baseline gap-5">

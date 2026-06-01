@@ -1,11 +1,14 @@
 import React from "react"
 import { cn } from "../../lib/utils"
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 const BookConsultationButton = ({ className, ...props }: Props) => {
   return (
-    <button
+    <a
+      href="https://wa.me/919319606763?text=Hi!%20I%27d%20like%20to%20book%20a%20consultation."
+      target="_blank"
+      rel="noopener noreferrer"
       className={cn(`
   inline-flex items-center justify-center
   rounded-lg
@@ -25,7 +28,7 @@ const BookConsultationButton = ({ className, ...props }: Props) => {
       {...props}
     >
       Book a Consultation
-    </button>
+    </a>
   )
 }
 

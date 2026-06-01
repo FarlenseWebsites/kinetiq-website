@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion } from "framer-motion"
-import { FaInstagram } from "react-icons/fa"
+import { FaWhatsapp } from "react-icons/fa"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -18,7 +18,6 @@ interface EventCard {
   title: string
   date: string
   media: MediaItem
-  instagramUrl: string
 }
 
 // ─── Data — swap src/type to add images or videos anytime ────────────────────
@@ -28,24 +27,21 @@ interface EventCard {
 const upcomingEvents: EventCard[] = [
   {
     id: 4,
-    title: "Summer Fitness Camp",
-    date: "June 2025",
-    media: { type: "image", src: "/videoimg.png", alt: "Summer fitness camp" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
+    title: "Menopause Wellness Program",
+    date: "June 2026",
+    media: { type: "image", src: "/insta1.png", alt: "Summer fitness camp" },
   },
   {
     id: 5,
-    title: "Sports Recovery Workshop",
-    date: "July 2025",
-    media: { type: "image", src: "/videoimg.png", alt: "Sports recovery workshop" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
+    title: "Master class for Athletes",
+    date: "June 2026",
+    media: { type: "image", src: "/insta2.png", alt: "Sports recovery workshop" },
   },
   {
     id: 6,
-    title: "Community Rehab Drive",
-    date: "August 2025",
-    media: { type: "image", src: "/videoimg.png", alt: "Community rehab drive" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
+    title: "Summer Fitness Camp",
+    date: "June 2026",
+    media: { type: "image", src: "/insta3.png", alt: "Community rehab drive" },
   },
 ]
 
@@ -59,7 +55,7 @@ function EventMedia({ media }: { media: MediaItem }) {
         poster={media.poster}
         controls
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-fit"
       />
     )
   }
@@ -69,7 +65,7 @@ function EventMedia({ media }: { media: MediaItem }) {
       alt={media.alt}
       fill
       sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 30vw"
-      className="object-cover transition-transform duration-500 group-hover:scale-105"
+      className="object-cover"
     />
   )
 }
@@ -102,15 +98,15 @@ function EventCardItem({ event }: { event: EventCard }) {
 
           <div className="h-px bg-[#FF914D]/25" />
 
-          {/* Instagram link */}
+          {/* Book Now — WhatsApp */}
           <a
-            href={event.instagramUrl}
+            href={`https://wa.me/919319606763?text=${encodeURIComponent(`Hi! I'd like to book a spot for the "${event.title}" event.`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-[#8681a5] hover:text-[#FF914D] transition-colors duration-200 text-sm font-medium w-fit"
           >
-            <FaInstagram size={16} />
-            <span>View on Instagram</span>
+            <FaWhatsapp size={16} />
+            <span>Book Now</span>
           </a>
         </div>
       </motion.div>

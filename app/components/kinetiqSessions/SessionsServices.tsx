@@ -56,10 +56,10 @@ export default function SessionsServices() {
         <div className="mb-14 flex flex-col items-center text-center sm:mb-20">
           
           <ButtonWithTwoDots label="We Offer" />
-
-          <h2 className="mt-5 text-[28px] font-Medium tracking-[-0.03em] text-[#373355] sm:text-[40px]">
+           <h1 className="text-center text-2xl sm:text-3xl font-medium bg-linear-to-r from-[#ff914d] to-[#e06010] bg-clip-text text-transparent mt-7">
             Multiple Access Points
-          </h2>
+          </h1>
+
 
           
         </div>

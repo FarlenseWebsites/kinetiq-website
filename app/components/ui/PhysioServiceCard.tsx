@@ -51,7 +51,7 @@ export default function ServiceCard({
 
       {/* Photo */}
       <div
-        className="absolute overflow-hidden"
+        className="absolute overflow-hidden group"
         style={
           !mirrored
             ? {
@@ -74,7 +74,7 @@ export default function ServiceCard({
           src={imageSrc}
           alt={title}
           fill
-          className="object-cover object-top"
+          className="object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-110"
         />
       </div>
 

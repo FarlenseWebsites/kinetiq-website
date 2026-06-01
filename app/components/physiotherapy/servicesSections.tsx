@@ -65,21 +65,39 @@ export default function ServicesSection() {
         {/* Desktop: staggered 2-column */}
         <div className="hidden md:flex gap-12 lg:gap-16">
 
-          <div className="flex-1 flex flex-col gap-8 lg:gap-10">
+          <div className="flex-1 flex flex-col gap-8 lg:gap-10 pt-8">
             {leftCards.map((condition, i) => (
-              <PhysioServiceCard
+              <div
                 key={i}
-                title={condition.title}
-                description={condition.description}
-                imageSrc={condition.image}
-                variant="orange"
-              />
+                className="relative"
+                style={i === 0 ? { containerType: "inline-size" } : undefined}
+              >
+                <PhysioServiceCard
+                  title={condition.title}
+                  description={condition.description}
+                  imageSrc={condition.image}
+                  variant="orange"
+                />
+                {i === 0 && (
+                  <div
+                    className="absolute rounded-full pointer-events-none z-10"
+                    style={{
+                      width: "clamp(36px, 13cqw, 78px)",
+                      height: "clamp(36px, 13cqw, 78px)",
+                      backgroundColor: "#DDD0BE",
+                      right: "clamp(-39px, -6.5cqw, -18px)",
+                      top: "55%",
+                      transform: "translateY(-50%)",
+                    }}
+                  />
+                )}
+              </div>
             ))}
           </div>
 
           <div className="flex-1 flex flex-col gap-8 lg:gap-10">
             {rightCards.map((condition, i) => (
-              <div key={i} style={i === 0 ? { marginTop: IMAGE_HEIGHT_PCT } : undefined}>
+              <div key={i} style={i === 0 ? { marginTop: `calc(${IMAGE_HEIGHT_PCT} + 3.5rem)` } : undefined}>
                 <PhysioServiceCard
                   title={condition.title}
                   description={condition.description}

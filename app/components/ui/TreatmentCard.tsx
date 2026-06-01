@@ -13,23 +13,22 @@ const ORANGE = "#FF914D";
 
 // D-shape: flat left, semicircular bump right
 // Center (435, 300), radius 200 — two quarter-arcs form a perfect semicircle
+// strokeWidth = 8, so inset = 4
 const NORMAL_PATH = `
-  M 0 100
+  M 4 104
   H 435
-  A 200 200 0 0 1 635 300
-  A 200 200 0 0 1 435 500
-  H 0
+  A 196 196 0 0 1 631 300
+  A 196 196 0 0 1 435 496
+  H 4
   Z
 `;
 
-// Mirrored D-shape: semicircular bump left, flat right
-// Center (265, 300), radius 200
 const MIRRORED_PATH = `
-  M 700 100
+  M 696 104
   H 265
-  A 200 200 0 0 0 65 300
-  A 200 200 0 0 0 265 500
-  H 700
+  A 196 196 0 0 0 69 300
+  A 196 196 0 0 0 265 496
+  H 696
   Z
 `;
 

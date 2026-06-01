@@ -16,16 +16,14 @@ export default function TreatmentCard({
       {/* ── Photo area ── */}
       <div className="relative w-full aspect-[4/3]">
         {/* Clipped Image */}
-        <div className="absolute inset-0" style={{ clipPath: "ellipse(50% 78% at 60% 18%)" }}>
-          <Image
-            src={images[0]}
-            alt={title}
-            fill
-            className="object-contain "
-            style={{ transform: "scaleX(-1)" }}
-          />
-        </div>
-        </div>
+        <Image
+          src={images[0]}
+          alt={title}
+          fill
+          className="object-cover"
+          style={{ clipPath: "ellipse(50% 78% at 60% 18%)" }}
+        />
+      </div>
 
 
         {/* ── Text area ── */}
@@ -49,6 +47,8 @@ export default function TreatmentCard({
           {description}
         </p>
       </div>
+
+
      
     </div>
   );

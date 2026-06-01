@@ -62,7 +62,7 @@ export default function RootLayout({
           <Footer />
 
           {/* Global Floating WhatsApp Button */}
-          <Link href="#" className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-xl hover:scale-110 hover:shadow-[#25D366]/40 transition-all duration-300">
+          <Link href="https://wa.me/919319606763" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-xl hover:scale-110 hover:shadow-[#25D366]/40 transition-all duration-300">
             <FaWhatsapp size={32} />
           </Link>
         </div>

@@ -1,31 +1,57 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
+import { useEffect } from "react";
 
 export default function BookingWidget() {
-  const containerRef = useRef<HTMLDivElement | null>(null)
-  const scriptLoadedRef = useRef(false)
-
   useEffect(() => {
-    if (scriptLoadedRef.current || !containerRef.current) {
-      return
+    const widgetId = "6a169af5374f1e87b98190f7";
+    const globalWindow = window as Window & {
+      __HOP_WIDGET_EMBED__?: {
+        widgets?: Record<string, { initialized?: boolean }>;
+      };
+    };
+
+    const widgets = globalWindow.__HOP_WIDGET_EMBED__?.widgets;
+    if (widgets && widgets[widgetId]) {
+      delete widgets[widgetId];
     }
 
-    scriptLoadedRef.current = true
+    const existingScript = document.querySelector(
+      `script[data-hop-widget-id="${widgetId}"]`
+    );
+    if (existingScript) {
+      existingScript.remove();
+    }
 
-    const script = document.createElement("script")
+    const script = document.createElement("script");
+
     script.src =
-      "https://dashboard.hopwellness.ai/widgets/embed.js?widgetId=6a169af5374f1e87b98190f7&origin=https://dashboard.hopwellness.ai/&target=%23hop-booking-widget"
-    script.async = true
-    containerRef.current.appendChild(script)
-  }, [])
+      "https://dashboard.hopwellness.ai/widgets/embed.js?widgetId=6a169af5374f1e87b98190f7&origin=https://dashboard.hopwellness.ai/&target=%23hop-booking-widget";
+
+    script.async = true;
+    script.dataset.hopWidgetId = widgetId;
+
+    document.body.appendChild(script);
+
+    return () => {
+      script.remove();
+
+      const cleanupWidgets = globalWindow.__HOP_WIDGET_EMBED__?.widgets;
+      if (cleanupWidgets && cleanupWidgets[widgetId]) {
+        delete cleanupWidgets[widgetId];
+      }
+
+      const container = document.getElementById("hop-booking-widget");
+      if (container) {
+        container.replaceChildren();
+      }
+    };
+  }, []);
 
   return (
     <div
-      ref={containerRef}
       id="hop-booking-widget"
-      className="w-full min-h-130"
-    >
-    </div>
-  )
+      className="w-full min-h-175"
+    />
+  );
 }

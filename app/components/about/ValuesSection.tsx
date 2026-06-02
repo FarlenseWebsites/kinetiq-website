@@ -24,177 +24,212 @@ const values = [
   },
 ]
 
-// Arc is a semicircle bulging LEFT, sitting on the right edge of the left panel.
-// The arc goes from top-right to bottom-right, curving leftward.
-// We compute points along: center-x=100%, half-circle radius = 50% of height
-// Using parametric: x = cx + r*cos(θ), y = cy + r*sin(θ), θ from -90° to 90°
-// cx = 100% (right edge), r bulges left so subtract. We map to CSS % of the container.
+// Near-vertical arc — x stays ~44-45% across full height
+const cxOrange = -255
+const cyOrange = 50
+const rOrange = 300
 
-// Gray dots: evenly spaced along the arc (right-edge semicircle bulging left)
-// Container assumed ~600px tall, arc center at right edge (100%), radius ~50% width
-// We'll express as percentages of the left-panel container
-function getArcPoint(t: number) {
-  // t from 0 to 1 maps angle from -90deg to +90deg
-  const angle = (t - 0.5) * Math.PI // -π/2 to +π/2
-  // Arc center is at LEFT edge (cx=0), bulges RIGHTWARD
-  // The belly of the arc is on the right side of the left panel
-  const r = 52  // radius as % of container width — how far right it bulges
-  const cx = 0
-  const x = cx + r * Math.cos(angle) // bulges right
-  const y = 50 + 47 * Math.sin(angle)
-  return { x, y }
+function getOrangeX(y: number) {
+  const dy = y - cyOrange
+  return cxOrange + Math.sqrt(Math.max(0, rOrange * rOrange - dy * dy))
 }
 
-const grayDotCount = 20
-const grayDots = Array.from({ length: grayDotCount }, (_, i) => {
-  const t = i / (grayDotCount - 1)
-  const p = getArcPoint(t)
-  return { top: `${p.y.toFixed(1)}%`, left: `${p.x.toFixed(1)}%` }
-})
+// y positions matching the design: 27 / 48 / 68
+const rowYPositions = [27, 48, 68]
 
-// Orange milestone dots at t positions for rows 01, 02, 03
-const orangeDotTs = [0.18, 0.5, 0.82]
-const orangeDotPositions = orangeDotTs.map((t) => {
-  const p = getArcPoint(t)
-  return { top: `${p.y.toFixed(1)}%`, left: `${p.x.toFixed(1)}%` }
+const lineStartY = 82
+const lineEndY = 16
+const orangeArcPath = `M ${getOrangeX(lineStartY)} ${lineStartY} A ${rOrange} ${rOrange} 0 0 0 ${getOrangeX(lineEndY)} ${lineEndY}`
+
+// Purple dots: curve from near-arc (upper-centre-left) toward upper-left corner
+const purpleDotCount = 11
+const purpleDots = Array.from({ length: purpleDotCount }, (_, i) => {
+  const t = i / (purpleDotCount - 1)
+  return {
+    x: 32 - t * 29 + Math.sin(t * Math.PI) * 2.5,
+    y: 30 - t * 26,
+  }
 })
 
 export default function ValuesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 md:px-8 bg-[#F4F4F4]">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-0 items-stretch">
+    <section className="bg-[#F4F4F4] relative w-full overflow-hidden">
 
-        {/* LEFT — Image with arc overlay */}
-        <div className="w-full md:w-[50%] relative flex-shrink-0 min-h-[500px]">
-          {/* Background arc fill — semicircle anchored left, bulging RIGHT */}
-          <div
-            className="absolute inset-0 z-0"
-            style={{
-              background: "radial-gradient(ellipse 95% 88% at 0% 50%, #E4E3EA 52%, transparent 53%)",
-            }}
+      {/* ── DESKTOP ─────────────────────────────────────────────────── */}
+      <div className="relative mt-15 bg-[#FDEadf] hidden md:block w-full h-187.5 lg:h-212.5 max-w-400 mx-auto">
+
+        {/* Background circles */}
+        <div className="absolute top-0 left-0 w-[50%] h-full z-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-0 left-[-20%] w-[110%] pb-[110%] rounded-full bg-[#F9CDB2] opacity-50" />
+          <div className="absolute top-[25%] left-[5%] w-[60%] pb-[60%] rounded-full bg-[#F5A973] opacity-80" />
+          <div className="absolute top-[35%] left-[-10%] w-[45%] pb-[45%] rounded-full bg-[#F5A973] opacity-60" />
+        </div>
+
+        {/* Photo — anchored bottom-left */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="absolute bottom-0 left-0 w-[45%] lg:w-[43%] h-[92%] z-10 pointer-events-none"
+        >
+          <Image
+            src="/valuesimg.png"
+            alt="Physiotherapy treatment"
+            fill
+            className="object-contain object-bottom-left"
+            priority
+          />
+          {/* fade hard bottom edge into background */}
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-linear-to-t from-[#FDEadf] to-transparent" />
+        </motion.div>
+
+        {/* SVG — arc + purple dots */}
+        <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+          className="absolute inset-0 w-full h-full z-20 pointer-events-none"
+        >
+          <defs>
+            <linearGradient id="arc-fade" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%"  stopColor="#F58F48" stopOpacity="0" />
+              <stop offset="18%" stopColor="#F58F48" stopOpacity="1" />
+              <stop offset="82%" stopColor="#F58F48" stopOpacity="1" />
+              <stop offset="100%" stopColor="#F58F48" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+
+          <path
+            d={orangeArcPath}
+            fill="none"
+            stroke="url(#arc-fade)"
+            strokeWidth="0.22"
+            vectorEffect="non-scaling-stroke"
           />
 
-          {/* Photo — sits inside the arc, centered */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 h-full flex items-center justify-start pl-4"
-          >
-            <Image
-              src="/massageimg.png"
-              alt="Physiotherapy treatment"
-              width={380}
-              height={520}
-              className="object-cover rounded-2xl max-h-[520px]"
-              style={{ objectPosition: "center top", width: "auto" }}
-            />
-          </motion.div>
-
-          {/* Arc SVG line — semicircle anchored at LEFT edge, belly bulging RIGHT */}
-          <svg
-            className="absolute inset-0 w-full h-full z-20 pointer-events-none"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Arc: top-left (0,3) → curves right → bottom-left (0,97) */}
-            <path
-              d="M 0 3 C 80 3, 80 97, 0 97"
-              fill="none"
-              stroke="#E8A87C"
-              strokeWidth="0.5"
-              vectorEffect="non-scaling-stroke"
-              strokeLinecap="round"
-            />
-          </svg>
-
-          {/* Gray decorative dots along arc */}
-          {grayDots.map((dot, i) => (
-            <div
-              key={i}
-              className="absolute z-20 rounded-full bg-[#C4C2CC]"
-              style={{
-                top: dot.top,
-                left: dot.left,
-                width: 6,
-                height: 6,
-                transform: "translate(-50%, -50%)",
-              }}
-            />
+          {purpleDots.map((dot, i) => (
+            <circle key={i} cx={dot.x} cy={dot.y} r="0.42" fill="#A9A4C2" />
           ))}
+        </svg>
 
-          {/* Orange milestone dots — highlight on hover */}
-          {orangeDotPositions.map((pos, i) => (
-            <div
-              key={i}
-              className="absolute z-30 rounded-full transition-all duration-300"
-              style={{
-                top: pos.top,
-                left: pos.left,
-                width: hoveredIndex === i ? 16 : 12,
-                height: hoveredIndex === i ? 16 : 12,
-                transform: "translate(-50%, -50%)",
-                background: hoveredIndex === i ? "#FF914D" : "#F0A97A",
-                boxShadow: hoveredIndex === i
-                  ? "0 0 0 4px rgba(255,145,77,0.25), 0 0 12px rgba(255,145,77,0.4)"
-                  : "none",
-              }}
-            />
-          ))}
-        </div>
+        {/* Value items — each anchored on arc at (x%, y%) */}
+        <div className="absolute inset-0 w-full h-full z-30 pointer-events-none">
+          {values.map((v, i) => {
+            const y = rowYPositions[i]
+            const x = getOrangeX(y)
+            const isHovered = hoveredIndex === i
 
-        {/* RIGHT — Numbered values */}
-        <div className="flex w-full md:w-[50%] flex-col justify-center gap-0 pl-0 md:pl-8">
-          {values.map((v, i) => (
-            <motion.div
-              key={v.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.6,
-                delay: i * 0.1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="flex flex-col gap-2 py-10 sm:py-12 cursor-default group"
-            >
-              {/* Number + title row */}
-              <div className="flex items-baseline gap-5">
-                <span
-                  className="font-black leading-none select-none flex-shrink-0 transition-colors duration-300"
+            return (
+              <div
+                key={v.number}
+                className="absolute"
+                style={{ top: `${y}%`, left: `${x}%` }}
+              >
+                {/* Orange dot on the arc */}
+                <motion.div
+                  animate={{
+                    scale: isHovered ? 1.35 : 1,
+                    backgroundColor: isHovered ? "#FF7A2B" : "#F58F48",
+                  }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute w-3.5 h-3.5 rounded-full"
                   style={{
-                    fontSize: "clamp(3rem, 6vw, 5rem)",
-                    color: hoveredIndex === i ? "#FF914D" : "#373355",
-                    opacity: hoveredIndex === i ? 1 : 0.85,
+                    transform: "translate(-50%, -50%)",
+                    boxShadow: isHovered
+                      ? "0 0 0 7px rgba(245,143,72,0.18)"
+                      : "0 0 0 4px #FDEadf",
+                  }}
+                />
+
+                {/* Content — centred vertically on the dot */}
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  animate={{ x: isHovered ? 10 : 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, ease: "easeOut" }}
+                  onMouseEnter={() => setHoveredIndex(i)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                  className="absolute pointer-events-auto cursor-default origin-left"
+                  style={{
+                    left: "2.5vw",
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    width: "38vw",
+                    maxWidth: "480px",
                   }}
                 >
-                  {v.number}
-                </span>
-                <h3
-                  className="font-medium text-[#4A4572] tracking-tight"
-                  style={{ fontSize: "clamp(1.25rem, 2.2vw + 0.25rem, 1.875rem)" }}
-                >
-                  {v.title}
-                </h3>
-              </div>
+                  {/*
+                    Outer flex: items-baseline so the bottom of "01" aligns
+                    with the bottom of the first line of the title.
+                    Inner div stacks title + description so description
+                    auto-aligns under the title — no manual margin needed.
+                  */}
+                  <div className="flex items-baseline" style={{ gap: "clamp(0.9rem, 1.4vw, 1.5rem)" }}>
+                    <span
+                      className="font-black leading-none text-[#37315B] tracking-tighter shrink-0"
+                      style={{ fontSize: "clamp(3rem, 5vw, 4.5rem)" }}
+                    >
+                      {v.number}
+                    </span>
 
-              {/* Description */}
-              <p
-                className="text-[#4A4572]/70 leading-relaxed max-w-sm italic"
-                style={{ fontSize: "clamp(0.875rem, 1vw + 0.15rem, 1rem)" }}
-              >
-                {v.description}
-              </p>
-            </motion.div>
-          ))}
+                    <div className="flex flex-col" style={{ gap: "0.3rem" }}>
+                      <h3
+                        className="font-semibold text-[#37315B] tracking-wide leading-tight"
+                        style={{ fontSize: "clamp(1.15rem, 1.7vw, 1.7rem)" }}
+                      >
+                        {v.title}
+                      </h3>
+                      <p
+                        className="italic text-[#37315B]/75 leading-relaxed"
+                        style={{ fontSize: "clamp(0.85rem, 1.05vw, 1rem)" }}
+                      >
+                        {v.description}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* ── MOBILE ──────────────────────────────────────────────────── */}
+      <div className="w-full md:hidden flex flex-col relative z-10">
+        {/* Photo block */}
+        <div className="relative w-full h-105">
+          <div className="absolute top-0 left-[-10%] w-[90%] pb-[90%] rounded-full bg-[#F9CDB2] opacity-50" />
+          <div className="absolute top-[30%] left-[10%] w-[60%] pb-[60%] rounded-full bg-[#F5A973] opacity-80" />
+          <Image
+            src="/valuesimg.png"
+            alt="Treatment"
+            fill
+            className="object-contain object-bottom-left relative z-10"
+          />
+          <div className="absolute bottom-0 left-0 w-full h-24 bg-linear-to-t from-[#FDEadf] to-transparent z-20" />
         </div>
 
+        {/* Text list */}
+        <div className="bg-[#FDEadf] flex flex-col gap-10 px-6 pt-4 pb-16">
+          {values.map((v) => (
+            <div key={v.number} className="flex items-baseline gap-5">
+              <span className="font-black leading-none text-[#37315B] tracking-tighter shrink-0 text-[3rem]">
+                {v.number}
+              </span>
+              <div className="flex flex-col gap-1">
+                <h3 className="text-xl font-semibold text-[#37315B] leading-tight">
+                  {v.title}
+                </h3>
+                <p className="text-sm italic text-[#37315B]/75 leading-relaxed">
+                  {v.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

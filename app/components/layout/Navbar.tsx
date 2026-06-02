@@ -171,7 +171,7 @@ export default function Navbar() {
                   font-medium
                   whitespace-nowrap
                   text-[#373355]
-                  hover:text-[#986c55]
+                  hover:text-[#68638E]
                   transition-colors duration-300
                 "
               >
@@ -203,7 +203,7 @@ export default function Navbar() {
                               <li key={itemIdx}>
                                 <Link
                                   href="#"
-                                  className="text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors block"
+                                  className="text-[#373355] hover:text-[#68638E] text-[15px] transition-colors block"
                                 >
                                   {subItem}
                                 </Link>

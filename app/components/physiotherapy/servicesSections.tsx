@@ -6,22 +6,22 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 const nerveConditions = [
   {
     title: "Sciatic Nerve Pain",
-    description: "Sciatic nerve inflammation causing sharp, radiating pain from the lower back down the leg.",
+    description: "Pain radiating from the lower back through the hip and into the leg. Treatment focuses on relieving nerve compression, reducing inflammation, and improving mobility. Combines manual therapy, targeted exercise, and postural correction for lasting relief.",
     image: "/excerciseimg.png",
   },
   {
     title: "Cervical Radiculopathy",
-    description: "Pinched cervical nerve root causing arm pain, weakness, and numbness.",
+    description: "Nerve compression in the neck causing arm pain, tingling, or numbness. Treatment targets the source of compression to relieve symptoms and restore cervical function. Combines manual therapy, traction techniques, and corrective exercise for effective management.",
     image: "/excerciseimg.png",
   },
   {
     title: "Lumbar Radiculopathy",
-    description: "Compressed lumbar nerve root causing leg pain and restricted mobility.",
+    description: "Nerve-related lower back pain that radiates into the legs. Focuses on reducing nerve irritation, decompressing affected structures, and restoring movement. Managed through a combination of manual therapy, exercise, and functional rehabilitation.",
     image: "/excerciseimg.png",
   },
   {
     title: "Neuropathic Pain",
-    description: "Chronic nerve damage causing burning, tingling, and hypersensitivity.",
+    description: "Chronic nerve pain presenting as burning, tingling, or sharp recurrent sensations. Includes conditions such as migraines and peripheral neuropathy managed through targeted therapy. Treatment focuses on reducing sensitization, improving function, and preventing recurrence.",
     image: "/excerciseimg.png",
   },
 ]
@@ -38,10 +38,10 @@ export default function ServicesSection() {
 
         <div className="justify-center mb-8 sm:mb-10">
           <ButtonWithTwoDots label="Services" />
-          <h1 className="text-center text-2xl sm:text-3xl font-medium bg-linear-to-r from-[#ff914d] to-[#e06010] bg-clip-text text-transparent mt-7">
+          <h1 className="text-center text-2xl sm:text-3xl font-medium bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text text-transparent mt-7">
             Nerve & Radiating Pain Conditions
           </h1>
-          <p className="text-center text-[#7a4020] text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5">
+          <p className="text-center text-[#373355] text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5">
             Targeted treatment for nerve compression,
             <br />
             radiating pain, and neuropathic symptoms.
@@ -49,7 +49,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Mobile: single column, alternating mirrored */}
-        <div className="flex flex-col gap-8 md:hidden">
+        <div className="flex flex-col gap-14 md:hidden">
           {nerveConditions.map((condition, idx) => (
             <PhysioServiceCard
               key={idx}
@@ -65,7 +65,7 @@ export default function ServicesSection() {
         {/* Desktop: staggered 2-column */}
         <div className="hidden md:flex gap-12 lg:gap-16">
 
-          <div className="flex-1 flex flex-col gap-8 lg:gap-10 pt-8">
+          <div className="flex-1 flex flex-col gap-14 lg:gap-16 pt-8">
             {leftCards.map((condition, i) => (
               <div
                 key={i}
@@ -82,11 +82,11 @@ export default function ServicesSection() {
                   <div
                     className="absolute rounded-full pointer-events-none z-10"
                     style={{
-                      width: "clamp(36px, 13cqw, 78px)",
-                      height: "clamp(36px, 13cqw, 78px)",
+                      width: "clamp(36px, 13cqw, 72px)",
+                      height: "clamp(36px, 13cqw, 72px)",
                       backgroundColor: "#DDD0BE",
-                      right: "clamp(-39px, -6.5cqw, -18px)",
-                      top: "55%",
+                      right: "calc(-6.5cqw - 28px)",
+                      top: "50%",
                       transform: "translateY(-50%)",
                     }}
                   />
@@ -95,7 +95,7 @@ export default function ServicesSection() {
             ))}
           </div>
 
-          <div className="flex-1 flex flex-col gap-8 lg:gap-10">
+          <div className="flex-1 flex flex-col gap-14 lg:gap-16">
             {rightCards.map((condition, i) => (
               <div key={i} style={i === 0 ? { marginTop: `calc(${IMAGE_HEIGHT_PCT} + 3.5rem)` } : undefined}>
                 <PhysioServiceCard

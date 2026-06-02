@@ -6,6 +6,7 @@ import TeamSection from "../components/about/TeamSection"
 import FormMethod from "../components/about/FormMethod"
 import EventsSection from "../components/about/EventsSection"
 import CTA from "../components/home/CTA"
+import TvvideoSection from "../components/about/Video"
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -19,6 +20,7 @@ export default function AboutPage() {
       <AboutHero />
       <AboutIntro />
       <ValuesSection />
+      <TvvideoSection />
       <TeamSection />
       <FormMethod />
       <EventsSection />

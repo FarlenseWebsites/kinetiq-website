@@ -1,14 +1,13 @@
 import React from "react"
+import Link from "next/link"
 import { cn } from "../../lib/utils"
 
-interface Props extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+interface Props extends Omit<React.ComponentPropsWithoutRef<typeof Link>, "href"> {}
 
 const BookConsultationButton = ({ className, ...props }: Props) => {
   return (
-    <a
-      href="https://wa.me/919319606763?text=Hi!%20I%27d%20like%20to%20book%20a%20consultation."
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href="/book"
       className={cn(`
   inline-flex items-center justify-center
   rounded-lg
@@ -28,7 +27,7 @@ const BookConsultationButton = ({ className, ...props }: Props) => {
       {...props}
     >
       Book a Consultation
-    </a>
+    </Link>
   )
 }
 

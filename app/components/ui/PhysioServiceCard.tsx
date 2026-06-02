@@ -29,7 +29,7 @@ export default function ServiceCard({
 
   return (
     <div
-      className="relative w-full aspect-[702/554]"
+      className="relative w-full aspect-[702/720]"
       style={{ containerType: "inline-size" }}
     >
       {/* SVG background — fills + blob border, behind the photo */}

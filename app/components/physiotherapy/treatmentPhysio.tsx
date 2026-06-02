@@ -6,7 +6,7 @@ const physioServices = [
   {
     title: "Orthopaedic Physiotherapy",
     description: "Focused care for bones, joints, muscles, ligaments, and tendons. Treats injuries, pain, and movement restrictions to restore strength and function. Addresses acute and chronic conditions through structured, evidence-based rehabilitation.",
-    image: "/excerciseimg.png",
+    image: "/ortho1.png",
   },
   {
     title: "Sports Physiotherapy",
@@ -97,11 +97,11 @@ export default function PhysioServicesSection() {
                   <div
                     className="absolute rounded-full pointer-events-none z-10"
                     style={{
-                      width: "clamp(36px, 13cqw, 78px)",
-                      height: "clamp(36px, 13cqw, 78px)",
+                      width: "clamp(36px, 13cqw, 72px)",
+                      height: "clamp(36px, 13cqw, 72px)",
                       backgroundColor: "#DDD0BE",
-                      right: "clamp(-39px, -6.5cqw, -18px)",
-                      top: "55%",
+                      right: "calc(-6.5cqw - 28px)",
+                      top: "50%",
                       transform: "translateY(-50%)",
                     }}
                   />

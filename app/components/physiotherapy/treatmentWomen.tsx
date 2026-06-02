@@ -6,22 +6,22 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 const womenServices = [
   {
     title: "Women's Health Physiotherapy",
-    description: "Pelvic floor, hormonal, and postural care tailored specifically for women's health needs.",
+    description: "Focused care for pregnancy, postnatal recovery, and hormonal changes across life stages. Addresses pelvic floor dysfunction, pregnancy-related back pain, and post-menopause fatigue. Aims to restore strength, stability, and overall well-being through targeted rehabilitation.",
     image: "/excerciseimg.png",
   },
   {
-    title: "Prostate Physiotherapy",
-    description: "Targeted pelvic floor rehabilitation and recovery support for prostate-related conditions.",
+    title: "Prenatal Physiotherapy",
+    description: "Supports physical health and comfort throughout pregnancy. Addresses common concerns including lower back pain, pelvic instability, and postural changes. Prepares the body for labour through safe, trimester-appropriate exercise and therapy.",
     image: "/excerciseimg.png",
   },
   {
-    title: "Antenatal Physiotherapy",
-    description: "Safe exercise, posture support, and pain management throughout pregnancy.",
+    title: "Postnatal Physiotherapy",
+    description: "Aids recovery after childbirth with a focus on core strength and pelvic stability. Addresses diastasis recti, pelvic floor weakness, and posture-related discomfort. Supports a gradual, safe return to functional daily activity and exercise.",
     image: "/excerciseimg.png",
   },
   {
     title: "Pelvic Floor Rehabilitation",
-    description: "Specialised strengthening and retraining to restore pelvic floor control and function.",
+    description: "Rehabilitation for nerve and neurological conditions affecting movement. Focused on restoring coordination, balance, and independence with structured therapy that extends beyond the clinic into your home.",
     image: "/excerciseimg.png",
   },
 ]
@@ -48,7 +48,7 @@ export default function PhysioWomenSection() {
         </div>
 
         {/* Mobile: single column, alternating mirrored */}
-        <div className="flex flex-col gap-8 md:hidden">
+        <div className="flex flex-col gap-14 md:hidden">
           {womenServices.map((service, idx) => (
             <PhysioServiceCard
               key={idx}
@@ -64,7 +64,7 @@ export default function PhysioWomenSection() {
         <div className="hidden md:flex gap-12 lg:gap-16">
 
           {/* Left column */}
-          <div className="flex-1 flex flex-col gap-8 lg:gap-10 pt-8">
+          <div className="flex-1 flex flex-col gap-14 lg:gap-16 pt-8">
             {leftCards.map((service, i) => (
               <div
                 key={i}
@@ -80,11 +80,11 @@ export default function PhysioWomenSection() {
                   <div
                     className="absolute rounded-full pointer-events-none z-10"
                     style={{
-                      width: "clamp(36px, 13cqw, 78px)",
-                      height: "clamp(36px, 13cqw, 78px)",
+                      width: "clamp(36px, 13cqw, 72px)",
+                      height: "clamp(36px, 13cqw, 72px)",
                       backgroundColor: "#DDD0BE",
-                      right: "clamp(-39px, -6.5cqw, -18px)",
-                      top: "55%",
+                      right: "calc(-6.5cqw - 28px)",
+                      top: "50%",
                       transform: "translateY(-50%)",
                     }}
                   />
@@ -94,7 +94,7 @@ export default function PhysioWomenSection() {
           </div>
 
           {/* Right column — first card offset to sit below the left card's image */}
-          <div className="flex-1 flex flex-col gap-8 lg:gap-10">
+          <div className="flex-1 flex flex-col gap-14 lg:gap-16">
             {rightCards.map((service, i) => (
               <div
                 key={i}

@@ -16,12 +16,12 @@ const conditions = [
   },
   {
     title: "Repetitive Strain Injuries",
-    description: "RSI recovery from overuse patterns in work and sports activities.",
+    description: " Injuries caused by repetitive daily movements, prolonged postures, or overuse patterns. Treatment focuses on tissue recovery, load management, and movement correction. Includes preventive strategies to reduce the risk of re-injury in occupational and daily contexts.",
     image: "/excerciseimg.png",
   },
   {
     title: "Ergonomic & Workplace Optimisation",
-    description: "Workstation assessment and posture coaching to prevent injury and improve productivity.",
+    description: "Addresses posture-related strain from daily habits, work setups, and lifestyle patterns. Applicable across all age groups — from children to working professionals and the elderly. Improves spinal alignment, reduces pain, and enhances overall movement efficiency.",
     image: "/excerciseimg.png",
   },
 ]
@@ -38,10 +38,10 @@ export default function ConditionsSection() {
 
         <div className="justify-center mb-8 sm:mb-10">
           <ButtonWithTwoDots label="Services" />
-          <h1 className="text-center text-2xl sm:text-3xl font-medium bg-linear-to-r from-[#ff914d] to-[#e06010] bg-clip-text text-transparent mt-7">
+          <h1 className="text-center text-2xl sm:text-3xl font-medium bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text text-transparent mt-7">
             Lifestyle & Postural Conditions
           </h1>
-          <p className="text-center text-[#7a4020] text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5">
+          <p className="text-center text-[#373355] text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5">
             Corrective care for everyday movement habits,
             <br />
             posture, and work-related strain.
@@ -49,7 +49,7 @@ export default function ConditionsSection() {
         </div>
 
         {/* Mobile: single column, alternating mirrored */}
-        <div className="flex flex-col gap-8 md:hidden">
+        <div className="flex flex-col gap-14 md:hidden">
           {conditions.map((condition, idx) => (
             <PhysioServiceCard
               key={idx}
@@ -65,7 +65,7 @@ export default function ConditionsSection() {
         {/* Desktop: staggered 2-column */}
         <div className="hidden md:flex gap-12 lg:gap-16">
 
-          <div className="flex-1 flex flex-col gap-8 lg:gap-10 pt-8">
+          <div className="flex-1 flex flex-col gap-14 lg:gap-16 pt-8">
             {leftCards.map((condition, i) => (
               <div
                 key={i}
@@ -82,11 +82,11 @@ export default function ConditionsSection() {
                   <div
                     className="absolute rounded-full pointer-events-none z-10"
                     style={{
-                      width: "clamp(36px, 13cqw, 78px)",
-                      height: "clamp(36px, 13cqw, 78px)",
+                      width: "clamp(36px, 13cqw, 72px)",
+                      height: "clamp(36px, 13cqw, 72px)",
                       backgroundColor: "#DDD0BE",
-                      right: "clamp(-39px, -6.5cqw, -18px)",
-                      top: "55%",
+                      right: "calc(-6.5cqw - 28px)",
+                      top: "50%",
                       transform: "translateY(-50%)",
                     }}
                   />
@@ -95,7 +95,7 @@ export default function ConditionsSection() {
             ))}
           </div>
 
-          <div className="flex-1 flex flex-col gap-8 lg:gap-10">
+          <div className="flex-1 flex flex-col gap-14 lg:gap-16">
             {rightCards.map((condition, i) => (
               <div key={i} style={i === 0 ? { marginTop: `calc(${IMAGE_HEIGHT_PCT} + 3.5rem)` } : undefined}>
                 <PhysioServiceCard

@@ -7,40 +7,28 @@ const sessions = [
     title: "In-Centre Treatment",
     description:
       "Experience hands-on physiotherapy at our KinetiQ centers with access to advanced therapies and specialized equipment. Each session is guided by expert clinicians to ensure precise treatment, faster recovery, and measurable results in a structured environment.",
-    images: [
-      "/incenter.png",
-     
-    ],
+    image: "/incenter.png",
   },
 
   {
     title: "Home Visits",
     description:
       "Receive personalised physiotherapy care in the comfort of your home. Ideal for post-surgical recovery, elderly care, or convenience-led treatment, our therapists deliver the same clinical expertise with focused, one-on-one attention.",
-    images: [
-      "/home.png",
-     
-    ],
+    image: "/home.png",
   },
 
   {
     title: "Online Physiotherapy",
     description:
         "Access expert consultations and guided rehabilitation from anywhere. Our online sessions ensure continuity of care with structured programs, real-time guidance, and progress tracking tailored to your needs.",
-    images: [
-      "/online.png",
-      
-    ],
+    image: "/online.png",
   },
 
   {
     title: "Corporate",
     description:
       "Comprehensive workplace wellness solutions designed to reduce pain, improve posture, and enhance employee productivity. From on-site sessions to ergonomic assessments, we help build healthier, more resilient teams.",
-    images: [
-      "/corporate.png",
-      
-    ],
+    image: "/corporate.png",
   },
 ]
 
@@ -56,11 +44,9 @@ export default function SessionsServices() {
         <div className="mb-14 flex flex-col items-center text-center sm:mb-20">
           
           <ButtonWithTwoDots label="We Offer" />
-           <h1 className="text-center text-2xl sm:text-3xl font-medium bg-linear-to-r from-[#ff914d] to-[#e06010] bg-clip-text text-transparent mt-7">
+           <h1 className="text-center text-2xl sm:text-3xl font-medium bg-linear-to-r from-[#68628e] to-[#373355] bg-clip-text text-transparent mt-7">
             Multiple Access Points
           </h1>
-
-
           
         </div>
 
@@ -77,7 +63,7 @@ export default function SessionsServices() {
               <TreatmentCard
                 title={session.title}
                 description={session.description}
-                images={session.images}
+                image={session.image}
               />
             </div>
           ))}

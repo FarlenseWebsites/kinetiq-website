@@ -3,13 +3,13 @@ import Image from "next/image";
 type TreatmentCardProps = {
   title: string;
   description: string;
-  images?: string[];
+  image: string;
 };
 
 export default function TreatmentCard({
   title,
   description,
-  images = [],
+  image,
 }: TreatmentCardProps) {
   return (
     <div className=" overflow-hidden w-full bg-[#9692B0]">
@@ -17,11 +17,11 @@ export default function TreatmentCard({
       <div className="relative w-full aspect-[4/3]">
         {/* Clipped Image */}
         <Image
-          src={images[0]}
+          src={image}
           alt={title}
           fill
-          className="object-cover"
-          style={{ clipPath: "ellipse(50% 78% at 60% 18%)" }}
+          className="object-fit"
+          style={{ clipPath: "ellipse(50% 78% at 45% 18%)", transform: "scaleX(-1)" }}
         />
       </div>
 
@@ -29,9 +29,9 @@ export default function TreatmentCard({
         {/* ── Text area ── */}
         <div className="px-5  pb-7 z-10 -mt-2  bg-[#9692B0]">
         <h3
-          className="mb-2 font-bold leading-tight"
+          className="mb-2 font-medium leading-tight"
           style={{
-            fontSize: "clamp(24px, 2.3vw, 38px)",
+            fontSize: "clamp(24px, 2.5vw, 40px)",
           }}
         >
           {title}
@@ -41,15 +41,11 @@ export default function TreatmentCard({
           className="leading-relaxed "
           style={{
             fontSize: "clamp(13px, 1.2vw, 16px)",
-            
           }}
         >
           {description}
         </p>
       </div>
-
-
-     
     </div>
   );
 }

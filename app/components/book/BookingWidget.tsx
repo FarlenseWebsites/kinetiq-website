@@ -30,7 +30,7 @@ export default function BookingWidget() {
     <div
       ref={containerRef}
       id="hop-booking-widget"
-      className="w-full max-w-3xl min-h-130"
+      className="w-full min-h-130"
     />
   )
 }

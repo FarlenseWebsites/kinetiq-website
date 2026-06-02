@@ -75,7 +75,7 @@ export default function TreatmentCard({
         className="absolute flex flex-col"
         style={{
           ...(mirrored ? { right: "6%" } : { left: "6%" }),
-          top: "21%",
+          top: "23%",
           bottom: "5%",
           width: "46%",
           textAlign: mirrored ? "right" : "left",

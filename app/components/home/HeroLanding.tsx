@@ -21,52 +21,52 @@ export default function HeroLanding() {
 	const shouldReduceMotion = useReducedMotion()
 
 	return (
-		<section className="relative isolate flex flex-col min-h-[80vh] md:min-h-[80vh] lg:h-svh overflow-hidden bg-[#F4F4F4]">
+		<section className="relative isolate flex flex-col min-h-[80vh]  lg:h-svh overflow-hidden bg-[#F4F4F4]">
 
 			{/* Background */}
-			<div className="absolute inset-0 z-0 min-h-[100svh] overflow-hidden pointer-events-none">
- 			<motion.div
- 				initial={{ y: "-30%", opacity: 0 }}
- 				animate={{ y: "0%", opacity: 1 }}
- 				transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
- 				className="absolute inset-0 [clip-path:ellipse(75%_92%_at_50%_-30%)] md:[clip-path:ellipse(72%_68%_at_50%_-10%)] lg:[clip-path:ellipse(52%_86%_at_50%_0%)] xl:[clip-path:ellipse(58%_86%_at_50%_0%)]"
- 				style={{
-				background: `
-					linear-gradient(
-					180deg,
-					#68628E2E 0%,
-					#68628E 66%,
-					#1D1C28 100%
-					)
-				`,
-				}}
- 			/>
- 		</div>
+			<div className="absolute inset-0 z-0 min-h-screen overflow-hidden pointer-events-none">
+ 				<motion.div
+					initial={{ y: "-30%", opacity: 0 }}
+					animate={{ y: "0%", opacity: 1 }}
+					transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+					className="absolute inset-0 [clip-path:ellipse(75%_92%_at_50%_-30%)] md:[clip-path:ellipse(72%_68%_at_50%_-10%)] lg:[clip-path:ellipse(52%_86%_at_50%_0%)] xl:[clip-path:ellipse(52%_86%_at_50%_0%)]"
+					style={{
+					background: `
+						linear-gradient(
+						180deg,
+						#68628E2E 0%,
+						#68628E 66%,
+						#1D1C28 100%
+						)
+					`,
+					}}
+				/>
+ 				</div>
 
 			{/* Content Layer */}
-			<div className="relative z-10 flex flex-1 items-center justify-center px-5 sm:px-6 lg:px-8">
+			<div className="relative z-10 flex flex-1 items-center justify-center pb-[18svh] md:pb-[22svh] lg:pb-[14svh]">
 				<motion.div
 					variants={revealContainer}
 					initial={shouldReduceMotion ? undefined : "hidden"}
 					animate={shouldReduceMotion ? undefined : "show"}
-					className="flex w-full max-w-5xl flex-col items-center text-center text-white"
+					className="flex w-full  flex-col items-center text-center text-white"
 				>
 					{/* Heading */}
 					<div className="overflow-hidden">
-						<motion.h2 variants={revealItem} className="font-bold leading-tight tracking-tight" style={{ fontSize: "clamp(1.75rem, 5vw + 0.5rem, 4.5rem)" }}>
+						<motion.h2 variants={revealItem} className="font-bold leading-tight tracking-tight" style={{ fontSize: "clamp(1.75rem, 4vw + 0.5rem, 6.5rem)" }}>
 							Pain is not permanent,
 						</motion.h2>
 					</div>
 
-					<div className="mt-2 overflow-hidden sm:mt-3">
-						<motion.h1 variants={revealItem} className="font-bold leading-tight tracking-tight" style={{ fontSize: "clamp(1.75rem, 5vw + 0.5rem, 4.5rem)" }}>
+					<div className="mt-2 overflow-hidden">
+						<motion.h1 variants={revealItem} className="font-bold leading-tight tracking-tight" style={{ fontSize: "clamp(1.75rem, 4vw + 0.5rem, 6.5rem)" }}>
 							It&apos;s a message.
 						</motion.h1>
 					</div>
 
 					{/* Subtitle */}
 					<div className="mt-6 overflow-hidden sm:mt-8">
-						<motion.p variants={revealItem} className="max-w-2xl px-2 font-light leading-relaxed text-slate-100" style={{ fontSize: "clamp(0.813rem, 1.5vw + 0.25rem, 1.125rem)" }}>
+						<motion.p variants={revealItem} className=" px-2 font-light leading-relaxed text-slate-100" style={{ fontSize: "clamp(0.813rem, 1.0vw + 0.25rem, 2.125rem)" }}>
 							We combine movement science, hands-on physiotherapy and
 							<br className="hidden sm:block" />
 							personalized care to treat the root cause, not just the symptoms.
@@ -76,7 +76,7 @@ export default function HeroLanding() {
 					{/* CTA */}
 					<motion.div variants={revealItem} className="mt-8 flex flex-col items-center gap-3 sm:mt-10">
 						<BookConsultationButton className="shadow-xl" />
-						<p className="text-[clamp(0.625rem,1.1vw,0.75rem)] italic tracking-wide text-slate-300">Recovery and Fitness Backed by Science</p>
+						<p className="text-[clamp(0.325rem,1.0vw,0.55rem)] italic tracking-wide text-slate-300">Recovery and Fitness Backed by Science</p>
 					</motion.div>
 				</motion.div>
 			</div>

@@ -72,44 +72,36 @@ export default function TreatmentCard({
 
       {/* Content */}
       <div
-        className="absolute overflow-hidden"
+        className="absolute flex flex-col"
         style={{
           ...(mirrored ? { right: "6%" } : { left: "6%" }),
-          top: "22%",
+          top: "21%",
           bottom: "5%",
           width: "46%",
+          textAlign: mirrored ? "right" : "left",
+          paddingTop: "clamp(10px, 2.5cqw, 20px)",
         }}
       >
-        <div
-          className="absolute w-full"
+        <h3
+          className="font-medium text-[#373355] leading-tight"
           style={{
-            top: "50%",
-            transform: "translateY(-50%)",
-            textAlign: mirrored ? "right" : "left",
+            fontSize: "clamp(12px, 5.8cqw, 25px)",
+            marginBottom: "clamp(8px, 2cqw, 12px)",
           }}
         >
-          <h3
-            className="font-medium text-[#373355] leading-tight"
-            style={{
-             
-              fontSize: "clamp(12px, 5.8cqw, 25px)",
-              marginBottom: "clamp(6px, 1.5cqw, 10px)",
-            }}
-          >
-            {title}
-          </h3>
-          <p
-            className="text-[#373355]"
-            style={{
-              
-              fontSize: "clamp(9px, 3cqw, 16px)",
-              lineHeight: 1.5,
-              opacity: 0.85,
-            }}
-          >
-            {description}
-          </p>
-        </div>
+          {title}
+        </h3>
+        <p
+          className="text-[#373355]"
+          style={{
+            fontSize: "clamp(9px, 3cqw, 16px)",
+            lineHeight: 1.5,
+            opacity: 0.85,
+            overflowWrap: "break-word",
+          }}
+        >
+          {description}
+        </p>
       </div>
     </div>
   );

@@ -31,8 +31,8 @@ export default function TreatmentSection({
     variant === "orange" ? "text-[#7a4020]" : "text-[#373355]";
 
   return (
-    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-8 md:px-12">
-      <div className="max-w-6xl mx-auto">
+    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto">
         <div className="mb-8 sm:mb-12">
           <ButtonWithTwoDots label={label} />
           <h2
@@ -49,7 +49,7 @@ export default function TreatmentSection({
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 xl:gap-14">
           {treatments.map((t, idx) => (
             <TreatmentCard
               key={idx}

@@ -51,10 +51,7 @@ export default function SessionsServices() {
         </div>
 
         {/* CARDS */}
-        <div
-         
-          className="grid grid-cols-1 md:grid-cols-2  gap-8 px-4"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 xl:gap-14">
           {sessions.map((session, index) => (
             <div
               key={index}

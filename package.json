@@ -10,6 +10,7 @@
     "deploy": "next build && wrangler pages deploy out --project-name kinetiq"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "clsx": "^2.1.1",
     "flowbite": "^4.0.2",
     "framer-motion": "^12.38.0",

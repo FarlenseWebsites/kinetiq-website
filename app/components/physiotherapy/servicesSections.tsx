@@ -7,22 +7,22 @@ const nerveConditions = [
   {
     title: "Sciatic Nerve Pain",
     description: "Pain radiating from the lower back through the hip and into the leg. Treatment focuses on relieving nerve compression, reducing inflammation, and improving mobility. Combines manual therapy, targeted exercise, and postural correction for lasting relief.",
-    image: "/excerciseimg.png",
+    image: "/joint1.png",
   },
   {
     title: "Cervical Radiculopathy",
     description: "Nerve compression in the neck causing arm pain, tingling, or numbness. Treatment targets the source of compression to relieve symptoms and restore cervical function. Combines manual therapy, traction techniques, and corrective exercise for effective management.",
-    image: "/excerciseimg.png",
+    image: "/cervical.png",
   },
   {
     title: "Lumbar Radiculopathy",
     description: "Nerve-related lower back pain that radiates into the legs. Focuses on reducing nerve irritation, decompressing affected structures, and restoring movement. Managed through a combination of manual therapy, exercise, and functional rehabilitation.",
-    image: "/excerciseimg.png",
+    image: "/lumbar.png",
   },
   {
     title: "Neuropathic Pain",
     description: "Chronic nerve pain presenting as burning, tingling, or sharp recurrent sensations. Includes conditions such as migraines and peripheral neuropathy managed through targeted therapy. Treatment focuses on reducing sensitization, improving function, and preventing recurrence.",
-    image: "/excerciseimg.png",
+    image: "/neuropathic1.png",
   },
 ]
 
@@ -78,26 +78,17 @@ export default function ServicesSection() {
                   imageSrc={condition.image}
                   variant="orange"
                 />
-                {i === 0 && (
-                  <div
-                    className="absolute rounded-full pointer-events-none z-10"
-                    style={{
-                      width: "clamp(36px, 13cqw, 72px)",
-                      height: "clamp(36px, 13cqw, 72px)",
-                      backgroundColor: "#DDD0BE",
-                      right: "calc(-6.5cqw - 28px)",
-                      top: "50%",
-                      transform: "translateY(-50%)",
-                    }}
-                  />
-                )}
               </div>
             ))}
           </div>
 
           <div className="flex-1 flex flex-col gap-14 lg:gap-16">
             {rightCards.map((condition, i) => (
-              <div key={i} style={i === 0 ? { marginTop: `calc(${IMAGE_HEIGHT_PCT} + 3.5rem)` } : undefined}>
+              <div
+                key={i}
+                className="relative"
+                style={i === 0 ? { marginTop: `calc(${IMAGE_HEIGHT_PCT} + 3.5rem)`, containerType: "inline-size" } : undefined}
+              >
                 <PhysioServiceCard
                   title={condition.title}
                   description={condition.description}

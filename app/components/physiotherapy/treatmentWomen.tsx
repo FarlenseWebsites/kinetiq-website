@@ -7,22 +7,22 @@ const womenServices = [
   {
     title: "Women's Health Physiotherapy",
     description: "Focused care for pregnancy, postnatal recovery, and hormonal changes across life stages. Addresses pelvic floor dysfunction, pregnancy-related back pain, and post-menopause fatigue. Aims to restore strength, stability, and overall well-being through targeted rehabilitation.",
-    image: "/excerciseimg.png",
+    image: "/incenter.png",
   },
   {
     title: "Prenatal Physiotherapy",
     description: "Supports physical health and comfort throughout pregnancy. Addresses common concerns including lower back pain, pelvic instability, and postural changes. Prepares the body for labour through safe, trimester-appropriate exercise and therapy.",
-    image: "/excerciseimg.png",
+    image: "/prenatal1.png",
   },
   {
     title: "Postnatal Physiotherapy",
     description: "Aids recovery after childbirth with a focus on core strength and pelvic stability. Addresses diastasis recti, pelvic floor weakness, and posture-related discomfort. Supports a gradual, safe return to functional daily activity and exercise.",
-    image: "/excerciseimg.png",
+    image: "/postnatal.png",
   },
   {
     title: "Pelvic Floor Rehabilitation",
     description: "Rehabilitation for nerve and neurological conditions affecting movement. Focused on restoring coordination, balance, and independence with structured therapy that extends beyond the clinic into your home.",
-    image: "/excerciseimg.png",
+    image: "/pelvic1.png",
   },
 ]
 
@@ -76,19 +76,6 @@ export default function PhysioWomenSection() {
                   description={service.description}
                   imageSrc={service.image}
                 />
-                {i === 0 && (
-                  <div
-                    className="absolute rounded-full pointer-events-none z-10"
-                    style={{
-                      width: "clamp(36px, 13cqw, 72px)",
-                      height: "clamp(36px, 13cqw, 72px)",
-                      backgroundColor: "#DDD0BE",
-                      right: "calc(-6.5cqw - 28px)",
-                      top: "50%",
-                      transform: "translateY(-50%)",
-                    }}
-                  />
-                )}
               </div>
             ))}
           </div>

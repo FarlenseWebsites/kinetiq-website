@@ -7,22 +7,22 @@ const conditions = [
   {
     title: "Postural Imbalance",
     description: "Poor posture leading to chronic pain, muscular imbalance, and movement dysfunction. Corrects spinal alignment and addresses compensatory movement patterns causing discomfort. Combines targeted exercise, manual therapy, and ergonomic guidance for sustained improvement.",
-    image: "/excerciseimg.png",
+    image: "/mobility1.png",
   },
   {
     title: "Muscle Tightness & Imbalances",
     description: "Restricted mobility and uneven muscle function resulting from overuse or sedentary patterns. Restores flexibility, muscular balance, and strength through structured rehabilitation. Addresses underlying movement inefficiencies to prevent recurrence and improve performance.",
-    image: "/excerciseimg.png",
+    image: "/muscle1.png",
   },
   {
     title: "Repetitive Strain Injuries",
     description: " Injuries caused by repetitive daily movements, prolonged postures, or overuse patterns. Treatment focuses on tissue recovery, load management, and movement correction. Includes preventive strategies to reduce the risk of re-injury in occupational and daily contexts.",
-    image: "/excerciseimg.png",
+    image: "/repetitive1.png",
   },
   {
     title: "Ergonomic & Workplace Optimisation",
     description: "Addresses posture-related strain from daily habits, work setups, and lifestyle patterns. Applicable across all age groups — from children to working professionals and the elderly. Improves spinal alignment, reduces pain, and enhances overall movement efficiency.",
-    image: "/excerciseimg.png",
+    image: "/ergonomic1.png",
   },
 ]
 
@@ -78,19 +78,6 @@ export default function ConditionsSection() {
                   imageSrc={condition.image}
                   variant="orange"
                 />
-                {i === 0 && (
-                  <div
-                    className="absolute rounded-full pointer-events-none z-10"
-                    style={{
-                      width: "clamp(36px, 13cqw, 72px)",
-                      height: "clamp(36px, 13cqw, 72px)",
-                      backgroundColor: "#DDD0BE",
-                      right: "calc(-6.5cqw - 28px)",
-                      top: "50%",
-                      transform: "translateY(-50%)",
-                    }}
-                  />
-                )}
               </div>
             ))}
           </div>

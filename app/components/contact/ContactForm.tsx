@@ -1,141 +1,208 @@
 "use client"
 
+import Image from "next/image"
 import { useState } from "react"
-import ButtonWithTwoDots from "../ui/buttonWithTwodots"
+import { FiUser, FiMail, FiPhone } from "react-icons/fi"
+import { BsBuilding, BsFileText } from "react-icons/bs"
+import { TbTargetArrow } from "react-icons/tb"
+import emailjs from "@emailjs/browser"
 
-const partnershipTypes = [
-  "Individual Patient",
-  "Corporate Partnership",
-  "Sports Team",
-  "Healthcare Provider",
-  "Insurance Partnership",
-  "Other",
-]
-
-const inputClass =
-  "w-full border border-[#E0DFF0] rounded-md px-3 py-2 text-sm text-[#373355] placeholder-[#C8C6D8] bg-[#FAFAFC] focus:outline-none focus:border-[#68628E] transition-colors"
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
 
 export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
     organisation: "",
     email: "",
-    partnershipType: "",
+    enquiryType: "",
     contact: "",
     description: "",
   })
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
-  ) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+  }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault()
-    // Handle form submission logic here
+    setStatus("sending")
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          organisation: form.organisation,
+          from_email: form.email,
+          enquiry_type: form.enquiryType,
+          contact: form.contact,
+          message: form.description,
+          to_email: "info@kinetiqphysiotherapy.com",
+        },
+        EMAILJS_PUBLIC_KEY
+      )
+      setStatus("success")
+      setForm({ name: "", organisation: "", email: "", enquiryType: "", contact: "", description: "" })
+    } catch {
+      setStatus("error")
+    }
   }
 
   return (
-    <section className="relative bg-[#f4f4f4] py-10 md:py-16 px-4 sm:px-6 md:px-8 overflow-hidden">
+    <section className="w-full bg-[#Fee2d2] overflow-hidden lg:aspect-21/9">
+      <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-full">
 
-      {/* Top-right orange dot cluster */}
-      <div className="pointer-events-none absolute right-6 sm:right-10 md:right-16 top-10 sm:top-14 flex flex-col gap-[6px] z-0">
-        <div className="flex gap-[6px]">
-          <div className="w-[11px] h-[11px] sm:w-[14px] sm:h-[14px] rounded-full bg-[#FF914D]" />
-          <div className="w-[11px] h-[11px] sm:w-[14px] sm:h-[14px] rounded-full bg-[#FF914D]" />
+        {/* LEFT — image */}
+        <div className="relative w-full h-64 lg:h-full overflow-hidden">
+          <Image
+            src="/contactform1.png"
+            alt="Physiotherapy session"
+            fill
+            className="object-cover object-left"
+            priority
+          />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to right, transparent 65%, #Fee2d2 100%)",
+            }}
+          />
         </div>
-        <div className="w-[11px] h-[11px] sm:w-[14px] sm:h-[14px] rounded-full bg-[#FF914D] self-end" />
-      </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
-        
-        {/* Badge */}
-        <ButtonWithTwoDots label="Get in Touch" />
+        {/* RIGHT — form */}
+        <div className="flex flex-col justify-center max-w-5xl items-center gap-5 px-8 lg:px-12 py-10 lg:py-6">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl text-center font-medium text-[#373355]">
+              We&apos;d love to hear from you
+            </h2>
+            <p className="mt-2 text-[#373355] text-center text-sm sm:text-base cursor-pointer">
+              Fill in your details and we&apos;ll get back to you
+            </p>
+          </div>
 
-        {/* Form */}
-        <form onSubmit={handleSubmit} className="mt-16 md:mt-20 w-full">
-
-          {/* THE SMART GRID:
-            - Mobile: 1 Column
-            - Tablet (sm): 2 Columns
-            - Desktop (lg): 3 Columns 
-          */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-x-6 lg:gap-y-5">
-
-            {/* Name */}
-            <div className="flex flex-col gap-1 lg:col-start-1 lg:row-start-1">
-              <label htmlFor="name" className="text-xs text-[#9A97A9]">Name</label>
-              <input id="name" name="name" type="text" value={form.name} onChange={handleChange} className={inputClass} />
-            </div>
-
-            {/* Organisation */}
-            <div className="flex flex-col gap-1 lg:col-start-2 lg:row-start-1">
-              <label htmlFor="org" className="text-xs text-[#9A97A9]">Organisation Name</label>
-              <input id="org" name="organisation" type="text" value={form.organisation} onChange={handleChange} className={inputClass} />
-            </div>
-
-            {/* Email */}
-            <div className="flex flex-col gap-1 lg:col-start-1 lg:row-start-2">
-              <label htmlFor="email" className="text-xs text-[#9A97A9]">Email</label>
-              <input id="email" name="email" type="email" value={form.email} onChange={handleChange} className={inputClass} />
-            </div>
-
-            {/* Partnership Type */}
-            <div className="flex flex-col gap-1 lg:col-start-2 lg:row-start-2">
-              <label htmlFor="pt" className="text-xs text-[#9A97A9]">Partnership Type</label>
-              <select id="pt" name="partnershipType" value={form.partnershipType} onChange={handleChange} className={inputClass}>
-                <option value="">Select partnership type ▾</option>
-                {partnershipTypes.map((t) => (
-                  <option key={t} value={t}>{t}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Contact */}
-            <div className="flex flex-col gap-1 lg:col-start-1 lg:row-start-3">
-              <label htmlFor="contact" className="text-xs text-[#9A97A9]">Contact</label>
-              <input id="contact" name="contact" type="tel" value={form.contact} onChange={handleChange} className={inputClass} />
-            </div>
-
-            {/* Brief Description 
-                - On mobile/tablet: spans 2 columns at the bottom (sm:col-span-2)
-                - On desktop: jumps to the top right and spans 2 rows down (lg:col-start-3 lg:row-start-1 lg:row-span-2)
-            */}
-            <div className="flex flex-col gap-1 sm:col-span-2 lg:col-start-3 lg:row-start-1 lg:row-span-2">
-              <label htmlFor="desc" className="text-xs text-[#9A97A9]">Brief Description About You</label>
-              <textarea
-                id="desc"
-                name="description"
-                value={form.description}
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full">
+            {/* Row 1 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <InputField
+                icon={<FiUser className="text-[#E07B45]" />}
+                placeholder="Name"
+                name="name"
+                value={form.name}
                 onChange={handleChange}
-                className={`${inputClass} resize-none flex-1 min-h-[120px] lg:h-full`}
+              />
+              <InputField
+                icon={<BsBuilding className="text-[#E07B45]" />}
+                placeholder="Organisation Name"
+                name="organisation"
+                value={form.organisation}
+                onChange={handleChange}
               />
             </div>
-            
-          </div>
 
-          {/* Submit Button */}
-          <div className="mt-8 flex justify-center lg:justify-start">
+            {/* Row 2 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <InputField
+                icon={<FiMail className="text-[#E07B45]" />}
+                placeholder="Email"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+              />
+              {/* Enquiry dropdown */}
+              <div className="flex items-center gap-3 bg-[#f4f4f4] border border-[#E07B45] rounded-xl px-4 py-3 shadow-md">
+                <TbTargetArrow className="text-[#E07B45] text-lg shrink-0" />
+                <select
+                  name="enquiryType"
+                  value={form.enquiryType}
+                  onChange={handleChange}
+                  className="flex-1 bg-transparent text-[#68628e] text-sm outline-none border-0 appearance-none cursor-pointer"
+                >
+                  <option value="" disabled>
+                    I am Enquiring Type
+                  </option>
+                  <option value="general">General Enquiry</option>
+                  <option value="appointment">Book Appointment</option>
+                  <option value="corporate">Corporate Wellness</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Row 3 — full width */}
+            <InputField
+              icon={<FiPhone className="text-[#E07B45]" />}
+              placeholder="Contact No."
+              name="contact"
+              type="tel"
+              value={form.contact}
+              onChange={handleChange}
+              fullWidth
+            />
+
+            {/* Textarea */}
+            <div className="flex gap-3 bg-[#f4f4f4] border border-[#E07B45] rounded-xl px-4 py-3 shadow-md">
+              <BsFileText className="text-[#E07B45] text-lg mt-0.5 shrink-0" />
+              <textarea
+                name="description"
+                placeholder="Brief Description or Leave Note"
+                rows={2}
+                value={form.description}
+                onChange={handleChange}
+                className="flex-1 bg-transparent text-[#373355] text-sm outline-none border-0 resize-none placeholder:text-[#68628e] w-full"
+              />
+            </div>
+
+            {/* Submit */}
             <button
               type="submit"
-              className="bg-[#FF914D] text-white px-8 py-2.5 rounded-md text-sm font-medium hover:bg-[#68628E] active:bg-[#373355] transition-colors duration-300 w-full sm:w-auto"
+              disabled={status === "sending" || status === "success"}
+              className="flex items-center justify-between bg-[#68628e] hover:bg-[#3d3a7a] disabled:opacity-70 disabled:cursor-not-allowed transition-colors text-white font-semibold text-base rounded-full px-8 py-4 w-full"
             >
-              Submit
+              <span className="flex-1 text-center">
+                {status === "sending" ? "Sending…" : status === "success" ? "Message Sent!" : status === "error" ? "Failed — Try Again" : "Submit"}
+              </span>
+              <span className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center shrink-0">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
             </button>
-          </div>
-          
-        </form>
-      </div>
-
-      {/* Bottom-left orange dot cluster */}
-      <div className="pointer-events-none absolute left-6 sm:left-10 md:left-16 bottom-10 sm:bottom-14 flex flex-col gap-[6px] z-0">
-        <div className="w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] rounded-full bg-[#FF914D]" />
-        <div className="flex gap-[6px]">
-          <div className="w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] rounded-full bg-[#FF914D]" />
-          <div className="w-[14px] h-[14px] sm:w-[18px] sm:h-[18px] rounded-full bg-[#FF914D]" />
+          </form>
         </div>
       </div>
     </section>
+  )
+}
+
+type InputFieldProps = {
+  icon: React.ReactNode
+  placeholder: string
+  name: string
+  value: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  type?: string
+  fullWidth?: boolean
+}
+
+function InputField({ icon, placeholder, name, value, onChange, type = "text", fullWidth }: InputFieldProps) {
+  return (
+    <div className={`flex items-center gap-3 bg-[#f4f4f4] border border-[#E07B45] rounded-xl px-4 py-2 w-full shadow-md ${fullWidth ? "col-span-full" : ""}`}>
+      <span className="text-lg shrink-0">{icon}</span>
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        className="flex-1 bg-transparent text-[#373355] text-sm outline-none border-0 focus:outline-none placeholder:text-[#68628e] w-full min-w-0"
+      />
+    </div>
   )
 }

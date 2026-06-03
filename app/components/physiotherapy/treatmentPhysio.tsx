@@ -11,22 +11,22 @@ const physioServices = [
   {
     title: "Sports Physiotherapy",
     description: "Injury management and performance-focused rehabilitation for active individuals. Targets faster recovery, sports-specific injury prevention, and performance enhancement. Guides athletes through a safe, structured return to sport.",
-    image: "/excerciseimg.png",
+    image: "/mensports1.png",
   },
   {
     title: "Neurological Physiotherapy",
     description: " Rehabilitation for nerve and neurological conditions affecting movement and function. Focuses on restoring coordination, balance, and independence through structured therapy. Extends clinical care into the home environment for continued functional progress.",
-    image: "/excerciseimg.png",
+    image: "/neuropathic1.png",
   },
   {
     title: "Paediatric Physiotherapy",
     description: "Support for children with developmental, postural, sports injury, or movement challenges. Encourages healthy growth, functional mobility, and age-appropriate physical development. Tailored to each child's needs with goal-oriented, progressive rehabilitation.",
-    image: "/excerciseimg.png",
+    image: "/paediatric.png",
   },
   {
     title: "Geriatric Physiotherapy",
     description: "Specialized care for age-related mobility, balance, and strength concerns. Aims to improve functional independence, prevent falls, and support active aging. Designed around the unique physical demands and limitations of older adults.",
-    image: "/excerciseimg.png",
+    image: "/geriatric.png",
   },
   {
     title: "Cardiopulmonary Physiotherapy",
@@ -36,7 +36,7 @@ const physioServices = [
   {
     title: "Post-Surgical Rehabilitation",
     description: "Structured recovery following ligament reconstruction, joint replacement, and spine procedures. Restores mobility, strength, and functional movement through phased rehabilitation protocols. Ensures a safe, monitored return to daily activities and physical independence.",
-    image: "/excerciseimg.png",
+    image: "/physio.png",
   },
 ]
 
@@ -93,19 +93,6 @@ export default function PhysioServicesSection() {
                   description={service.description}
                   imageSrc={service.image}
                 />
-                {i === 0 && (
-                  <div
-                    className="absolute rounded-full pointer-events-none z-10"
-                    style={{
-                      width: "clamp(36px, 13cqw, 72px)",
-                      height: "clamp(36px, 13cqw, 72px)",
-                      backgroundColor: "#DDD0BE",
-                      right: "calc(-6.5cqw - 28px)",
-                      top: "50%",
-                      transform: "translateY(-50%)",
-                    }}
-                  />
-                )}
               </div>
             ))}
           </div>

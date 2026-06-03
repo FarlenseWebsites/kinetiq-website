@@ -86,7 +86,7 @@ export default function HeroLanding() {
 				initial={shouldReduceMotion ? undefined : { y: 120, opacity: 0 }}
 				animate={shouldReduceMotion ? undefined : { y: 0, opacity: 1 }}
 				transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.5 }}
-				className="absolute inset-x-0 bottom-10 md:bottom-0 lg:bottom-0 z-20 pointer-events-none"
+				className="absolute inset-x-0 bottom-10 md:bottom-0 lg:bottom-0 z-20"
 			>
 				<OrangeCircles7 />
 			</motion.div>

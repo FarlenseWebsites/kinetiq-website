@@ -12,15 +12,11 @@ export default function AboutIntro() {
         style={{ background: "rgba(254, 254, 254, 0.98)" }}
       >
         <ButtonWithTwoDots label="Clinical Excellence" />
-        <h2
-            className="my-8 text-[#373355] font-medium text-center"
-            style={{ fontSize: "clamp(1.75rem, 4vw + 0.25rem, 3rem)" }}
-          >
-          
-          Expert Care,
+        <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+           Expert Care,
           <br />
           Backed by Science
-        </h2>
+          </h1>
       </div>
 
       {/* Bottom section: aspect-ratio drives height from width at every breakpoint */}

@@ -36,12 +36,9 @@ export default function FormMethod() {
       {/* Light strip — button + subtitle */}
       <div className="bg-[#f4f4f4] w-full flex flex-col items-center pb-10 ">
         <ButtonWithTwoDots label="Our Approach" />
-         <h2
-            className="my-8 text-[#373355] font-medium text-center"
-            style={{ fontSize: "clamp(1.75rem, 4vw + 0.25rem, 3rem)" }}
-          >
-            The KinetiQ Method
-          </h2>
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+           The KinetiQ Method
+          </h1>
       </div>
 
       {/* FORM content — full width, no outer margin or padding */}
@@ -53,7 +50,7 @@ export default function FormMethod() {
               style={{ fontSize: "clamp(3rem, 8vw + 0.5rem, 7rem)" }}
             >
               {[
-                { char: "F", x: -120, y: 0 },
+                { char: "F", x: -80, y: 0 },
                 { char: ".", x: 0, y: -60 },
                 { char: "O", x: 0, y: -120 },
                 { char: ".", x: 0, y: 60 },
@@ -79,7 +76,7 @@ export default function FormMethod() {
             </h2>
           </div>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
             {steps.map((step, i) => (
               <motion.div
                 key={step.letter}

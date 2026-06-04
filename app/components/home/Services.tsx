@@ -57,11 +57,8 @@ export default function Services() {
         {/* Navigation and Bottom Label */}
         <div className="flex flex-col items-center">
           <ButtonWithTwoDots label="One Stop for" />
-          <h1
-            className="text-[#373355] font-medium text-center"
-            style={{ marginTop: "32px", fontSize: "42px" }}
-          >
-            Rehab | Posture | Fitness
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+           Rehab | Posture | Fitness
           </h1>
         </div>
       </div>

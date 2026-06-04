@@ -151,12 +151,13 @@ export default function Navbar() {
   return (
     <header
       className={cn(`
-        absolute top-0 left-0 right-0 z-50
+        fixed top-0 left-0 right-0 z-50
         w-full
         px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16
         py-[clamp(0.75rem,1.8svh,1.25rem)]
-        bg-transparent
+        bg-opacity-90 backdrop-blur-md
         transition-all duration-300
+        
       `)}
     >
       <div

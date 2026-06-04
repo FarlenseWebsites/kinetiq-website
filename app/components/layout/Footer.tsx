@@ -40,7 +40,7 @@ export default function Footer() {
                 href="/sessions"
                 className="hover:opacity-70 transition-opacity"
               >
-                KinetiQ Sessions
+                Sessions
               </Link>
 
               <Link
@@ -63,13 +63,15 @@ export default function Footer() {
               <Link
                 href="#"
                 className="hover:text-[#ff914D] transition-colors"
+                target="_blank"
               >
                 <FaFacebook size={22} />
               </Link>
 
               <Link
-                href="#"
-                className="hover:text-[#ff914D] transition-colors"
+                href="https://www.instagram.com/kinetiqphysiotherapy"
+                className="hover:text-[#ff914D] transition-colors "
+                target="_blank"
               >
                 <FaInstagram size={22} />
               </Link>
@@ -77,8 +79,10 @@ export default function Footer() {
               <Link
                 href="#"
                 className="hover:text-[#ff914D] transition-colors"
+                target="_blank"
               >
                 <FaLinkedin size={22} />
+
               </Link>
             </div>
           </div>

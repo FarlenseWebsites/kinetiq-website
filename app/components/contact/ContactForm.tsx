@@ -77,10 +77,10 @@ export default function ContactForm() {
 
         {/* RIGHT — form */}
         <div className="flex flex-col justify-center max-w-5xl items-center gap-5 px-8 lg:px-12 py-10 lg:py-6">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl text-center font-medium text-[#373355]">
-              We&apos;d love to hear from you
-            </h2>
+          <div className="">
+             <h1 className="text-[#373355] font-medium text-[clamp(1.45rem,4vw,3.5rem)] mt-8 leading-tight">
+                We&apos;d love to hear from you
+              </h1>
             <p className="mt-2 text-[#373355] text-center text-sm sm:text-base cursor-pointer">
               Fill in your details and we&apos;ll get back to you
             </p>
@@ -130,6 +130,7 @@ export default function ContactForm() {
                   <option value="general">General Enquiry</option>
                   <option value="appointment">Book Appointment</option>
                   <option value="corporate">Corporate Wellness</option>
+                  <option value="carriers">Carrier Services</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -147,15 +148,15 @@ export default function ContactForm() {
             />
 
             {/* Textarea */}
-            <div className="flex gap-3 bg-[#f4f4f4] border border-[#E07B45] rounded-xl px-4 py-3 shadow-md">
-              <BsFileText className="text-[#E07B45] text-lg mt-0.5 shrink-0" />
+            <div className="flex items-start gap-3 bg-[#f4f4f4] border border-[#E07B45] rounded-xl px-4 py-3 shadow-md">
+              <BsFileText className="text-[#E07B45] text-lg mt-1 shrink-0" />
               <textarea
                 name="description"
                 placeholder="Brief Description or Leave Note"
                 rows={2}
                 value={form.description}
                 onChange={handleChange}
-                className="flex-1 bg-transparent text-[#373355] text-sm outline-none border-0 resize-none placeholder:text-[#68628e] w-full"
+                className="flex-1 bg-transparent text-[#373355] text-sm leading-6 outline-none border-0 resize-none placeholder:text-[#68628e] w-full pt-0.5"
               />
             </div>
 
@@ -167,11 +168,6 @@ export default function ContactForm() {
             >
               <span className="flex-1 text-center">
                 {status === "sending" ? "Sending…" : status === "success" ? "Message Sent!" : status === "error" ? "Failed — Try Again" : "Submit"}
-              </span>
-              <span className="w-8 h-8 rounded-full border border-white/40 flex items-center justify-center shrink-0">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
               </span>
             </button>
           </form>

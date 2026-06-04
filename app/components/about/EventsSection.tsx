@@ -29,47 +29,24 @@ const pastEvents: EventCard[] = [
     title: "KinetiQ Fitness Event",
     date: "March 2025",
     media: { type: "image", src: "/videoimg.png", alt: "KinetiQ fitness event" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
+    instagramUrl: "https://www.instagram.com/kinetiqphysiotherapy",
   },
   {
     id: 2,
     title: "Posture Workshop",
     date: "January 2025",
     media: { type: "image", src: "/videoimg.png", alt: "KinetiQ posture workshop" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
+    instagramUrl: "https://www.instagram.com/kinetiqphysiotherapy",
   },
   {
     id: 3,
     title: "Rehab Recovery Session",
     date: "November 2024",
     media: { type: "image", src: "/videoimg.png", alt: "KinetiQ rehab session" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
+    instagramUrl: "https://www.instagram.com/kinetiqphysiotherapy",
   },
 ]
 
-const upcomingEvents: EventCard[] = [
-  {
-    id: 4,
-    title: "Summer Fitness Camp",
-    date: "June 2025",
-    media: { type: "image", src: "/videoimg.png", alt: "Summer fitness camp" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
-  },
-  {
-    id: 5,
-    title: "Sports Recovery Workshop",
-    date: "July 2025",
-    media: { type: "image", src: "/videoimg.png", alt: "Sports recovery workshop" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
-  },
-  {
-    id: 6,
-    title: "Community Rehab Drive",
-    date: "August 2025",
-    media: { type: "image", src: "/videoimg.png", alt: "Community rehab drive" },
-    instagramUrl: "https://www.instagram.com/kinetiq.official",
-  },
-]
 
 // ─── Media renderer ──────────────────────────────────────────────────────────
 
@@ -241,43 +218,12 @@ function EventCarousel({ events }: { events: EventCard[] }) {
   )
 }
 
-// ─── Subsection header ────────────────────────────────────────────────────────
-
-function SubsectionHeader({
-  label,
-  badge,
-}: {
-  label: string
-  badge?: "past" | "upcoming"
-}) {
-  return (
-    <div className="flex items-center gap-4 mb-8">
-      <div className="flex-1 h-px bg-linear-to-r from-transparent via-[#FF914D]/30 to-[#FF914D]/50" />
-      <div className="flex items-center gap-2 shrink-0">
-        {badge === "upcoming" && (
-          <span className="inline-block w-2 h-2 rounded-full bg-[#FF914D] animate-pulse" />
-        )}
-        <span className="text-[#373355] font-bold text-lg sm:text-xl tracking-wide px-5 py-1.5 rounded-full border border-[#FF914D]/40 bg-white shadow-sm">
-          {label}
-        </span>
-                  <span className="inline-block w-2 h-2 rounded-full bg-[#FF914D] animate-pulse" />
-
-        {badge === "past" && (
-          <span className="text-xs text-[#8681a5] font-medium px-2 py-0.5 bg-[#8681a5]/10 rounded-full">
-            archived
-          </span>
-        )}
-      </div>
-      <div className="flex-1 h-px bg-linear-to-l from-transparent via-[#FF914D]/30 to-[#FF914D]/50" />
-    </div>
-  )
-}
 
 // ─── Main section ─────────────────────────────────────────────────────────────
 
 export default function EventsSection() {
   return (
-    <section id="about-events" className="bg-[#F4F4F4] py-16 sm:py-20 scroll-mt-32">
+    <section id="about-events" className="bg-[#F4F4F4]  pt-16 scroll-mt-32">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Section header */}
@@ -289,12 +235,10 @@ export default function EventsSection() {
           className="flex flex-col items-center mb-14"
         >
           <ButtonWithTwoDots label="Our Events" />
-          <h2
-            className="mt-8 text-[#373355] font-medium text-center"
-            style={{ fontSize: "clamp(1.75rem, 4vw + 0.25rem, 3rem)" }}
-          >
-            Past Events
-          </h2>
+          
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+           Past Events
+          </h1>
           
         </motion.div>
 
@@ -304,27 +248,11 @@ export default function EventsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="mb-16"
         >
           <EventCarousel events={pastEvents} />
         </motion.div>
 
-        {/* Upcoming Events */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-           <h2
-            className="my-8 text-[#373355] font-medium text-center"
-            style={{ fontSize: "clamp(1.75rem, 4vw + 0.25rem, 3rem)" }}
-          >
-            Upcoming Events
-          </h2>
-          <EventCarousel events={upcomingEvents} />
-        </motion.div>
-
+       
       </div>
     </section>
   )

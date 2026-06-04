@@ -1,6 +1,7 @@
 "use client";
 import TreatmentCard from "../ui/TreatmentCard";
 import ButtonWithTwoDots from "../ui/buttonWithTwodots";
+import { slugifyAnchor } from "../../lib/anchors";
 
 interface Treatment {
   title: string;
@@ -9,6 +10,7 @@ interface Treatment {
 }
 
 interface TreatmentSectionProps {
+  id?: string;
   label: string;
   title: string;
   subtitle?: string;
@@ -17,6 +19,7 @@ interface TreatmentSectionProps {
 }
 
 export default function TreatmentSection({
+  id,
   label,
   title,
   subtitle,
@@ -31,7 +34,7 @@ export default function TreatmentSection({
     variant === "orange" ? "text-[#7a4020]" : "text-[#373355]";
 
   return (
-    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6">
+    <section id={id} className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 scroll-mt-32">
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 sm:mb-12">
           <ButtonWithTwoDots label={label} />
@@ -51,13 +54,14 @@ export default function TreatmentSection({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 xl:gap-14">
           {treatments.map((t, idx) => (
-            <TreatmentCard
-              key={idx}
-              title={t.title}
-              description={t.description}
-              imageSrc={t.image}
-              mirrored={idx % 2 === 1}
-            />
+            <div key={idx} id={slugifyAnchor(t.title)} className="scroll-mt-32">
+              <TreatmentCard
+                title={t.title}
+                description={t.description}
+                imageSrc={t.image}
+                mirrored={idx % 2 === 1}
+              />
+            </div>
           ))}
         </div>
       </div>

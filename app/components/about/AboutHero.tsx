@@ -5,7 +5,7 @@ import Pendulum from "../ui/pendulum" // Adjust import path if needed
 
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-[#FAFAFC] flex flex-col items-center justify-start pt-24 sm:pt-28 md:pt-32 pb-40 md:pb-54">
+    <section id="about-hero" className="relative overflow-hidden bg-[#FAFAFC] flex flex-col items-center justify-start pt-24 sm:pt-28 md:pt-32 pb-40 md:pb-54 scroll-mt-32">
 
       {/* Bottom Section Fade */}
       <div className="absolute inset-0 z-0 pointer-events-none">

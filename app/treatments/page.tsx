@@ -200,6 +200,7 @@ export default function TreatmentsPage() {
       <TreatmentsHero />
 
       <TreatmentSection
+        id="core-assessment"
         label="Treatments"
         title="Core Assessment & Corrective Care"
         treatments={coreAssessment}
@@ -209,6 +210,7 @@ export default function TreatmentsPage() {
 
 
       <TreatmentSection
+        id="manual-therapy"
         label="Treatments"
         title="Manual Therapy"
         treatments={manualTherapy}
@@ -216,6 +218,7 @@ export default function TreatmentsPage() {
       />
 
       <TreatmentSection
+        id="pain-injury-areas"
         label="Services"
         title="Pain & Injury Areas"
         treatments={painAndInjury}
@@ -223,6 +226,7 @@ export default function TreatmentsPage() {
       />
 
       <TreatmentSection
+        id="recovery-performance"
         label="Services"
         title="Recovery & Performance"
         treatments={recoveryPerformance}
@@ -230,6 +234,7 @@ export default function TreatmentsPage() {
       />
 
       <TreatmentSection
+        id="womens-health-prenatal-care"
         label="Treatments"
         title="Women's Health & Prenatal Care"
         treatments={womensHealth}

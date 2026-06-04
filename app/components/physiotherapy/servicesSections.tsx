@@ -2,6 +2,7 @@
 
 import PhysioServiceCard from "../ui/PhysioServiceCard"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
+import { slugifyAnchor } from "../../lib/anchors"
 
 const nerveConditions = [
   {
@@ -33,7 +34,7 @@ const rightCards = nerveConditions.filter((_, i) => i % 2 === 1)
 
 export default function ServicesSection() {
   return (
-    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-transparent">
+    <section id="physio-nerve-radiating" className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-transparent scroll-mt-32">
       <div className="max-w-6xl mx-auto">
 
         <div className="justify-center mb-8 sm:mb-10">
@@ -51,14 +52,15 @@ export default function ServicesSection() {
         {/* Mobile: single column, alternating mirrored */}
         <div className="flex flex-col gap-14 md:hidden">
           {nerveConditions.map((condition, idx) => (
-            <PhysioServiceCard
-              key={idx}
-              title={condition.title}
-              description={condition.description}
-              imageSrc={condition.image}
-              variant="orange"
-              mirrored={idx % 2 === 1}
-            />
+            <div key={idx}>
+              <PhysioServiceCard
+                title={condition.title}
+                description={condition.description}
+                imageSrc={condition.image}
+                variant="orange"
+                mirrored={idx % 2 === 1}
+              />
+            </div>
           ))}
         </div>
 
@@ -69,7 +71,8 @@ export default function ServicesSection() {
             {leftCards.map((condition, i) => (
               <div
                 key={i}
-                className="relative"
+                id={slugifyAnchor(condition.title)}
+                className="relative scroll-mt-32"
                 style={i === 0 ? { containerType: "inline-size" } : undefined}
               >
                 <PhysioServiceCard
@@ -86,7 +89,8 @@ export default function ServicesSection() {
             {rightCards.map((condition, i) => (
               <div
                 key={i}
-                className="relative"
+                id={slugifyAnchor(condition.title)}
+                className="relative scroll-mt-32"
                 style={i === 0 ? { marginTop: `calc(${IMAGE_HEIGHT_PCT} + 3.5rem)`, containerType: "inline-size" } : undefined}
               >
                 <PhysioServiceCard

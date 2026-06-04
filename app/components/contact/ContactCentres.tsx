@@ -16,7 +16,7 @@ const centres = [
 
 export default function ContactCentres() {
   return (
-    <section className="bg-[#f4f4f4] py-16 md:py-20 px-4 sm:px-6 md:px-8">
+    <section id="contact-centres" className="bg-[#f4f4f4] py-16 md:py-20 px-4 sm:px-6 md:px-8 scroll-mt-32">
       {/* Added flex-col and items-center to properly center the top button */}
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         

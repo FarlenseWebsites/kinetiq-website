@@ -1,6 +1,7 @@
 "use client"
 import PhysioServiceCard from "../ui/PhysioServiceCard"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
+import { slugifyAnchor } from "../../lib/anchors"
 
 const physioServices = [
   {
@@ -49,7 +50,7 @@ const rightCards = physioServices.filter((_, i) => i % 2 === 1) // [1,3,5]
 
 export default function PhysioServicesSection() {
   return (
-    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-transparent">
+    <section id="physio-services" className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-transparent scroll-mt-32">
       <div className="max-w-6xl mx-auto">
 
         <div className="justify-center mb-8 sm:mb-10">
@@ -67,13 +68,14 @@ export default function PhysioServicesSection() {
         {/* Mobile: single column, alternating mirrored */}
         <div className="flex flex-col gap-8 md:hidden">
           {physioServices.map((service, idx) => (
-            <PhysioServiceCard
-              key={idx}
-              title={service.title}
-              description={service.description}
-              imageSrc={service.image}
-              mirrored={idx % 2 === 1}
-            />
+            <div key={idx}>
+              <PhysioServiceCard
+                title={service.title}
+                description={service.description}
+                imageSrc={service.image}
+                mirrored={idx % 2 === 1}
+              />
+            </div>
           ))}
         </div>
 
@@ -85,7 +87,8 @@ export default function PhysioServicesSection() {
             {leftCards.map((service, i) => (
               <div
                 key={i}
-                className="relative"
+                id={slugifyAnchor(service.title)}
+                className="relative scroll-mt-32"
                 style={i === 0 ? { containerType: "inline-size" } : undefined}
               >
                 <PhysioServiceCard
@@ -102,6 +105,8 @@ export default function PhysioServicesSection() {
             {rightCards.map((service, i) => (
               <div
                 key={i}
+                id={slugifyAnchor(service.title)}
+                className="scroll-mt-32"
                 style={i === 0 ? { marginTop: `calc(${IMAGE_HEIGHT_PCT} + 3.5rem)` } : undefined}
               >
                 <PhysioServiceCard

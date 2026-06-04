@@ -40,7 +40,7 @@ export default function ValuesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section className="w-full aspect-21/9 bg-[#f4f4f4]  overflow-hidden relative">
+    <section id="about-values" className="w-full aspect-21/9 bg-[#f4f4f4]  overflow-hidden relative scroll-mt-32">
       <div className="absolute inset-0 flex mt-12">
 
         {/* Left column — image */}

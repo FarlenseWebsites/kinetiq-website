@@ -25,3 +25,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
 }
+
+section[id], div[id] {
+  scroll-margin-top: 7rem;
+}

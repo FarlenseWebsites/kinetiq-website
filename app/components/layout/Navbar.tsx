@@ -7,6 +7,13 @@ import { Menu, X } from "lucide-react"
 
 import { cn } from "../../lib/utils"
 import BookConsultationButton from "../ui/bookConsulationButton"
+import {
+  aboutLinks,
+  contactLinks,
+  physiotherapyLinks,
+  sessionLinks,
+  treatmentLinks,
+} from "../../lib/navigation"
 
 import KinetiQLogo from "../../../public/KinetiQLogo.png"
 
@@ -15,40 +22,40 @@ const physiotherapyMegaMenu = [
   {
     title: "Physiotherapy Services",
     items: [
-      "Orthopaedic Physiotherapy",
-      "Sports Physiotherapy",
-      "Neurological Physiotherapy",
-      "Paediatric Physiotherapy",
-      "Geriatric Physiotherapy",
-      "Cardiopulmonary Physiotherapy",
-      "Post-Surgical Rehabilitation",
+      { label: "Orthopaedic Physiotherapy", href: physiotherapyLinks.orthopaedic },
+      { label: "Sports Physiotherapy", href: physiotherapyLinks.sports },
+      { label: "Neurological Physiotherapy", href: physiotherapyLinks.neurological },
+      { label: "Paediatric Physiotherapy", href: physiotherapyLinks.paediatric },
+      { label: "Geriatric Physiotherapy", href: physiotherapyLinks.geriatric },
+      { label: "Cardiopulmonary Physiotherapy", href: physiotherapyLinks.cardiopulmonary },
+      { label: "Post-Surgical Rehabilitation", href: physiotherapyLinks.postSurgical },
     ],
   },
   {
     title: "Women’s Health & Recovery",
     items: [
-      "Women’s Health Physiotherapy",
-      "Prenatal Physiotherapy",
-      "Postnatal Physiotherapy",
-      "Pelvic Floor Rehabilitation",
+      { label: "Women’s Health Physiotherapy", href: physiotherapyLinks.womensHealth },
+      { label: "Prenatal Physiotherapy", href: physiotherapyLinks.prenatal },
+      { label: "Postnatal Physiotherapy", href: physiotherapyLinks.postnatal },
+      { label: "Pelvic Floor Rehabilitation", href: physiotherapyLinks.pelvicFloor },
     ],
   },
   {
     title: "Nerve & Radiating Pain Conditions",
     items: [
-      "Sciatic Nerve Pain",
-      "Cervical Radiculopathy",
-      "Lumbar Radiculopathy",
-      "Neuropathic Pain",
+      { label: "Sciatic Nerve Pain", href: physiotherapyLinks.sciatic },
+      { label: "Cervical Radiculopathy", href: physiotherapyLinks.cervical },
+      { label: "Lumbar Radiculopathy", href: physiotherapyLinks.lumbar },
+      { label: "Neuropathic Pain", href: physiotherapyLinks.neuropathic },
     ],
   },
   {
     title: "Lifestyle & Postural Conditions",
     items: [
-      "Postural Imbalance",
-      "Muscle Tightness & Imbalances",
-      "Repetitive Strain Injuries",
-      "Ergonomic & Workplace Dysfunction",
+      { label: "Postural Imbalance", href: physiotherapyLinks.posturalImbalance },
+      { label: "Muscle Tightness & Imbalances", href: physiotherapyLinks.muscleImbalances },
+      { label: "Repetitive Strain Injuries", href: physiotherapyLinks.repetitiveStrain },
+      { label: "Ergonomic & Workplace Dysfunction", href: physiotherapyLinks.ergonomicWorkplace },
     ],
   },
 ]
@@ -58,75 +65,75 @@ const treatmentMegaMenu = [
     title: "Core Assessment & Corrective Care",
     titleColor: "#88849F",
     items: [
-      "Postural Correction Programs",
-      "Ergonomic Assessment\n& Workplace Therapy",
-      "Mobility & Corrective Exercise Therapy",
-      "Breathing & Respiratory Therapy",
-      "EMG Biofeedback",
+      { label: "Postural Correction Programs", href: treatmentLinks.posturalCorrectionPrograms },
+      { label: "Ergonomic Assessment\n& Workplace Therapy", href: treatmentLinks.ergonomicAssessment },
+      { label: "Mobility & Corrective Exercise Therapy", href: treatmentLinks.mobilityCorrectiveExercise },
+      { label: "Breathing & Respiratory Therapy", href: treatmentLinks.breathingRespiratory },
+      { label: "EMG Biofeedback", href: treatmentLinks.emgBiofeedback },
     ],
   },
   {
     title: "Manual Therapy",
     titleColor: "#88849F",
     items: [
-      "Joint Mobilization",
-      "Myofascial Release",
-      "Trigger Point Therapy",
-      "Lymphatic Drainage Therapy",
+      { label: "Joint Mobilization", href: treatmentLinks.jointMobilization },
+      { label: "Myofascial Release", href: treatmentLinks.myofascialRelease },
+      { label: "Trigger Point Therapy", href: treatmentLinks.triggerPointTherapy },
+      { label: "Lymphatic Drainage Therapy", href: treatmentLinks.lymphaticDrainage },
     ],
   },
   {
     title: "Pain & Injury Areas",
     titleColor: "#88849F",
     items: [
-      "ANF Therapy",
-      "Electrotherapy",
-      "Class IV Laser Therapy",
-      "Shockwave Therapy",
-      "Dry Needling",
+      { label: "ANF Therapy", href: treatmentLinks.anfTherapy },
+      { label: "Electrotherapy", href: treatmentLinks.electrotherapy },
+      { label: "Class IV Laser Therapy", href: treatmentLinks.classIVLaser },
+      { label: "Shockwave Therapy", href: treatmentLinks.shockwaveTherapy },
+      { label: "Dry Needling", href: treatmentLinks.dryNeedling },
     ],
   },
   {
     title: "Recovery & Performance Therapies",
     titleColor: "#88849F",
     items: [
-      "Sports Recovery Therapy",
-      "Kinesio Taping",
-      "Cupping Therapy",
-      "Vibration Plate Therapy",
-      "BlazePod Training",
-      "Boba Pro Training",
+      { label: "Sports Recovery Therapy", href: treatmentLinks.sportsRecovery },
+      { label: "Kinesio Taping", href: treatmentLinks.kinesioTaping },
+      { label: "Cupping Therapy", href: treatmentLinks.cuppingTherapy },
+      { label: "Vibration Plate Therapy", href: treatmentLinks.vibrationPlate },
+      { label: "BlazePod Training", href: treatmentLinks.blazepodTraining },
+      { label: "Boba Pro Training", href: treatmentLinks.bobaProTraining },
     ],
   },
   {
     title: "Women's Health & Prenatal Care",
     titleColor: "#88849F",
     items: [
-      "Women's Health Physiotherapy",
-      "Prenatal Physiotherapy",
-      "Postnatal Physiotherapy",
-      "Pelvic Floor Rehabilitation",
+      { label: "Women's Health Physiotherapy", href: treatmentLinks.womensHealthPhysio },
+      { label: "Prenatal Physiotherapy", href: treatmentLinks.prenatalPhysio },
+      { label: "Postnatal Physiotherapy", href: treatmentLinks.postnatalPhysio },
+      { label: "Pelvic Floor Rehabilitation", href: treatmentLinks.pelvicFloorRehab },
     ],
   },
 ]
 
 const sessionsMenu = [
-  "In Centre Treatment",
-  "Home Visits",
-  "Online Physiotherapy",
-  "Corporate",
+  { label: "In Centre Treatment", href: sessionLinks.inCentre },
+  { label: "Home Visits", href: sessionLinks.homeVisits },
+  { label: "Online Physiotherapy", href: sessionLinks.online },
+  { label: "Corporate", href: sessionLinks.corporate },
 ]
 
 const aboutMenu = [
-  "Clinical Excellence",
-  "The KinetiQ Foundation",
-  "About KinetiQ",
-  "KinetiQ Community",
+  { label: "About KinetiQ", href: aboutLinks.hero },
+  { label: "Clinical Excellence", href: aboutLinks.intro },
+  { label: "The KinetiQ Foundation", href: aboutLinks.values },
+  { label: "KinetiQ Community", href: aboutLinks.events },
 ]
 
 const contactMenu = [
-  "Visit KinetiQ",
-  "Lorem Ipsum",
+  { label: "Visit KinetiQ", href: contactLinks.centres },
+  { label: "Lorem Ipsum", href: contactLinks.form },
 ]
 
 export default function Navbar() {
@@ -224,13 +231,13 @@ export default function Navbar() {
                             {group.title}
                           </h3>
                           <ul className="space-y-4">
-                            {group.items.map((subItem, itemIdx) => (
+                            {group.items.map((subItem: { label: string; href: string }, itemIdx) => (
                               <li key={itemIdx}>
                                 <Link
-                                  href="#"
+                                  href={subItem.href}
                                   className="text-[#9A97A9] hover:text-[#68638E] text-[15px] transition-colors block"
                                 >
-                                  {subItem}
+                                  {subItem.label}
                                 </Link>
                               </li>
                             ))}
@@ -262,13 +269,13 @@ export default function Navbar() {
                             {group.title}
                           </h3>
                           <ul className="space-y-4">
-                            {group.items.map((subItem, subIdx) => (
+                            {group.items.map((subItem: { label: string; href: string }, subIdx) => (
                               <li key={subIdx}>
                                 <Link
-                                  href="#"
+                                  href={subItem.href}
                                   className="text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-pre-line block"
                                 >
-                                  {subItem}
+                                  {subItem.label}
                                 </Link>
                               </li>
                             ))}
@@ -299,13 +306,13 @@ export default function Navbar() {
                 >
                   <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 cursor-auto">
                     <ul className="space-y-4">
-                      {sessionsMenu.map((subItem, idx) => (
+                      {sessionsMenu.map((subItem: { label: string; href: string }, idx) => (
                         <li key={idx}>
                           <Link
-                            href="#"
+                            href={subItem.href}
                             className="block text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-nowrap"
                           >
-                            {subItem}
+                            {subItem.label}
                           </Link>
                         </li>
                       ))}
@@ -329,13 +336,13 @@ export default function Navbar() {
                 >
                   <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 cursor-auto">
                     <ul className="space-y-4">
-                      {aboutMenu.map((subItem, idx) => (
+                      {aboutMenu.map((subItem: { label: string; href: string }, idx) => (
                         <li key={idx}>
                           <Link
-                            href="#"
+                            href={subItem.href}
                             className="block text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-nowrap"
                           >
-                            {subItem}
+                            {subItem.label}
                           </Link>
                         </li>
                       ))}
@@ -359,13 +366,13 @@ export default function Navbar() {
                 >
                   <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 cursor-auto">
                     <ul className="space-y-4">
-                      {contactMenu.map((subItem, idx) => (
+                      {contactMenu.map((subItem: { label: string; href: string }, idx) => (
                         <li key={idx}>
                           <Link
-                            href="#"
+                            href={subItem.href}
                             className="block text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-nowrap"
                           >
-                            {subItem}
+                            {subItem.label}
                           </Link>
                         </li>
                       ))}

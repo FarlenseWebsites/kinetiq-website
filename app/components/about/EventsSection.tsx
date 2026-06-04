@@ -277,7 +277,7 @@ function SubsectionHeader({
 
 export default function EventsSection() {
   return (
-    <section className="bg-[#F4F4F4] py-16 sm:py-20">
+    <section id="about-events" className="bg-[#F4F4F4] py-16 sm:py-20 scroll-mt-32">
       <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Section header */}

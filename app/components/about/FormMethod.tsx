@@ -32,7 +32,7 @@ const steps = [
 
 export default function FormMethod() {
   return (
-    <section className="overflow-hidden">
+    <section id="about-method" className="overflow-hidden scroll-mt-32">
       {/* Light strip — button + subtitle */}
       <div className="bg-[#f4f4f4] w-full flex flex-col items-center pb-10 ">
         <ButtonWithTwoDots label="Our Approach" />

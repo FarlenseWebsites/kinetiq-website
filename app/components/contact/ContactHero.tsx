@@ -7,7 +7,7 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 export default function ContactHero() {
   return (
-    <section className="relative overflow-hidden bg-[#FAFAFA]">
+    <section id="contact-hero" className="relative overflow-hidden bg-[#FAFAFA] scroll-mt-32">
       {/* Navbar clearance + button (kept exactly as requested) */}
       <div className="pt-20 sm:pt-24 md:pt-28 pb-8 relative z-10 flex justify-center">
         <ButtonWithTwoDots label="Contact Us" />

@@ -1,6 +1,7 @@
 "use client"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 import TreatmentCard from "../ui/kinetiqsessionCard"
+import { slugifyAnchor } from "../../lib/anchors"
 
 const sessions = [
   {
@@ -36,7 +37,7 @@ const sessions = [
 
 export default function SessionsServices() {
   return (
-    <section className="relative overflow-hidden bg-[#F4f4f4] py-14 sm:py-16 lg:py-14">
+    <section id="sessions-services" className="relative overflow-hidden bg-[#F4f4f4] py-14 sm:py-16 lg:py-14 scroll-mt-32">
       
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -55,7 +56,8 @@ export default function SessionsServices() {
           {sessions.map((session, index) => (
             <div
               key={index}
-              className="flex justify-center"
+              id={slugifyAnchor(session.title)}
+              className="flex justify-center scroll-mt-32"
             >
               <TreatmentCard
                 title={session.title}

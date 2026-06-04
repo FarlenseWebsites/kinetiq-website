@@ -5,7 +5,7 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 export default function AboutIntro() {
   return (
-    <section className="relative w-full overflow-hidden">
+    <section id="about-intro" className="relative w-full overflow-hidden scroll-mt-32">
       {/* Top: light background header */}
       <div
         className="flex flex-col items-center text-center px-6 pt-6 pb-16"

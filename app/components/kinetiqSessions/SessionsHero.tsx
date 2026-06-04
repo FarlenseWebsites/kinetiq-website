@@ -5,7 +5,7 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 export default function SessionsHero() {
   return (
-    <section className="relative overflow-hidden flex flex-col items-center justify-start pt-[8vw]">
+    <section id="sessions-hero" className="relative overflow-hidden flex flex-col items-center justify-start pt-[8vw] scroll-mt-32">
 
       {/* Top button */}
       <ButtonWithTwoDots label="KinetiQ Sessions" />

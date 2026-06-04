@@ -54,7 +54,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="w-full bg-[#Fee2d2] overflow-hidden lg:aspect-21/9">
+    <section id="contact-form" className="w-full bg-[#Fee2d2] overflow-hidden lg:aspect-21/9 scroll-mt-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-full">
 
         {/* LEFT — image */}

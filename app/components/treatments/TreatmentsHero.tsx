@@ -5,7 +5,7 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 export default function PhysioHero() {
   return (
-    <section className="relative overflow-hidden bg-[#FAFAFA] flex flex-col items-center justify-start pt-[8vw]">
+    <section id="treatments-hero" className="relative overflow-hidden bg-[#FAFAFA] flex flex-col items-center justify-start pt-[8vw] scroll-mt-32">
       
       {/* Button */}
       <div className="relative z-10  flex justify-center pb-[5vw]">

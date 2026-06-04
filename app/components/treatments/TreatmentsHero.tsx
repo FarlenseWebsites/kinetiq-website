@@ -18,7 +18,7 @@ export default function PhysioHero() {
         {/* BASE IMAGE */}
         <div className="absolute left-0 top-0 bottom-0 w-[65%] z-0 h-full overflow-hidden rounded-r-[100vw]">
           <Image
-            src="/spaceimg.png"
+            src="/treatmentimg.png"
             alt="KinetiQ Sessions"
             fill
             className="object-cover object-[25%_center]"

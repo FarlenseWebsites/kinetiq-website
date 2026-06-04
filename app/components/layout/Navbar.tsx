@@ -12,78 +12,100 @@ import KinetiQLogo from "../../../public/KinetiQLogo.png"
 
 // --- Mega Menu Data ---
 const physiotherapyMegaMenu = [
-  // Column 1
-  [
-    "Orthopedic Physiotherapy",
-    "Sports Physiotherapy",
-    "Posture Correction & Ergonomics",
-    "Neurological Physiotherapy",
-    "Geriatric Physiotherapy",
-  ],
-  // Column 2
-  [
-    "Pediatric Physiotherapy",
-    "Women’s Health Physiotherapy",
-    "Post-Surgical Rehabilitation",
-    "Palliative Physiotherapy",
-    "Cardiopulmonary Physiotherapy",
-  ],
-  // Column 3
-  [
-    "Postnatal Physiotherapy",
-    "Nerve & Radiating Pain Conditions",
-    "Sciatic Nerve Pain",
-    "Cervical Radiculopathy",
-    "Lumbar Radiculopathy",
-  ],
-  // Column 4
-  [
-    "Neuropathic Pain",
-    "Lifestyle & Postural Conditions",
-    "Muscle Tightness & Imbalances",
-    "Repetitive Strain Injuries",
-  ],
+  {
+    title: "Physiotherapy Services",
+    items: [
+      "Orthopaedic Physiotherapy",
+      "Sports Physiotherapy",
+      "Neurological Physiotherapy",
+      "Paediatric Physiotherapy",
+      "Geriatric Physiotherapy",
+      "Cardiopulmonary Physiotherapy",
+      "Post-Surgical Rehabilitation",
+    ],
+  },
+  {
+    title: "Women’s Health & Recovery",
+    items: [
+      "Women’s Health Physiotherapy",
+      "Prenatal Physiotherapy",
+      "Postnatal Physiotherapy",
+      "Pelvic Floor Rehabilitation",
+    ],
+  },
+  {
+    title: "Nerve & Radiating Pain Conditions",
+    items: [
+      "Sciatic Nerve Pain",
+      "Cervical Radiculopathy",
+      "Lumbar Radiculopathy",
+      "Neuropathic Pain",
+    ],
+  },
+  {
+    title: "Lifestyle & Postural Conditions",
+    items: [
+      "Postural Imbalance",
+      "Muscle Tightness & Imbalances",
+      "Repetitive Strain Injuries",
+      "Ergonomic & Workplace Dysfunction",
+    ],
+  },
 ]
 
 const treatmentMegaMenu = [
   {
+    title: "Core Assessment & Corrective Care",
+    titleColor: "#88849F",
+    items: [
+      "Postural Correction Programs",
+      "Ergonomic Assessment\n& Workplace Therapy",
+      "Mobility & Corrective Exercise Therapy",
+      "Breathing & Respiratory Therapy",
+      "EMG Biofeedback",
+    ],
+  },
+  {
     title: "Manual Therapy",
+    titleColor: "#88849F",
     items: [
       "Joint Mobilization",
       "Myofascial Release",
       "Trigger Point Therapy",
+      "Lymphatic Drainage Therapy",
     ],
   },
   {
-    title: "Advanced Clinical Technologies",
+    title: "Pain & Injury Areas",
+    titleColor: "#88849F",
     items: [
       "ANF Therapy",
       "Electrotherapy",
       "Class IV Laser Therapy",
       "Shockwave Therapy",
       "Dry Needling",
-      "BlazePod Training",
-      "Boba Pro Training",
-      "EMG Biofeedback",
     ],
   },
   {
     title: "Recovery & Performance Therapies",
+    titleColor: "#88849F",
     items: [
+      "Sports Recovery Therapy",
       "Kinesio Taping",
       "Cupping Therapy",
-      "Sports Recovery Therapy",
-      "Mobility & Corrective Exercise Therapy",
+      "Vibration Plate Therapy",
+      "BlazePod Training",
+      "Boba Pro Training",
     ],
   },
   {
-    title: "Recovery & Performance Therapies",
+    title: "Women's Health & Prenatal Care",
+    titleColor: "#88849F",
     items: [
-      "Lymphatic Drainage Therapy",
-      "Postural Correction Programs",
-      "Breathing & Respiratory Therapy",
-      "Vibration Plate Therapy",
-      "Ergonomic Assessment\n& Workplace Therapy",
+      "Women's Health Physiotherapy",
+      "Prenatal Physiotherapy",
+      "Postnatal Physiotherapy",
+      "Pelvic Floor Rehabilitation",
     ],
   },
 ]
@@ -196,14 +218,17 @@ export default function Navbar() {
                 >
                   <div className="mx-auto w-full max-w-275 bg-white rounded-2xl shadow-xl border border-slate-100 p-8 cursor-auto">
                     <div className="grid grid-cols-4 gap-8">
-                      {physiotherapyMegaMenu.map((column, colIdx) => (
+                      {physiotherapyMegaMenu.map((group, colIdx) => (
                         <div key={colIdx}>
+                          <h3 className="text-[#88849F] text-[1.15rem] font-medium mb-6 leading-tight">
+                            {group.title}
+                          </h3>
                           <ul className="space-y-4">
-                            {column.map((subItem, itemIdx) => (
+                            {group.items.map((subItem, itemIdx) => (
                               <li key={itemIdx}>
                                 <Link
                                   href="#"
-                                  className="text-[#373355] hover:text-[#68638E] text-[15px] transition-colors block"
+                                  className="text-[#9A97A9] hover:text-[#68638E] text-[15px] transition-colors block"
                                 >
                                   {subItem}
                                 </Link>
@@ -230,10 +255,10 @@ export default function Navbar() {
                   "
                 >
                   <div className="mx-auto w-full max-w-275 bg-white rounded-2xl shadow-xl border border-slate-100 p-8 cursor-auto">
-                    <div className="grid grid-cols-4 gap-8">
+                    <div className="grid grid-cols-5 gap-8">
                       {treatmentMegaMenu.map((group, idx) => (
                         <div key={idx}>
-                          <h3 className="text-[#88849F] text-[1.15rem] font-medium mb-6 leading-tight">
+                          <h3 className="text-[1.15rem] font-medium mb-6 leading-tight" style={{ color: group.titleColor }}>
                             {group.title}
                           </h3>
                           <ul className="space-y-4">

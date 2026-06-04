@@ -87,15 +87,16 @@ export default function RehabIntro() {
     <section className="relative flex w-full overflow-hidden aspect-[21/9] bg-[url('/stockback.png')] bg-cover bg-center">
       {/* Left Content */}
       <div className="z-30 flex w-[50%] shrink-0 flex-col justify-start pl-[7%] pt-[5%]">
-        <p className="bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text text-sm italic tracking-wide text-transparent sm:text-base md:text-xl lg:text-2xl">
+        <p className="bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text text-sm italic tracking-wide text-transparent text-[clamp(0.55rem,1.5vw,2.0rem)]">
           One stop for all your
         </p>
 
-        <h2 className="whitespace-nowrap bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text text-3xl font-normal leading-tight tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+        <h2 className="whitespace-nowrap bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text text-3xl font-normal leading-tight tracking-tight text-transparent text-[clamp(1.45rem,5vw,3.5rem)]">
           Rehab and
           <br />
           Fitness Needs
         </h2>
+         
       </div>
 
       {/* Right Side */}

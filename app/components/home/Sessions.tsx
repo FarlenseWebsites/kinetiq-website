@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import SpaceCard from "../ui/SpaceCard"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
@@ -51,11 +52,12 @@ export default function Spaces() {
       
         {/* ── ACTION BAR ── */}
         <div className="flex justify-end mt-6 mb-6">
-          <button
-            className="px-6 py-2 rounded-lg bg-[#D2D0DD] border border-[#373355] font-medium text-[#373355] text-sm  hover:bg-black/5 "
+          <Link
+            href="/kinetiqSessions"
+            className="px-6 py-2 rounded-lg bg-[#D2D0DD] border border-[#373355] font-medium text-[#373355] text-sm hover:bg-black/5"
           >
             Explore All
-          </button>
+          </Link>
         </div>
 
         {/* ── 2 × 2 GRID ── */}

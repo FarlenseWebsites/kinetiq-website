@@ -14,11 +14,11 @@ export default function Footer() {
 
           {/* Section 1: Quick Links */}
           <div className="md:col-span-3">
-            <h4 className="text-[#ff914D] italic text-lg font-medium mb-6">
+            <h4 className="text-[#ff914D]  text-lg font-medium mb-6">
               Quick Links
             </h4>
 
-            <nav className="flex flex-col gap-4 italic font-light text-[14px] sm:text-[15px]">
+            <nav className="flex flex-col gap-4  font-light text-[14px] sm:text-[15px]">
               <Link href="/" className="hover:opacity-70 transition-opacity">
                 Home
               </Link>
@@ -88,7 +88,7 @@ export default function Footer() {
           </div>
 
           {/* Section 2: Contact Info */}
-          <div className="md:col-span-5 flex flex-col gap-8 italic font-light text-[14px] sm:text-[15px] pt-1">
+          <div className="md:col-span-5 flex flex-col gap-8  font-light text-[14px] sm:text-[15px] pt-1">
 
             {/* Address 1 */}
             <div className="flex gap-4">

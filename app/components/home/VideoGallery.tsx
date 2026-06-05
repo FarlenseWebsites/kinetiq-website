@@ -1,132 +1,119 @@
 "use client"
 
-import { Fragment, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 const videos = ["/video1.mp4", "/video2.mp4", "/video3.mp4"]
 
-export default function EquipmentGallery() {
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const [current, setCurrent] = useState(0)
+export default function VideoGallery() {
+  const [active, setActive] = useState(1)
+  // slots 0-2 = desktop refs, slots 3-5 = mobile refs
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>(Array(6).fill(null))
 
-  const scrollTo = (index: number) => {
-    const el = scrollRef.current
-    if (!el) return
-    const next = Math.max(0, Math.min(videos.length - 1, index))
-    el.scrollTo({ left: next * el.clientWidth, behavior: "smooth" })
-    setCurrent(next)
-  }
-
-  const onScroll = () => {
-    const el = scrollRef.current
-    if (!el) return
-    setCurrent(Math.round(el.scrollLeft / el.clientWidth))
-  }
+  useEffect(() => {
+    videoRefs.current.forEach((video) => {
+      if (!video) return
+      video.play().catch(() => {})
+    })
+  }, [])
 
   return (
-    <div className="relative bg-[#f4f4f4]">
-      {/*
-        SVG must NOT use overflow-hidden — that can prevent clipPath defs from
-        being exposed to external CSS url() references in some browsers.
-      */}
-      <svg className="absolute w-0 h-0" aria-hidden="true">
-        <defs>
-          <clipPath id="eq-concave" clipPathUnits="objectBoundingBox">
-            <path d="
-              M 0,0.01
-              Q 0,0 0.01,0
-              C 0.30,0.08 0.70,0.08 0.99,0
-              Q 1,0 1,0.01
-              L 1,0.99
-              Q 1,1 0.99,1
-              C 0.70,0.92 0.30,0.92 0.01,1
-              Q 0,1 0,0.99
-              Z
-            " />
-          </clipPath>
-        </defs>
-      </svg>
+    <section style={{ background: "#F4F4F4" }} className="">
+      <style>{`
+        @keyframes spin-ring {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+        .ring-spin { animation: spin-ring 3s linear infinite; }
+      `}</style>
 
-      <section className="relative bg-[#F4F4F4]">
-        <div className="flex items-center justify-center pb-10">
+      {/* Desktop */}
+       <div className="flex items-center justify-center pb-20">
           <ButtonWithTwoDots label="Testimonial" />
-        </div>
-
-        <div style={{ clipPath: "url(#eq-concave)" }}>
-          {/* DESKTOP — 3 videos filling the shape */}
-          <div
-            className="hidden md:flex w-full"
-            style={{ height: "clamp(380px, 52vw, 620px)" }}
-          >
-            {videos.map((src, i) => (
-              <Fragment key={src}>
-                {i > 0 && <div className="w-5 shrink-0 bg-[#F4F4F4]" />}
-                <div className="relative flex-1 h-full">
-                  <video
-                    src={src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    controls
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                </div>
-              </Fragment>
-            ))}
-          </div>
-
-          {/* MOBILE — swipeable carousel with prev/next arrows */}
-          <div
-            className="md:hidden relative"
-            style={{ height: "clamp(260px, 72vw, 420px)" }}
-          >
+       </div>
+      <div
+        className="hidden md:flex items-center justify-center"
+        style={{ gap: "36px", minHeight: "540px", padding: "0 48px" }}
+      >
+        {videos.map((src, i) => {
+          const isActive = i === active
+          return (
             <div
-              ref={scrollRef}
-              onScroll={onScroll}
-              className="flex w-full h-full overflow-x-auto snap-x snap-mandatory scrollbar-none [&::-webkit-scrollbar]:hidden"
+              key={src}
+              onMouseEnter={() => setActive(i)}
+              style={{
+                position: "relative",
+                width: isActive ? "300px" : "175px",
+                aspectRatio: "9 / 16",
+                flexShrink: 0,
+                transition: "width 0.5s cubic-bezier(0.4,0,0.2,1)",
+                cursor: isActive ? "default" : "pointer",
+              }}
             >
-              {videos.map((src) => (
-                <div key={src} className="shrink-0 w-full h-full snap-center">
-                  <video
-                    src={src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    controls
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
+             
+
+              {/* Video clip */}
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  filter: isActive ? "none" : "blur(1.5px)",
+                  transition: "filter 0.5s ease",
+                }}
+              >
+                <video
+                  ref={(el) => { videoRefs.current[i] = el }}
+                  src={src}
+                  muted
+                  loop
+                  playsInline
+                  autoPlay
+                  controls
+                  style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
+                />
+              </div>
             </div>
+          )
+        })}
+      </div>
 
-            {current > 0 && (
-              <button
-                onClick={() => scrollTo(current - 1)}
-                className="absolute left-3 top-1/2 -translate-y-1/2 z-30 bg-white/75 backdrop-blur-sm rounded-full p-2.5 shadow-md"
-                aria-label="Previous video"
-              >
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M11 14L6 9L11 4" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            )}
-
-            {current < videos.length - 1 && (
-              <button
-                onClick={() => scrollTo(current + 1)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 z-30 bg-white/75 backdrop-blur-sm rounded-full p-2.5 shadow-md"
-                aria-label="Next video"
-              >
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <path d="M7 4L12 9L7 14" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            )}
-          </div>
-        </div>
-      </section>
-    </div>
+      {/* Mobile: accordion expand */}
+      <div
+        className="flex md:hidden items-stretch gap-3 px-4"
+        style={{ height: "clamp(240px, 72vw, 380px)" }}
+      >
+        {videos.map((src, i) => {
+          const isActive = i === active
+          return (
+            <div
+              key={src}
+              onClick={() => setActive(i)}
+              style={{
+                flex: isActive ? 2 : 1,
+                borderRadius: "12px",
+                overflow: "hidden",
+                position: "relative",
+                transition: "flex 0.5s cubic-bezier(0.4,0,0.2,1), filter 0.5s ease",
+                filter: isActive ? "none" : "blur(1px)",
+                cursor: isActive ? "default" : "pointer",
+              }}
+            >
+              <video
+                ref={(el) => { videoRefs.current[3 + i] = el }}
+                src={src}
+                muted
+                loop
+                playsInline
+                autoPlay
+                controls={isActive}
+                style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
+              />
+            </div>
+          )
+        })}
+      </div>
+    </section>
   )
 }

@@ -78,7 +78,7 @@ export default function ContactForm() {
         {/* RIGHT — form */}
         <div className="flex flex-col justify-center max-w-5xl items-center gap-5 px-8 lg:px-12 py-10 lg:py-6">
           <div className="">
-             <h1 className="text-[#373355] font-medium text-[clamp(1.45rem,4vw,3.5rem)] mt-8 leading-tight">
+             <h1 className="text-[#373355] font-medium text-[clamp(1.45rem,4vw,2.5rem)] mt-8 leading-tight">
                 We&apos;d love to hear from you
               </h1>
             <p className="mt-2 text-[#373355] text-center text-sm sm:text-base cursor-pointer">

@@ -19,14 +19,14 @@ const sessions = [
   },
 
   {
-    title: "Online Physiotherapy",
+    title: "Online Sessions",
     description:
         "Access expert consultations and guided rehabilitation from anywhere. Our online sessions ensure continuity of care with structured programs, real-time guidance, and progress tracking tailored to your needs.",
     image: "/online.png",
   },
 
   {
-    title: "Corporate",
+    title: "Corporate Wellness",
     description:
       "Comprehensive workplace wellness solutions designed to reduce pain, improve posture, and enhance employee productivity. From on-site sessions to ergonomic assessments, we help build healthier, more resilient teams.",
     image: "/corporate.png",

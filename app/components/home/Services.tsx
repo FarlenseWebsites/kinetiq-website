@@ -39,9 +39,24 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-10 sm:py-14 md:py-20 px-4 sm:px-6 md:px-8 bg-[#F4F4F4]">
+    <section className="py-10 sm:py-14 md:py-10 px-4 sm:px-6 md:px-8 bg-[#F4F4F4]">
       <div className="max-w-5xl mx-auto">
         {/* Grid Layout for Cards */}
+        <div className="flex flex-col items-center mb-10">
+          <div className="flex items-center gap-5">
+            <button
+              aria-label="Previous Slide"
+              className="h-5 w-5 rounded-full bg-[#8681a5]"
+            /><button
+              aria-label="Previous Slide"
+              className="h-5 w-5 rounded-full bg-[#8681a5]"
+            />
+          </div>
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,2vw,3.5rem)] mt-8 leading-tight">
+           We Tailored......
+          </h1>
+        </div>
+       
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 md:gap-x-10 gap-y-2 sm:gap-y-4 mb-10 sm:mb-14 md:mb-16">
           {services.map((service, index) => (
             <FeatureCard

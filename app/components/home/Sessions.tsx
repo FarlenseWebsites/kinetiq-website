@@ -21,14 +21,14 @@ const spaces = [
   },
   {
     number: "03",
-    title: "Online Physiotherapy",
+    title: "Online Sessions",
     subtitle: "Consultations and guided rehab programs from wherever you are.",
     image: "/online.png",
     flip: false,
   },
   {
     number: "04",
-    title: "Corporate",
+    title: "Corporate Wellness",
     subtitle: "On-site and customized physiotherapy solutions for modern workplaces.",
     image: "/corporate.png",
     flip: false,
@@ -39,7 +39,7 @@ export default function Spaces() {
   return (
     <section className="bg-[#F4F4F4] py-10 sm:py-16 md:py-20 px-6 sm:px-12 md:px-20 lg:px-28 xl:px-36">
       {/* FIX: Added max-w-[1400px] and mx-auto so it stays centered and stops growing on huge monitors */}
-      <div className="w-full  mx-auto flex flex-col">
+      <div className="max-w-7xl mx-auto flex flex-col">
 
         {/* ── HEADER AREA ── */}
         <div className="flex flex-col items-center text-center">

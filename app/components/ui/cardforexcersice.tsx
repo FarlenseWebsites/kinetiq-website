@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface FeatureCardProps {
   title?: string;
@@ -29,11 +29,21 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   className = "",
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 639px)');
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
 
   const dotStyle = (idx: number, colIdx: number): React.CSSProperties => {
     const isActive = dotOrder.indexOf(idx) < activeDots;
+    const showDark = isActive && (isHovered || isMobile);
     return {
-      backgroundColor: isActive && isHovered ? '#373355' : '#ff914d',
+      backgroundColor: showDark ? '#373355' : '#ff914d',
       transition: 'background-color 0.3s ease',
       transitionDelay: isHovered && isActive ? `${colIdx * 120}ms` : '0ms',
     };

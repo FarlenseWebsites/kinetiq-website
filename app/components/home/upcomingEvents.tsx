@@ -29,19 +29,19 @@ const upcomingEvents: EventCard[] = [
     id: 4,
     title: "Menopause Wellness Program",
     date: "June 2026",
-    media: { type: "image", src: "/insta1.png", alt: "Summer fitness camp" },
+    media: { type: "image", src: "/menopause.png", alt: "Summer fitness camp" },
   },
   {
     id: 5,
     title: "Master class for Athletes",
     date: "June 2026",
-    media: { type: "image", src: "/insta2.png", alt: "Sports recovery workshop" },
+    media: { type: "image", src: "/masterclass.png", alt: "Sports recovery workshop" },
   },
   {
     id: 6,
     title: "Summer Fitness Camp",
     date: "June 2026",
-    media: { type: "image", src: "/insta3.png", alt: "Community rehab drive" },
+    media: { type: "image", src: "/summer.png", alt: "Community rehab drive" },
   },
 ]
 
@@ -65,7 +65,7 @@ function EventMedia({ media }: { media: MediaItem }) {
       alt={media.alt}
       fill
       sizes="(max-width: 640px) 80vw, (max-width: 1024px) 45vw, 30vw"
-      className="object-cover"
+      className="object-cover object-top"
     />
   )
 }
@@ -81,13 +81,13 @@ function EventCardItem({ event }: { event: EventCard }) {
         className="group bg-white rounded-2xl overflow-hidden shadow-md border-2 border-transparent hover:border-[#FF914D] transition-all duration-300 h-full"
       >
         {/* Media */}
-        <div className="relative aspect-video overflow-hidden bg-[#373355]">
+        <div className="relative aspect-square overflow-hidden bg-[#373355]">
           <EventMedia media={event.media} />
 
-          {/* Date badge */}
+          {/* Date badge 
           <div className="absolute top-3 left-3 bg-[#373355]/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-1 rounded-full">
             {event.date}
-          </div>
+          </div>*/}
         </div>
 
         {/* Card body */}
@@ -221,19 +221,16 @@ function EventCarousel({ events }: { events: EventCard[] }) {
 export default function EventsSection() {
   return (
     <section className="bg-[#F4F4F4] py-16 sm:py-20">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Section header */}
         <div
           className="flex flex-col items-center mb-14"
         >
           <ButtonWithTwoDots label="KinetiQ Community" />
-          <h2
-            className="mt-8 text-[#373355] font-medium text-center"
-            style={{ fontSize: "clamp(1.75rem, 3vw + 0.25rem, 3rem)" }}
-          >
-            Upcoming Events
-          </h2>
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+          Upcoming Events
+          </h1>
         </div>
         {/* Upcoming Events */}
         <motion.div

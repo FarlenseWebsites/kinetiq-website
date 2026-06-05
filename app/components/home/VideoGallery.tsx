@@ -11,11 +11,16 @@ export default function VideoGallery() {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>(Array(6).fill(null))
 
   useEffect(() => {
-    videoRefs.current.forEach((video) => {
+    videoRefs.current.forEach((video, refIdx) => {
       if (!video) return
-      video.play().catch(() => {})
+      if (refIdx % 3 === active) {
+        video.play().catch(() => {})
+      } else {
+        video.pause()
+        video.currentTime = 0
+      }
     })
-  }, [])
+  }, [active])
 
   return (
     <section style={{ background: "#F4F4F4" }} className="">
@@ -69,7 +74,6 @@ export default function VideoGallery() {
                   muted
                   loop
                   playsInline
-                  autoPlay
                   controls
                   style={{ width: "100%", height: "100%", display: "block", objectFit: "cover" }}
                 />

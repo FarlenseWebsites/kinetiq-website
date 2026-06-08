@@ -78,14 +78,14 @@ function TeamCard({
           >
             {member.name}
           </h3>
-          <span
+          {/* <span
             className="flex items-center gap-1.5 uppercase tracking-widest text-[#68628e]/80 font-medium"
             style={{ fontSize: "9px", letterSpacing: "0.2em" }}
           >
             <span className="h-1 w-1 rounded-full bg-[#Ff914d] shrink-0" />
             {member.role}
             <span className="h-1 w-1 rounded-full bg-[#Ff914d] shrink-0" />
-          </span>
+          </span> */}
           <p
             className="text-[#68628e] leading-relaxed mt-1"
             style={{ fontSize: "clamp(0.65rem, 1.8vw, 0.78rem)" }}

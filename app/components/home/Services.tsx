@@ -43,7 +43,7 @@ export default function Services() {
       <div className="max-w-5xl mx-auto">
         {/* Grid Layout for Cards */}
         <div className="flex flex-col items-center mb-10">
-          <div className="flex items-center gap-5">
+          {/* <div className="flex items-center gap-5">
             <button
               aria-label="Previous Slide"
               className="h-5 w-5 rounded-full bg-[#8681a5]"
@@ -51,9 +51,9 @@ export default function Services() {
               aria-label="Previous Slide"
               className="h-5 w-5 rounded-full bg-[#8681a5]"
             />
-          </div>
+          </div> */}
           <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,2vw,3.5rem)] mt-8 leading-tight">
-           We Tailored......
+          Our Programs are tailored for...
           </h1>
         </div>
        

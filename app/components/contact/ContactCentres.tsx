@@ -2,13 +2,13 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 const centres = [
   {
-    label: "Centre 1",
+    label: "Golf Course Road",
     address:
       "2nd Floor, F 11 16/17, Golf Course Road, DLF Phase 1, Sector 27, Gurugram, Haryana 122002",
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.4316833970497!2d77.0939389!3d28.4665435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1960c4b62a15%3A0xb16ca90c9680d6d5!2sKinetiQ%20Physiotherapy!5e0!3m2!1sen!2sin!4v1780297154631!5m2!1sen!2sin",
   },
   {
-    label: "Centre 2",
+    label: "Golf Course Extension Road",
     address: "AIPL Joy Central Mall, Sector 65, Gurugram, Haryana 122101",
     mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.466927370292!2d77.06049759999999!3d28.4051645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23070debe56b%3A0xd1704c37bdff7e47!2sKinetiq%20Physiotherapy!5e0!3m2!1sen!2sin!4v1780297026647!5m2!1sen!2sin",
   },

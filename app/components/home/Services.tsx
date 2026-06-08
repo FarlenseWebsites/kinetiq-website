@@ -32,7 +32,7 @@ const services = [
   
   {
     title: "Schools & Academies",
-    description: "Curated fitness program and posture screening",
+    description: "Curated fitness programs and posture screening",
     activeDots: 6,
   },
 ]

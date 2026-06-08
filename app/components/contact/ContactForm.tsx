@@ -130,8 +130,9 @@ export default function ContactForm() {
                   <option value="general">General Enquiry</option>
                   <option value="appointment">Book Appointment</option>
                   <option value="corporate">Corporate Wellness</option>
-                  <option value="career">Career</option>
-                  <option value="other">Other</option>
+                  <option value="careers">Careers</option>
+                  <option value="partnerships">Business Enquiry</option>
+                  <option value="others">Others</option>
                 </select>
               </div>
             </div>

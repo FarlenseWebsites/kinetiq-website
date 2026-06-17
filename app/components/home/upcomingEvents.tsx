@@ -179,7 +179,7 @@ function EventCarousel({ events }: { events: EventCard[] }) {
         <button
           onClick={() => scrollByCard(-1)}
           aria-label="Previous event"
-          className="absolute left-0 top-[40%] -translate-y-1/2 -translate-x-3 w-9 h-9 bg-[#373355] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#FF914D] transition-colors duration-200 z-10"
+          className="absolute left-0 top-[40%] -translate-y-1/2  w-9 h-9 bg-[#373355] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#FF914D] transition-colors duration-200 z-10"
         >
           <ChevronLeft size={18} />
         </button>
@@ -190,7 +190,7 @@ function EventCarousel({ events }: { events: EventCard[] }) {
         <button
           onClick={() => scrollByCard(1)}
           aria-label="Next event"
-          className="absolute right-0 top-[40%] -translate-y-1/2 translate-x-3 w-9 h-9 bg-[#373355] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#FF914D] transition-colors duration-200 z-10"
+          className="absolute right-0 top-[40%] -translate-y-1/2  w-9 h-9 bg-[#373355] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#FF914D] transition-colors duration-200 z-10"
         >
           <ChevronRight size={18} />
         </button>
@@ -220,7 +220,7 @@ function EventCarousel({ events }: { events: EventCard[] }) {
 
 export default function EventsSection() {
   return (
-    <section className="bg-[#F4F4F4] py-16 sm:py-20">
+    <section className="bg-[#F4F4F4] pt-16 sm:pt-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Section header */}

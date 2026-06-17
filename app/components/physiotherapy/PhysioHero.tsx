@@ -5,7 +5,7 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 export default function PhysioHero() {
   return (
-    <section className="relative overflow-hidden flex flex-col items-center justify-start pt-[8vw]">
+    <section className="relative overflow-hidden flex flex-col items-center justify-start pt-20">
 
       {/* Button */}
       <ButtonWithTwoDots label="Types of Physiotherapies" />

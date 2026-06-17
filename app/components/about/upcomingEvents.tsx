@@ -216,7 +216,7 @@ function EventCarousel({ events }: { events: EventCard[] }) {
 
 export default function EventsSection() {
   return (
-    <section className="bg-[#F4F4F4] py-16 sm:py-20">
+    <section className="bg-[#F4F4F4] pt-16 sm:pt-20">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
         {/* Section header */}

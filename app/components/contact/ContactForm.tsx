@@ -54,13 +54,13 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contact-form" className="w-full bg-[#Fee2d2] overflow-hidden lg:aspect-21/9 scroll-mt-32">
+    <section id="contact-form" className="w-full bg-[#F5EFE4] overflow-hidden lg:aspect-21/9 scroll-mt-32">
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-full">
 
         {/* LEFT — image */}
-        <div className="relative w-full h-64 lg:h-full overflow-hidden">
+        <div className="relative w-full h-94 lg:h-full overflow-hidden">
           <Image
-            src="/contactform1.png"
+            src="/contactform.jpg"
             alt="Physiotherapy session"
             fill
             className="object-cover object-left"
@@ -70,7 +70,7 @@ export default function ContactForm() {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "linear-gradient(to right, transparent 65%, #Fee2d2 100%)",
+                "linear-gradient(to right, transparent 75%, #F5EFE4 100%)",
             }}
           />
         </div>

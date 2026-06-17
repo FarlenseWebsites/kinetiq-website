@@ -16,7 +16,7 @@ const centres = [
 
 export default function ContactCentres() {
   return (
-    <section id="contact-centres" className="bg-[#f4f4f4] py-16 md:py-20 px-4 sm:px-6 md:px-8 scroll-mt-32">
+    <section id="contact-centres" className="bg-[#f4f4f4] py-10 md:py-20 px-4 sm:px-6 md:px-8 scroll-mt-32">
       {/* Added flex-col and items-center to properly center the top button */}
       <div className="max-w-5xl mx-auto flex flex-col items-center">
         
@@ -24,7 +24,7 @@ export default function ContactCentres() {
         <ButtonWithTwoDots label="Visit KinetiQ" />
 
         {/* Map grid - 1 column on mobile, 2 columns on desktop */}
-        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 w-full">
+        <div className="mt-12 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 w-full">
           {centres.map((centre) => (
             // Added items-center so the map and the text align perfectly in the middle
             <div key={centre.label} className="flex flex-col items-center gap-5 w-full">

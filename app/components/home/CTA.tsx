@@ -5,10 +5,10 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 export default function CTA() {
   return (
-    <section className="flex flex-col bg-[#F4F4F4] items-center w-full">
+    <section className="flex flex-col bg-[#F4F4F4] items-center w-full py-15">
 
       {/* book button */}
-      <div className="pb-20">
+      <div className="pb-15">
         <ButtonWithTwoDots label="Book Now" />
       </div>
 
@@ -31,7 +31,6 @@ export default function CTA() {
         <div className="absolute inset-0 bg-black/30" />
 
         {/* content text */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-[#F4F4F4]" />
 
         <div className="relative z-10 text-center px-5 h-full flex flex-col items-center justify-center mb-8 sm:mb-12 md:mb-20">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-semi text-[#373355] mb-4 sm:mb-6 italic tracking-tight drop-shadow-lg">

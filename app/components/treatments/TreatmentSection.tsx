@@ -52,9 +52,15 @@ export default function TreatmentSection({
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 xl:gap-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 xl:gap-14 md:pb-16">
           {treatments.map((t, idx) => (
-            <div key={idx} id={slugifyAnchor(t.title)} className="scroll-mt-32">
+            <div
+              key={idx}
+              id={slugifyAnchor(t.title)}
+              className={`scroll-mt-32 transition-all duration-300 ${
+                idx % 2 === 1 ? "md:translate-y-40" : ""
+              }`}
+            >
               <TreatmentCard
                 title={t.title}
                 description={t.description}

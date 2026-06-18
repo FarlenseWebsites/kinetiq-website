@@ -5,9 +5,9 @@ import Image from "next/image"
 
 // 1. Extract images into a clean array
 const banners = [
-    { id: 1, src: "/rehabbanner.png", alt: "Rehab banner" },
-    { id: 2, src: "/posturebanner.png", alt: "Posture banner" },
-    { id: 3, src: "/fitnessbanner.png", alt: "Fitness banner" },
+    { id: 1, src: "/rehabbanner.jpg", alt: "Rehab banner" },
+    { id: 2, src: "/posturebanner.jpg", alt: "Posture banner" },
+    { id: 3, src: "/fitnessbanner.jpg", alt: "Fitness banner" },
 ]
 
 export default function RehabFeature() {

@@ -7,11 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "next build && wrangler pages deploy out --project-name kinetiq"
+    "deploy": "next build && wrangler deploy"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@opennextjs/cloudflare": "^1.19.11",
     "clsx": "^2.1.1",
     "flowbite": "^4.0.2",
     "framer-motion": "^12.38.0",

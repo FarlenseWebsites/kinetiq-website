@@ -176,7 +176,7 @@ const specialisedWellness = [
     title: "Women's Health Physiotherapy",
     description:
       "Focused care for pregnancy, postnatal recovery, and hormonal changes across life stages. Addresses pelvic floor dysfunction, pregnancy-related back pain, and post-menopause fatigue. Aims to restore strength, stability, and overall well-being through targeted rehabilitation.",
-    image: "/posturebanner.png",
+    image: "/posturebanner.jpg",
   },
   {
     title: "Prostate Physiotherapy",
@@ -188,7 +188,7 @@ const specialisedWellness = [
     title: "Palliative Physiotherapy",
     description:
       "Compassionate physiotherapy focused on comfort, maintaining mobility, and improving quality of life for individuals with life-limiting conditions. Care is adapted to energy levels, symptom management, and individual goals.",
-    image: "/rehabbanner.png",
+    image: "/rehabbanner.jpg",
   },
 ];
 

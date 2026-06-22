@@ -133,7 +133,7 @@ const aboutMenu = [
 
 const contactMenu = [
   { label: "Visit KinetiQ", href: contactLinks.centres },
-  { label: "Lorem Ipsum", href: contactLinks.form },
+  { label: "Make an Enquiry", href: contactLinks.form },
 ]
 
 export default function Navbar() {

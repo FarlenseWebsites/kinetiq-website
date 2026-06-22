@@ -36,10 +36,8 @@ export default function ContactHero() {
             background: "conic-gradient(from 180deg, #373355 0%, #68628E 100%)",
           }}
         >
-          <div className="absolute left-[20%] pt-[25%] inset-0 text-[2vw] m-auto w-[40%] italic flex items-center justify-end">
-            Lorem ipsum
-            <br />
-            Lorem ipsum
+          <div className="absolute text-center inset-0 text-[2.3vw] m-auto w-[40%]  flex items-center justify-center">
+            Get in Touch with KinetiQ
 
           </div>
         </div>

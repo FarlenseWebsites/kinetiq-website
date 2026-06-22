@@ -125,7 +125,7 @@ export default function ContactForm() {
                   className="flex-1 bg-transparent text-[#68628e] text-sm outline-none border-0 appearance-none cursor-pointer"
                 >
                   <option value="" disabled>
-                    I am Enquiring Type
+                    Enquiry Type
                   </option>
                   <option value="general">General Enquiry</option>
                   <option value="appointment">Book Appointment</option>

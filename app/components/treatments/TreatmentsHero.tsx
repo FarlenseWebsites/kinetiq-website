@@ -37,7 +37,7 @@ export default function PhysioHero() {
         {/* Tied entirely to container width, guaranteeing it never squishes */}
         <div className="absolute top-1/2 right-0 bg-[#ff914d] -translate-y-1/2 w-[35%] aspect-square rounded-full pointer-events-none z-20 flex flex-col items-center justify-center">
           
-          <div className="flex flex-col items-center justify-center text-[#373355] text-center italic h-full w-full px-[12%]">
+          <div className="flex flex-col items-center justify-center text-[#373355] text-center  h-full w-full px-[12%]">
             
             {/* Pure vw for text so it scales identically with the circles */}
             <span className="text-[1.5vw] leading-[1.3] font-medium">

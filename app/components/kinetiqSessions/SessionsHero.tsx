@@ -50,9 +50,7 @@ export default function SessionsHero() {
             <h2 className="text-white font-light leading-[0.9] text-[5.5vw]">
               Sessions
             </h2>
-            <p className="mt-[1vw] text-white/90 italic text-[2.2vw] leading-relaxed max-w-[80%]">
-             Lorem Ipsum
-            </p>
+           
           </div>
 
         </div>

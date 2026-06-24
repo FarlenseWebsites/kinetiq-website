@@ -45,7 +45,7 @@ export default function TreatmentSection({
           </h2>
           {subtitle && (
             <p
-              className={`text-center text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5 ${subtitleColor}`}
+              className={`text-center text-sm sm:text-base  leading-relaxed max-w-lg mx-auto mt-5 ${subtitleColor}`}
             >
               {subtitle}
             </p>

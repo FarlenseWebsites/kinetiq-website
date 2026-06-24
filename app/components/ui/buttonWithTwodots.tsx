@@ -16,7 +16,7 @@ const ButtonWithTwoDots = ({ label = "Book Now", className, ...props }: Props) =
         className={cn(`
           rounded-full bg-[#Ff914d]
           px-8 py-2
-          text-sm font-medium italic text-[#373355]
+          text-sm font-medium  text-[#373355]
           shadow-lg transition-all duration-300
           md:px-8 md:py-2 md:text-base
         `, className)}

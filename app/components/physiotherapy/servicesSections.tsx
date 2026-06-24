@@ -42,11 +42,7 @@ export default function ServicesSection() {
           <h1 className="text-center text-2xl sm:text-3xl font-medium bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text text-transparent mt-7">
             Nerve & Radiating Pain Conditions
           </h1>
-          <p className="text-center text-[#373355] text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5">
-            Targeted treatment for nerve compression,
-            <br />
-            radiating pain, and neuropathic symptoms.
-          </p>
+          
         </div>
 
         {/* Mobile: single column, alternating mirrored */}

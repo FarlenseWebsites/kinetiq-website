@@ -29,14 +29,14 @@ export default function AboutIntro() {
         {/* Text — absolutely spans full height so it can center vertically */}
         <div className="absolute inset-y-0 left-0 z-10 flex flex-col justify-start pt-[8vw]  md:pt-6 px-[6%] w-full md:w-[52%]">
           <p
-            className="italic font-medium text-[#373355] leading-relaxed"
+            className=" font-medium text-[#373355] leading-relaxed"
             style={{ fontSize: "clamp(0.95rem, 1.4vw, 1.25rem)" }}
           >
             KinetiQ is a physiotherapy and functional wellness platform rooted
             in clinical precision and personalised care.
           </p>
           <p
-            className="mt-[3vw] md:mt-[1.8vw] italic font-medium text-[#373355] leading-relaxed"
+            className="mt-[3vw] md:mt-[1.8vw]  font-medium text-[#373355] leading-relaxed"
             style={{ fontSize: "clamp(0.95rem, 1.4vw, 1.25rem)" }}
           >
             We combine evidence-based physiotherapy, functional strength

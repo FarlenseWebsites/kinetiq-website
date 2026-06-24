@@ -61,23 +61,23 @@ export default function AboutHero() {
       </div>
 
       {/* Main Quote Block — forced to two lines */}
-      <div className="relative z-10 text-center px-6 sm:px-10 w-[90vw] max-w-[640px]">
-        <span className="absolute left-1 top-[-10px] text-[#FF914D] font-serif text-[36px] sm:text-[52px] leading-none select-none">
-          &ldquo;
-        </span>
-
-        <p className="font-normal italic text-center text-base sm:text-2xl md:text-[26px] tracking-tight text-[#2D2A43] leading-relaxed sm:whitespace-nowrap">
-          Recovery is not just about reducing pain.
-        </p>
-        <p className="font-normal italic text-center text-base sm:text-2xl md:text-[26px] tracking-tight text-[#2D2A43] leading-relaxed sm:whitespace-nowrap">
-          It&apos;s about restoring how you move, live, and perform.
-        </p>
-
-        <span className="absolute right-0 bottom-[-18px] text-[#FF914D] font-serif text-[36px] sm:text-[52px] leading-none select-none">
-          &rdquo;
-        </span>
-      </div>
-
+    <div className="relative z-10 text-center px-6 sm:px-10 w-[90vw] max-w-[640px] mx-auto">
+  <p className="font-normal text-center text-base sm:text-xl md:text-[26px] tracking-tight text-[#2D2A43] leading-relaxed md:whitespace-nowrap">
+    {/* Left Quote - Standard alignment */}
+    <span className="inline-block text-[#FF914D] font-serif text-[36px] sm:text-[52px] leading-none select-none align-middle mr-1 sm:mr-2 -translate-y-1 sm:-translate-y-2">
+      &ldquo;
+    </span>
+    Recovery is not just about reducing pain.
+  </p>
+  
+  <p className="font-normal text-center text-base sm:text-xl md:text-[26px] tracking-tight text-[#2D2A43] leading-relaxed md:whitespace-nowrap mt-1 md:mt-0">
+    It&apos;s about restoring how you move, live, and perform.
+    {/* Right Quote - Flipped vertically, with stronger upward translate to offset the empty font space */}
+    <span className="inline-block text-[#FF914D] font-serif text-[36px] sm:text-[52px] leading-none select-none -scale-y-100 align-middle ml-1 sm:ml-2 -translate-y-4 sm:-translate-y-6 md:-translate-y-7">
+      &rdquo;
+    </span>
+  </p>
+</div>
       {/* Newton's Cradle (With embedded Grid and Glow) */}
       <div className="relative z-10 mt-14 sm:mt-20 md:mt-25 w-full">
         <Pendulum />

@@ -68,7 +68,7 @@ export default function PhysioHero() {
             <h2 className="text-white font-light leading-[0.9] text-[4.5vw]">
               & Services
             </h2>
-            <p className="mt-[1vw] text-white/90 italic text-[1.2vw] leading-relaxed max-w-[80%]">
+            <p className="mt-[1vw] text-white/90  text-[1.2vw] leading-relaxed max-w-[80%]">
               We don’t just treat pain at KinetiQ.
               <br />
               We redefine how your body moves.

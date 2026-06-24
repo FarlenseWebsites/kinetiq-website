@@ -36,7 +36,7 @@ export default function FormMethod() {
       {/* Light strip — button + subtitle */}
       <div className="bg-[#f4f4f4] w-full flex flex-col items-center pb-10 ">
         <ButtonWithTwoDots label="Our Approach" />
-          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,3vw,3.5rem)] mt-8 leading-tight">
            The KinetiQ Method
           </h1>
       </div>

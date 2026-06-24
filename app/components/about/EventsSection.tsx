@@ -236,7 +236,7 @@ export default function EventsSection() {
         >
           <ButtonWithTwoDots label="Our Events" />
           
-          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,3vw,3.5rem)] mt-8 leading-tight">
            Past Events
           </h1>
           

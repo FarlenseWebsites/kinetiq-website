@@ -45,7 +45,7 @@ export default function Spaces() {
         <div className="flex flex-col items-center text-center">
           <ButtonWithTwoDots label="KinetiQ Sessions" />
           
-          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,3vw,3.5rem)] mt-8 leading-tight">
             Multiple Access Points
           </h1>
         </div>

@@ -197,7 +197,7 @@ export default function Navbar() {
                   inline-block
                   py-4
                   text-sm
-                  xl:text-[15px]
+                  xl:text-[18px]
                   font-medium
                   whitespace-nowrap
                   text-[#373355]

@@ -228,7 +228,7 @@ export default function EventsSection() {
           className="flex flex-col items-center mb-14"
         >
           <ButtonWithTwoDots label="KinetiQ Community" />
-          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,4vw,3.5rem)] mt-8 leading-tight">
+          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,3vw,3.5rem)] mt-8 leading-tight">
           Upcoming Events
           </h1>
         </div>

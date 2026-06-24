@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
 
@@ -40,25 +39,22 @@ export default function ValuesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   return (
-    <section id="about-values" className="w-full aspect-21/9 bg-[#f4f4f4]  overflow-hidden relative scroll-mt-32">
+    <section id="about-values" className="w-full aspect-21/9 bg-[#f4f4f4] overflow-hidden relative scroll-mt-32">
       <div className="absolute inset-0 flex mt-12">
 
         {/* Left column — image */}
-        <div className="w-[40%] l relative bg-[#FDE8da]">
+        <div className="w-[40%] relative bg-[#Fcf6ef]">
           <Image
-            src="/valuesimg.png"
+            src="/values.jpg"
             alt="Physiotherapy treatment"
             fill
-            className="object-fit object-bottom-left left-[-45%]"
+            className="object-cover object-bottom-left left-[-45%]"
             priority
           />
         </div>
 
         {/* Right column — content with curved left edge */}
-        <div
-          className="flex-1 bg-[#FDE8da] relative z-10 overflow-hidden -ml-8"
-          style={{ borderTopLeftRadius: "4rem", borderBottomLeftRadius: "4rem" }}
-        >
+        <div className="flex-1 bg-[#Fcf6ef] relative z-10 overflow-hidden justify-center items-center">
           {values.map((v, i) => {
             const y = rowYPositions[i]
             const x = getContentX(y)
@@ -70,18 +66,21 @@ export default function ValuesSection() {
                 className="absolute"
                 style={{ top: `${y}%`, left: `${x}%` }}
               >
-                <motion.div
-                  initial={{ opacity: 0, x: 24 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  animate={{ x: isHovered ? 10 : 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, ease: "easeOut" }}
+                <div
                   onMouseEnter={() => setHoveredIndex(i)}
                   onMouseLeave={() => setHoveredIndex(null)}
                   className="absolute pointer-events-auto cursor-default"
-                  style={{ transform: "translateY(-50%)", width: "36vw" }}
+                  style={{
+                    // Apply zoom when hovered, otherwise default to 1
+                    transform: `translateY(-50%) scale(${isHovered ? 1.05 : 1})`,
+                    // Keep the zoom anchored to the left so it doesn't shift backward
+                    transformOrigin: "left center",
+                    // Smooth transition for the zoom effect
+                    transition: "transform 0.35s ease-out",
+                    width: "36vw" 
+                  }}
                 >
-                  <div className="flex items-baseline" style={{ gap: "1vw" }}>
+                  <div className="flex items-baseline" style={{ gap: "1.5vw" }}>
                     <span
                       className="font-medium leading-none text-[#37315B] tracking-tighter shrink-0"
                       style={{ fontSize: "3.8vw" }}
@@ -96,14 +95,14 @@ export default function ValuesSection() {
                         {v.title}
                       </h3>
                       <p
-                        className="italic text-[#37315B]/75 leading-relaxed"
+                        className="text-[#37315B]/75 leading-relaxed"
                         style={{ fontSize: "0.9vw" }}
                       >
                         {v.description}
                       </p>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
             )
           })}

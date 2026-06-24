@@ -31,7 +31,7 @@ export default function TreatmentCard({
         <h3
           className="mb-2 font-medium leading-tight text-white"
           style={{
-            fontSize: "clamp(24px, 2.5vw, 40px)",
+            fontSize: "clamp(24px, 2.2vw, 40px)",
           }}
         >
           {title}
@@ -40,7 +40,7 @@ export default function TreatmentCard({
         <p
           className="leading-relaxed text-white"
           style={{
-            fontSize: "clamp(13px, 1.2vw, 16px)",
+            fontSize: "clamp(13px, 0.9vw, 16px)",
           }}
         >
           {description}

@@ -91,7 +91,7 @@ export default function SpaceCard({
           {title}
         </h3>
 
-        <p className=" pr-30 leading-relaxed italic text-[#68628e] text-[clamp(13px,1.0vw,16px)]">
+        <p className=" pr-30 leading-relaxed  text-[#68628e] text-[clamp(13px,1.0vw,16px)]">
           {subtitle}
         </p>
       </div>

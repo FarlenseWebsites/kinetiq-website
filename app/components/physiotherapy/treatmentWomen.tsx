@@ -41,11 +41,7 @@ export default function PhysioWomenSection() {
           <h1 className="text-center text-2xl sm:text-3xl font-medium bg-linear-to-r from-[#68628E] to-[#373355] bg-clip-text text-transparent mt-7">
             Women's Health & Recovery
           </h1>
-          <p className="text-center text-[#373355] text-sm sm:text-base italic leading-relaxed max-w-lg mx-auto mt-5">
-            Hands-on techniques to relieve pain,
-            <br />
-            restore mobility, and improve joint function.
-          </p>
+          
         </div>
 
         {/* Mobile: single column, alternating mirrored */}

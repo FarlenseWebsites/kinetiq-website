@@ -1,4 +1,4 @@
-import HeroLanding from "./components/home/HeroLanding"
+import NewLanding from "./components/home/newlanding"
 import RehabFitness from "./components/home/onestopBanner"
 import Services from "./components/home/Services"
 import Spaces from "./components/home/Sessions"
@@ -10,8 +10,7 @@ import UpcomingEvents from "./components/home/upcomingEvents"
 export default function Home() {
   return (
     <>
-      <HeroLanding />
-      <RehabFitness />
+      <NewLanding />
       <Services />
       <BannerFeature />
       <Spaces />

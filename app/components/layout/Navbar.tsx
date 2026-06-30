@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
@@ -138,6 +139,24 @@ const contactMenu = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
+  const isHomePage = pathname === "/"
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+    window.addEventListener("scroll", handleScroll)
+    handleScroll()
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   // Added isMega property to determine layout behavior dynamically
   const navItems = [
@@ -155,7 +174,7 @@ export default function Navbar() {
         w-full
         px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16
         py-[clamp(0.75rem,1.8svh,1.25rem)]
-        bg-opacity-90 backdrop-blur-md
+        ${isHomePage && !isScrolled ? "bg-[#F4F4F4]" : "bg-white bg-opacity-90 backdrop-blur-md border-b border-slate-200/50 shadow-sm"}
         transition-all duration-300
         
       `)}
@@ -196,8 +215,8 @@ export default function Navbar() {
                 className="
                   inline-block
                   py-4
-                  text-sm
-                  xl:text-[18px]
+                  
+                  xl:text-[2vw]
                   font-medium
                   whitespace-nowrap
                   text-[#373355]
@@ -414,15 +433,15 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={cn(
-          `
-          lg:hidden
-          absolute top-full left-0 right-0
-          overflow-hidden
-          bg-white/95 backdrop-blur-md
-          border-t border-slate-200 shadow-xl
-          transition-all duration-300 ease-in-out
-        `,
+          className={cn(
+            `
+            lg:hidden
+            absolute top-full left-0 right-0
+            overflow-hidden
+            bg-white/95 backdrop-blur-md
+            border-t border-slate-200 shadow-xl
+            transition-all duration-300 ease-in-out
+          `,
           isMobileMenuOpen
             ? "max-h-125 opacity-100 py-6"
             : "max-h-0 opacity-0 py-0 pointer-events-none"

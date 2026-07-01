@@ -15,7 +15,6 @@ export default function Home() {
       <BannerFeature />
       <Spaces />
       <VideoGallery />
-      <UpcomingEvents />
       <CTA />
     </>
   )

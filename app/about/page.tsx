@@ -24,8 +24,6 @@ export default function AboutPage() {
       <TvvideoSection />
       <TeamSection />
       <FormMethod />
-      <EventsSection />
-      <UpcomingEvents />
       <CTA />
     </>
   )

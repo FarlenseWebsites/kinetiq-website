@@ -6,7 +6,7 @@ import BookConsultationButton from "../ui/bookConsulationButton"
 
 export default function NewLanding() {
   return (
-    <section 
+    <section
       className="relative w-full overflow-hidden bg-[#F4F4F4]"
       style={{
         marginTop: "calc(clamp(2.38rem, 6.12vw, 4.08rem) + clamp(1.5rem, 3.6svh, 2.5rem))"
@@ -15,8 +15,8 @@ export default function NewLanding() {
       {/* 
         Strict 21:9 aspect ratio container fixed across all screen sizes.
       */}
-      <div className="relative w-full aspect-[21/10] overflow-hidden">
-        
+      <div className="relative w-full min-h-screen overflow-hidden">
+
         {/* Layer 1: Background Room Scene (heroback.png) */}
         <div className="absolute inset-0 z-0">
           <img
@@ -34,7 +34,7 @@ export default function NewLanding() {
           Width increased to 42% for a larger visual impact behind the patient's head.
         */}
         <motion.div
-          animate={{ 
+          animate={{
             scale: [0.01, 2],
             opacity: [0.1, 1, 0],
             rotate: 360
@@ -69,9 +69,9 @@ export default function NewLanding() {
         </motion.div>
 
         {/* Layer 3: Foreground Transparent Cutout (heromainimg_transparent.png) */}
-        <div className="absolute inset-0 z-20 pointer-events-none">
+        <div className="absolute inset-0 z-20 pointer-events-none flex items-end justify-start">
           <img
-            src="/heromainimg_transparent.png"
+            src="/herobanner.png"
             alt="Therapist and Patient Cutout"
             className="w-full h-full object-cover"
           />
@@ -84,7 +84,7 @@ export default function NewLanding() {
           and scaled beautifully on all devices.
         */}
         <div className="absolute inset-0 z-30 flex justify-end items-start p-[4vw] select-none">
-          
+
           <div className="relative z-40 flex flex-col items-end text-right max-w-[42%]">
             {/* Tagline */}
             <span className="text-[#2F295C] italic font-normal tracking-wide text-[1.35vw] mb-[0.6vw] block ">

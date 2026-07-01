@@ -20,7 +20,7 @@ const team = [
   },
   {
     name: "Ridhima Bahuguna",
-    role: "Managing Director",
+    role: "Founder",
     description:
       "Creating wellness journeys focused on recovery and everyday strength.",
     bg: "#F5EFE4",

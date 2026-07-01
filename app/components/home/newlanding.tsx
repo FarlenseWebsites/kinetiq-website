@@ -101,7 +101,7 @@ export default function NewLanding() {
             </h1>
 
             {/* Description */}
-            <p className="text-[#2F295C]/95 text-[1.22vw] leading-relaxed mb-[1.8vw] font-normal max-w-[90%]">
+            <p className="text-[#2F295C]/95 text-[1.1vw] leading-relaxed mb-[1.8vw] font-normal max-w-[90%]">
               We combine movement science, hands-on physiotherapy and personalized care to make you feel, move better and feel stronger.
             </p>
 

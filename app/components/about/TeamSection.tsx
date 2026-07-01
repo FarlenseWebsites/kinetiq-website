@@ -5,22 +5,22 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 const team = [
   {
-    name: "Akshay Arora",
-    role: "Co-Founder",
+    name: "Dr Akshay Arora",
+    role: "Founder",
     description:
       "Helping people move pain-free through advanced rehabilitation and performance therapy.",
     bg: "#F5EFE4",
   },
   {
     name: "Ritwik Bahuguna",
-    role: "Co-Founder",
+    role: "Founder",
     description:
       "Building compassionate healthcare experiences with innovation and care.",
     bg: "#F5EFE4",
   },
   {
     name: "Ridhima Bahuguna",
-    role: "Co-Founder",
+    role: "Managing Director",
     description:
       "Creating wellness journeys focused on recovery and everyday strength.",
     bg: "#F5EFE4",
@@ -78,14 +78,14 @@ function TeamCard({
           >
             {member.name}
           </h3>
-          {/* <span
+          <span
             className="flex items-center gap-1.5 uppercase tracking-widest text-[#68628e]/80 font-medium"
             style={{ fontSize: "9px", letterSpacing: "0.2em" }}
           >
             <span className="h-1 w-1 rounded-full bg-[#Ff914d] shrink-0" />
             {member.role}
             <span className="h-1 w-1 rounded-full bg-[#Ff914d] shrink-0" />
-          </span> */}
+          </span>
           <p
             className="text-[#68628e] leading-relaxed mt-1"
             style={{ fontSize: "clamp(0.65rem, 1.8vw, 0.78rem)" }}

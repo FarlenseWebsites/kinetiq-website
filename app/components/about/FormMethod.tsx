@@ -50,7 +50,7 @@ export default function FormMethod() {
               style={{ fontSize: "clamp(3rem, 8vw + 0.5rem, 7rem)" }}
             >
               {[
-                { char: "F", x: -80, y: 0 },
+                { char: "F", x: -30, y: 0 },
                 { char: ".", x: 0, y: -60 },
                 { char: "O", x: 0, y: -120 },
                 { char: ".", x: 0, y: 60 },

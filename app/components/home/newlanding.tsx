@@ -7,7 +7,7 @@ import BookConsultationButton from "../ui/bookConsulationButton"
 export default function NewLanding() {
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#F4F4F4]"
+      className="relative w-full bg-[#f4f4f4]overflow-hidden bg-[#F4F4F4]"
       style={{
         marginTop: "calc(clamp(2.38rem, 6.12vw, 4.08rem) + clamp(1.5rem, 3.6svh, 2.5rem))"
       }}
@@ -15,7 +15,7 @@ export default function NewLanding() {
       {/* 
         Strict 21:9 aspect ratio container fixed across all screen sizes.
       */}
-      <div className="relative w-full min-h-screen overflow-hidden">
+      <div className="relative w-full  min-h-screen overflow-hidden">
 
         {/* Layer 1: Background Room Scene (heroback.png) */}
         <div className="absolute inset-0 z-0">
@@ -71,12 +71,11 @@ export default function NewLanding() {
         {/* Layer 3: Foreground Transparent Cutout (heromainimg_transparent.png) */}
         <div className="absolute inset-0 z-20 pointer-events-none flex items-end justify-start">
           <img
-            src="/herobanner.png"
+            src="/herobanner2.png"
             alt="Therapist and Patient Cutout"
             className="w-full h-full object-cover"
           />
         </div>
-
         {/* Layer 4: Text Overlay & CTA */}
         {/* 
           Positioned top-right using justify-end (horizontal end) and items-start (vertical top).

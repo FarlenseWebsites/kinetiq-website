@@ -8,7 +8,7 @@ const conditions = [
   {
     title: "Postural Imbalance",
     description: "Poor posture leading to chronic pain, muscular imbalance, and movement dysfunction. Corrects spinal alignment and addresses compensatory movement patterns causing discomfort. Combines targeted exercise, manual therapy, and ergonomic guidance for sustained improvement.",
-    image: "/mobility1.png",
+    image: "/postural.webp",
   },
   {
     title: "Muscle Tightness & Imbalances",
@@ -23,7 +23,7 @@ const conditions = [
   {
     title: "Ergonomic & Workplace Optimisation",
     description: "Addresses posture-related strain from daily habits, work setups, and lifestyle patterns. Applicable across all age groups — from children to working professionals and the elderly. Improves spinal alignment, reduces pain, and enhances overall movement efficiency.",
-    image: "/ergonomic1.png",
+    image: "/ergo.webp",
   },
 ]
 

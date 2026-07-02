@@ -18,12 +18,12 @@ const womenServices = [
   {
     title: "Postnatal Physiotherapy",
     description: "Aids recovery after childbirth with a focus on core strength and pelvic stability. Addresses diastasis recti, pelvic floor weakness, and posture-related discomfort. Supports a gradual, safe return to functional daily activity and exercise.",
-    image: "/postnatal.png",
+    image: "/postnatal.webp",
   },
   {
     title: "Pelvic Floor Rehabilitation",
     description: "Rehabilitation for nerve and neurological conditions affecting movement. Focused on restoring coordination, balance, and independence with structured therapy that extends beyond the clinic into your home.",
-    image: "/pelvic1.png",
+    image: "/pelvic.webp",
   },
 ]
 

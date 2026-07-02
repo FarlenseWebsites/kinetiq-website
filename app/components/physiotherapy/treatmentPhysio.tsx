@@ -7,7 +7,7 @@ const physioServices = [
   {
     title: "Orthopaedic Physiotherapy",
     description: "Focused care for bones, joints, muscles, ligaments, and tendons. Treats injuries, pain, and movement restrictions to restore strength and function. Addresses acute and chronic conditions through structured, evidence-based rehabilitation.",
-    image: "/ortho1.png",
+    image: "/ortho.webp",
   },
   {
     title: "Sports Physiotherapy",
@@ -17,7 +17,7 @@ const physioServices = [
   {
     title: "Neurological Physiotherapy",
     description: " Rehabilitation for nerve and neurological conditions affecting movement and function. Focuses on restoring coordination, balance, and independence through structured therapy. Extends clinical care into the home environment for continued functional progress.",
-    image: "/neuropathic1.png",
+    image: "/neuro.webp",
   },
   {
     title: "Paediatric Physiotherapy",
@@ -32,12 +32,12 @@ const physioServices = [
   {
     title: "Cardiopulmonary Physiotherapy",
     description: "Supports recovery in cardiac conditions, lung disorders, and post-surgical rehabilitation. Focuses on improving cardiovascular endurance, respiratory efficiency, and functional capacity. Structured to safely progress activity levels under clinical supervision.",
-    image: "/excerciseimg.png",
+    image: "/cardio.webp",
   },
   {
     title: "Post-Surgical Rehabilitation",
     description: "Structured recovery following ligament reconstruction, joint replacement, and spine procedures. Restores mobility, strength, and functional movement through phased rehabilitation protocols. Ensures a safe, monitored return to daily activities and physical independence.",
-    image: "/physio.png",
+    image: "/postsurgical.webp",
   },
 ]
 

@@ -22,13 +22,13 @@ const coreAssessment = [
     title: "Ergonomic Assessment & Workstation Therapy",
     description:
       "Comprehensive evaluation of your work environment to identify postural risks and strain patterns. Personalised recommendations and corrective strategies reduce injury risk and enhance long-term musculoskeletal health.",
-    image: "/ergonomic1.png",
+    image: "/ergo.jpg",
   },
   {
     title: "Mobility & Corrective Exercise Therapy",
     description:
       "Targeted improvement of joint mobility and movement quality through structured flexibility protocols, manual techniques, and corrective exercises. Addresses restrictions, compensations, and movement asymmetries to restore functional range.",
-    image: "/mobility1.png",
+    image: "/mobility.jpg",
   },
   {
     title: "Breathing & Respiratory Therapy",
@@ -50,7 +50,7 @@ const manualTherapy = [
     title: "Joint Mobilisation",
     description:
       "Controlled passive movement applied to joints to restore range of motion, reduce stiffness, and alleviate pain. Addresses articular restrictions and mechanical dysfunction through graded oscillatory or sustained techniques.",
-    image: "/joint1.png",
+    image: "/joint.webp",
   },
   {
     title: "Myofascial Release",
@@ -89,7 +89,7 @@ const painAndInjury = [
     title: "Class IV Laser Therapy",
     description:
       "High-powered laser energy penetrates deep tissues to stimulate cellular repair, reduce inflammation, and accelerate healing. Clinically effective for musculoskeletal injuries, chronic pain, and post-surgical recovery.",
-    image: "/class1.png",
+    image: "/laser.jpg",
   },
   {
     title: "Shockwave Therapy",
@@ -110,7 +110,7 @@ const recoveryPerformance = [
     title: "Sports Recovery Therapy",
     description:
       "Structured recovery protocols combining manual therapy, soft tissue techniques, and targeted rehabilitation to accelerate return to sport. Reduces delayed onset soreness, addresses overuse patterns, and supports peak performance maintenance.",
-    image: "/sports1.png",
+    image: "/sports.webp",
   },
   {
     title: "Kinesio Taping",
@@ -161,13 +161,13 @@ const womensHealth = [
     title: "Postnatal Physiotherapy",
     description:
       "Structured rehabilitation following childbirth to restore pelvic floor strength, core function, and physical wellbeing. Addresses diastasis recti, musculoskeletal pain, and readiness for return to activity.",
-    image: "/postnatal.png",
+    image: "/postnatal.webp",
   },
   {
     title: "Pelvic Floor Therapy",
     description:
       "Specialised assessment and rehabilitation of pelvic floor dysfunction including incontinence, prolapse, pelvic pain, and post-surgical recovery. Restores control, strength, and coordination for long-term function.",
-    image: "/excerciseimg.png",
+    image: "/pelvic.webp",
   },
 ];
 

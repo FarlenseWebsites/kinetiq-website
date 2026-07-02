@@ -13,7 +13,7 @@ const nerveConditions = [
   {
     title: "Cervical Radiculopathy",
     description: "Nerve compression in the neck causing arm pain, tingling, or numbness. Treatment targets the source of compression to relieve symptoms and restore cervical function. Combines manual therapy, traction techniques, and corrective exercise for effective management.",
-    image: "/cervical.png",
+    image: "/cervical.webp",
   },
   {
     title: "Lumbar Radiculopathy",

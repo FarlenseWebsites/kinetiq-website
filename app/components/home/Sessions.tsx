@@ -9,8 +9,8 @@ const spaces = [
     number: "01",
     title: "In-Centre Treatment",
     subtitle: "Hands-on physiotherapy at our centers with access to advanced treatments.",
-    image: "/incenter.png",
-    flip: true,
+    image: "/incenter-5.webp",
+    flip: false,
   },
   {
     number: "02",

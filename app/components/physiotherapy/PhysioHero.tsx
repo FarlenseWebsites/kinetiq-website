@@ -33,7 +33,7 @@ export default function PhysioHero() {
             <div className="relative left-[3vw] h-full aspect-square rounded-full overflow-hidden flex shadow-lg">
               
               {/* LEFT HALF - White Background with Inner Donut */}
-              <div className="relative w-1/2 h-full bg-white flex items-center justify-center">
+              <div className="relative w-1/3 h-full bg-white flex items-center justify-center">
                 {/* Inner donut - sized dynamically with % so it never breaks out of the half-circle */}
                 <div
                   className="relative left-[11%] top-[-24%] w-[77%] aspect-square rounded-full z-20 flex items-center justify-center"
@@ -47,7 +47,7 @@ export default function PhysioHero() {
               </div>
 
               {/* RIGHT HALF - Image */}
-              <div className="relative w-1/2 h-full">
+              <div className="relative w-2/3 h-full">
                 <Image
                   src="/physio.png"
                   alt="Physiotherapy"

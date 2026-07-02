@@ -30,9 +30,9 @@ export default function SessionsHero() {
                 - aspect-[1/2] ensures width is exactly half of the height
                 - rounded-r-[100vw] perfectly rounds the right side
             */}
-            <div className="relative left-[9vw] h-full aspect-[1/2] rounded-r-[100vw] overflow-hidden shadow-lg bg-[#ffc7a4]/50">
+            <div className="relative w-[80%] left-[9vw] h-full aspect-[1/2] rounded-r-[100vw] overflow-hidden shadow-lg bg-[#ffc7a4]/50">
               <Image
-                src="/servicesrightside.png"
+                src="/sessionhero.webp"
                 alt="KinetiQ Sessions"
                 fill
                 className="object-cover object-center"
@@ -42,7 +42,7 @@ export default function SessionsHero() {
           </div>
 
           {/* Text side - Exact 50% width */}
-          <div className="relative z-40 w-1/2 flex flex-col items-end justify-center text-right pr-[5vw] gap-[1.5vw]">
+          <div className="relative z-40 w-[60%] flex flex-col items-end justify-center text-right pr-[5vw] gap-[1.5vw]">
             {/* Using pure `vw` for font sizes guarantees the text scales perfectly with the layout */}
             <h1 className="text-white leading-[0.9] font-medium text-[5.5vw]">
               KinetiQ

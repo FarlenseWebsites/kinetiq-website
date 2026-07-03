@@ -60,7 +60,7 @@ export default function ContactForm() {
         {/* LEFT — image */}
         <div className="relative w-full h-94 lg:h-full overflow-hidden">
           <Image
-            src="/contactform.jpg"
+            src="/contactform.avif"
             alt="Physiotherapy session"
             fill
             className="object-cover object-left"

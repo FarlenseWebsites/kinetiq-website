@@ -7,37 +7,37 @@ const physioServices = [
   {
     title: "Orthopaedic Physiotherapy",
     description: "Focused care for bones, joints, muscles, ligaments, and tendons. Treats injuries, pain, and movement restrictions to restore strength and function. Addresses acute and chronic conditions through structured, evidence-based rehabilitation.",
-    image: "/ortho.webp",
+    image: "/ortho.avif",
   },
   {
     title: "Sports Physiotherapy",
     description: "Injury management and performance-focused rehabilitation for active individuals. Targets faster recovery, sports-specific injury prevention, and performance enhancement. Guides athletes through a safe, structured return to sport.",
-    image: "/mensports1.png",
+    image: "/sports2.avif",
   },
   {
     title: "Neurological Physiotherapy",
     description: " Rehabilitation for nerve and neurological conditions affecting movement and function. Focuses on restoring coordination, balance, and independence through structured therapy. Extends clinical care into the home environment for continued functional progress.",
-    image: "/neuro.webp",
+    image: "/neuro.avif",
   },
   {
     title: "Paediatric Physiotherapy",
     description: "Support for children with developmental, postural, sports injury, or movement challenges. Encourages healthy growth, functional mobility, and age-appropriate physical development. Tailored to each child's needs with goal-oriented, progressive rehabilitation.",
-    image: "/paediatric.png",
+    image: "/paediatric.avif",
   },
   {
     title: "Geriatric Physiotherapy",
     description: "Specialized care for age-related mobility, balance, and strength concerns. Aims to improve functional independence, prevent falls, and support active aging. Designed around the unique physical demands and limitations of older adults.",
-    image: "/geriatric.png",
+    image: "/geriatric.avif",
   },
   {
     title: "Cardiopulmonary Physiotherapy",
     description: "Supports recovery in cardiac conditions, lung disorders, and post-surgical rehabilitation. Focuses on improving cardiovascular endurance, respiratory efficiency, and functional capacity. Structured to safely progress activity levels under clinical supervision.",
-    image: "/cardio.webp",
+    image: "/cardio.avif",
   },
   {
     title: "Post-Surgical Rehabilitation",
     description: "Structured recovery following ligament reconstruction, joint replacement, and spine procedures. Restores mobility, strength, and functional movement through phased rehabilitation protocols. Ensures a safe, monitored return to daily activities and physical independence.",
-    image: "/postsurgical.webp",
+    image: "/postsurgical.avif",
   },
 ]
 

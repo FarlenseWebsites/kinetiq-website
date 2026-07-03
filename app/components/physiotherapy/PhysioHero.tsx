@@ -49,7 +49,7 @@ export default function PhysioHero() {
               {/* RIGHT HALF - Image */}
               <div className="relative w-2/3 h-full">
                 <Image
-                  src="/physio.png"
+                  src="/physio.avif"
                   alt="Physiotherapy"
                   fill
                   className="object-cover object-center"

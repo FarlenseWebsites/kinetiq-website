@@ -5,7 +5,7 @@ import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 export default function PhysioHero() {
   return (
-    <section id="treatments-hero" className="relative overflow-hidden bg-[#FAFAFA] flex flex-col items-center justify-start pt-[8vw] scroll-mt-32 sm:pt-20">
+    <section id="treatments-hero" className="relative overflow-hidden bg-[#FAFAFA] flex flex-col items-center justify-start pt-20">
       
       {/* Button */}
       <div className="relative z-10  flex justify-center pb-[5vw]">
@@ -18,7 +18,7 @@ export default function PhysioHero() {
         {/* BASE IMAGE */}
         <div className="absolute left-0 top-0 bottom-0 w-[65%] z-0 h-full overflow-hidden rounded-r-[100vw]">
           <Image
-            src="/treatmentimg.png"
+            src="/treatmentimg.avif"
             alt="KinetiQ Sessions"
             fill
             className="object-cover object-[25%_center]"

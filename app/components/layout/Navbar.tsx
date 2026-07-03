@@ -16,7 +16,7 @@ import {
   treatmentLinks,
 } from "../../lib/navigation"
 
-import KinetiQLogo from "../../../public/KinetiQLogo.png"
+import KinetiQLogo from "../../../public/KinetiQLogo.avif"
 
 // --- Mega Menu Data ---
 const physiotherapyMegaMenu = [

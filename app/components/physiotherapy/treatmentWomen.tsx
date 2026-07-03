@@ -8,22 +8,22 @@ const womenServices = [
   {
     title: "Women's Health Physiotherapy",
     description: "Focused care for pregnancy, postnatal recovery, and hormonal changes across life stages. Addresses pelvic floor dysfunction, pregnancy-related back pain, and post-menopause fatigue. Aims to restore strength, stability, and overall well-being through targeted rehabilitation.",
-    image: "/incenter.png",
+    image: "/incenter.avif",
   },
   {
     title: "Prenatal Physiotherapy",
     description: "Supports physical health and comfort throughout pregnancy. Addresses common concerns including lower back pain, pelvic instability, and postural changes. Prepares the body for labour through safe, trimester-appropriate exercise and therapy.",
-    image: "/prenatal1.png",
+    image: "/prenatal1.avif",
   },
   {
     title: "Postnatal Physiotherapy",
     description: "Aids recovery after childbirth with a focus on core strength and pelvic stability. Addresses diastasis recti, pelvic floor weakness, and posture-related discomfort. Supports a gradual, safe return to functional daily activity and exercise.",
-    image: "/postnatal.webp",
+    image: "/postnatal.avif",
   },
   {
     title: "Pelvic Floor Rehabilitation",
     description: "Rehabilitation for nerve and neurological conditions affecting movement. Focused on restoring coordination, balance, and independence with structured therapy that extends beyond the clinic into your home.",
-    image: "/pelvic.webp",
+    image: "/pelvic.avif",
   },
 ]
 

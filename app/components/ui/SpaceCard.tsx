@@ -24,7 +24,7 @@ export default function SpaceCard({
       <div className="relative w-full aspect-[4/3]">
         
         <Image
-          src={image || "/spaceimg.png"}
+          src={image || "/spaceimg.avif"}
           alt={title}
           fill
          className={`

@@ -7,7 +7,7 @@
 //   1. Drop photos into /public/images/conditions/ or /public/images/services/
 //   2. Import them below (static imports = type-safe + Next.js optimised)
 //   3. Fill in the matching slot in conditionImageMap or physioServiceImageMap
-//   4. Any slot left undefined → PhysioServiceCard shows excerciseimg.png
+//   4. Any slot left undefined → PhysioServiceCard shows excerciseimg.avif
 // ─────────────────────────────────────────────────────────────────────────────
 
 import { StaticImageData } from "next/image"
@@ -25,13 +25,13 @@ export interface CardImages {
 
 // Uncomment and update as you add real photography:
 //
-// import neckMain        from "../../public/images/conditions/neck-main.jpg"
-// import neckTop         from "../../public/images/conditions/neck-top.jpg"
-// import neckBottom      from "../../public/images/conditions/neck-bottom.jpg"
+// import neckMain        from "../../public/images/conditions/neck-main.avif"
+// import neckTop         from "../../public/images/conditions/neck-top.avif"
+// import neckBottom      from "../../public/images/conditions/neck-bottom.avif"
 //
-// import shoulderMain    from "../../public/images/conditions/shoulder-main.jpg"
-// import shoulderTop     from "../../public/images/conditions/shoulder-top.jpg"
-// import shoulderBottom  from "../../public/images/conditions/shoulder-bottom.jpg"
+// import shoulderMain    from "../../public/images/conditions/shoulder-main.avif"
+// import shoulderTop     from "../../public/images/conditions/shoulder-top.avif"
+// import shoulderBottom  from "../../public/images/conditions/shoulder-bottom.avif"
 // ... repeat for each condition
 
 export const conditionImageMap: Record<string, CardImages> = {
@@ -63,13 +63,13 @@ export const conditionImageMap: Record<string, CardImages> = {
 
 // Uncomment and update as you add real photography:
 //
-// import orthoMain        from "../../public/images/services/ortho-main.jpg"
-// import orthoTop         from "../../public/images/services/ortho-top.jpg"
-// import orthoBottom      from "../../public/images/services/ortho-bottom.jpg"
+// import orthoMain        from "../../public/images/services/ortho-main.avif"
+// import orthoTop         from "../../public/images/services/ortho-top.avif"
+// import orthoBottom      from "../../public/images/services/ortho-bottom.avif"
 //
-// import sportsMain       from "../../public/images/services/sports-main.jpg"
-// import sportsTop        from "../../public/images/services/sports-top.jpg"
-// import sportsBottom     from "../../public/images/services/sports-bottom.jpg"
+// import sportsMain       from "../../public/images/services/sports-main.avif"
+// import sportsTop        from "../../public/images/services/sports-top.avif"
+// import sportsBottom     from "../../public/images/services/sports-bottom.avif"
 // ... repeat for each service
 
 export const physioServiceImageMap: Record<string, CardImages> = {

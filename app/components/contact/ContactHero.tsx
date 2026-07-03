@@ -17,7 +17,7 @@ export default function ContactHero() {
         {/* Adjusted object position anchors the image better to simulate a "zoomed out" feel without white space */}
        <div className="absolute left-0 w-[63%] z-20 h-full z-0 overflow-hidden rounded-r-[100vw]">
           <Image
-            src="/contact.png"
+            src="/contact1.avif"
             alt="KinetiQ Sessions"
             fill
             className="object-cover object-left md:object-[25%_center]"
@@ -36,7 +36,7 @@ export default function ContactHero() {
             background: "conic-gradient(from 180deg, #373355 0%, #68628E 100%)",
           }}
         >
-          <div className="absolute text-center inset-0 text-[2.3vw] text-white m-auto w-[40%]  flex items-center justify-center">
+          <div className="absolute text-center inset-0 text-[2.3vw] text-white m-auto w-[40%] md:top-[-90] top-[-50]  flex items-center justify-center">
             Get in Touch with KinetiQ
 
           </div>

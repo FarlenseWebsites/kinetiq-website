@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
-import kinetiqLogoWhiteCenter from "../../../public/KinetiQ Logo (white center).png";
+import kinetiqLogoWhiteCenter from "../../../public/KinetiQ Logo (white center).avif";
 
 export default function Footer() {
   return (
@@ -60,14 +60,7 @@ export default function Footer() {
 
             {/* Social Icons */}
             <div className="flex items-center gap-5 mt-10">
-              <Link
-                href="#"
-                className="hover:text-[#ff914D] transition-colors"
-                target="_blank"
-              >
-                <FaFacebook size={22} />
-              </Link>
-
+              
               <Link
                 href="https://www.instagram.com/kinetiqphysiotherapy"
                 className="hover:text-[#ff914D] transition-colors "
@@ -77,7 +70,7 @@ export default function Footer() {
               </Link>
 
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/kinetiq-physiotherapy/"
                 className="hover:text-[#ff914D] transition-colors"
                 target="_blank"
               >

@@ -8,28 +8,28 @@ const sessions = [
     title: "In-Centre Treatment",
     description:
       "Experience hands-on physiotherapy at our KinetiQ centers with access to advanced therapies and specialized equipment. Each session is guided by expert clinicians to ensure precise treatment, faster recovery, and measurable results in a structured environment.",
-    image: "/incenter.png",
+    image: "/incenter.avif",
   },
 
   {
     title: "Home Visits",
     description:
       "Receive personalised physiotherapy care in the comfort of your home. Ideal for post-surgical recovery, elderly care, or convenience-led treatment, our therapists deliver the same clinical expertise with focused, one-on-one attention.",
-    image: "/home.png",
+    image: "/home.avif",
   },
 
   {
     title: "Online Sessions",
     description:
         "Access expert consultations and guided rehabilitation from anywhere. Our online sessions ensure continuity of care with structured programs, real-time guidance, and progress tracking tailored to your needs.",
-    image: "/online.png",
+    image: "/online.avif",
   },
 
   {
     title: "Corporate Wellness",
     description:
       "Comprehensive workplace wellness solutions designed to reduce pain, improve posture, and enhance employee productivity. From on-site sessions to ergonomic assessments, we help build healthier, more resilient teams.",
-    image: "/corporate.png",
+    image: "/corporate.avif",
   },
 ]
 

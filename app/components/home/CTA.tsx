@@ -9,7 +9,7 @@ export default function CTA() {
       {/* Image with overlay and text */}
       <div className="relative w-full aspect-4/3 sm:aspect-video md:aspect-21/9 overflow-hidden">
         <Image
-          src="/treatmenttable.jpg"
+          src="/treatmenttable.avif"
           alt="Treatment room background"
           fill
           priority

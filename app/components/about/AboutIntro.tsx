@@ -57,7 +57,7 @@ export default function AboutIntro() {
           style={{ clipPath: "ellipse(32% 78% at 75% 85%)" }}
         >
           <Image
-            src="/aboutcheckupimg.png"
+            src="/aboutcheckupimg.avif"
             alt="KinetiQ physiotherapy session"
             fill
             priority
@@ -70,7 +70,7 @@ export default function AboutIntro() {
         {/* Image — mobile: landscape block anchored to bottom-right */}
         <div className="md:hidden absolute bottom-0 right-0 w-[78vw] h-[64vw] overflow-hidden rounded-tl-full">
           <Image
-            src="/aboutcheckupimg.png"
+            src="/aboutcheckupimg.avif"
             alt="KinetiQ physiotherapy session"
             fill
             priority

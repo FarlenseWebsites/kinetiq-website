@@ -17,7 +17,7 @@ export default function NewLanding() {
         {/* Layer 1: Background Room Scene */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/heroback.png"
+            src="/heroback.avif"
             alt="Hero Background"
             className="w-full h-full object-cover object-center"
           />
@@ -50,7 +50,7 @@ export default function NewLanding() {
         {/* Layer 3: Foreground Transparent Cutout */}
         <div className="absolute inset-0 z-20 pointer-events-none flex items-end justify-center md:justify-start">
           <img
-            src="/herobanner2.png"
+            src="/herobanner2.avif"
             alt="Therapist and Patient Cutout"
             className="w-full h-[80vh] md:h-full object-contain md:object-cover object-bottom"
           />

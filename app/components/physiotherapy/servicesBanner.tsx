@@ -23,24 +23,24 @@ const ServicesBanner = () => {
         <div className="absolute inset-0 z-30 flex items-center">
 
           {/* IMAGE SIDE - Exact 50% width */}
-          <div className="relative w-1/2 flex justify-start items-center h-full">
+          <div className="relative w-1/2 flex justify-start items-center h-full " >
 
             {/* FULL CIRCLE CONTAINER */}
-            <div className="relative left-[5vw] h-full aspect-square rounded-full overflow-hidden flex shadow-lg">
+            <div className="relative left-[5vw] h-full aspect-square rounded-full overflow-hidden flex shadow-lg ">
               
               {/* LEFT HALF - White Background with Inner Orange Circle */}
-              <div className="relative w-1/2 h-full bg-white flex items-center justify-center">
+              <div className="relative w-1/2 h-full bg-white flex items-center justify-center z-40">
                 {/* Inner Orange Circle - sized dynamically with % */}
                 <div className="relative left-[11%] top-[-24%] w-[77%] aspect-square rounded-full bg-[#ff914d] z-20" />
               </div>
 
               {/* RIGHT HALF - Image */}
-              <div className="relative w-1/2 h-full">
+              <div className="relative w-full z-10 h-full">
                 <Image
-                  src="/servicesrightside.png"
+                  src="/services1.avif"
                   alt="Services"
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-[0%_center]"
                   priority
                 />
               </div>

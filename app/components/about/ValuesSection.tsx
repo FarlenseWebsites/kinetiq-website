@@ -39,7 +39,7 @@ export default function ValuesSection() {
         {/* Left Image */}
         <div className="w-[50%] relative bg-[#FCF6EF]">
           <Image
-            src="/values.jpg"
+            src="/values.avif"
             alt="Physiotherapy treatment"
             fill
             className="object-cover"

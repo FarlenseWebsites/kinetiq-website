@@ -42,7 +42,7 @@ export default function FormMethod() {
       </div>
 
       {/* FORM content — full width, no outer margin or padding */}
-      <div className="bg-[#68628e] w-full">
+      <div className="bg-[linear-gradient(180deg,_#948FAF_88%,_#68628E_100%)] w-full">
         <div className="max-w-6xl mx-auto flex flex-col items-center py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
           <div className="text-center">
             <h2
@@ -88,7 +88,7 @@ export default function FormMethod() {
                   delay: i * 0.1,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="flex flex-col gap-4 rounded-xl bg-[#373355] hover:bg-white/[0.05] transition-colors duration-300 border border-white/10 p-6 sm:p-7"
+                className="flex flex-col gap-4 rounded-xl bg-[#373355] hover:bg-[#68628e] transition-colors duration-300 border border-white/10 p-6 sm:p-7"
               >
                 <span
                   className="font-bold text-[#FF914D] leading-none select-none"

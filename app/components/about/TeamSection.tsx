@@ -4,27 +4,29 @@ import { useEffect, useRef, useState } from "react"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
 const team = [
+   {
+    name: "Ridhima Bahuguna",
+    role: "Founder HEAD - OPERATIONS",
+    description:
+      "- 15+ yrs multi-unit retail operations - Goodearth, FabIndia.\n - Experience in design, brand building and scaling operations.",
+    bg: "#F5EFE4",
+  },
   {
     name: "Dr Akshay Arora",
-    role: "Founder",
+    role: "Founder HEAD - CLINICAL",
     description:
-      "Helping people move pain-free through advanced rehabilitation and performance therapy.",
+      "- 15 yrs global experience; trained in UK,Finland & Spain.\n - MSK + posture specialist; blends physio with nutrition + coaching."
+      ,
     bg: "#F5EFE4",
   },
   {
     name: "Ritwik Bahuguna",
-    role: "Founder",
+    role: "Founder HEAD - PARTNERSHIPS",
     description:
-      "Building compassionate healthcare experiences with innovation and care.",
+      "- Multi-site execution: 16+ yrs strategy consulting + EPC across four contients.\n - Economist + former national level sportsperson.",
     bg: "#F5EFE4",
   },
-  {
-    name: "Ridhima Bahuguna",
-    role: "Founder",
-    description:
-      "Creating wellness journeys focused on recovery and everyday strength.",
-    bg: "#F5EFE4",
-  },
+ 
 ]
 
 function TeamCard({
@@ -66,8 +68,8 @@ function TeamCard({
       <div
         className="flex items-center justify-center rounded-full overflow-hidden"
         style={{
-          width: "clamp(190px, 24vw, 280px)",
-          height: "clamp(190px, 24vw, 280px)",
+          width: "clamp(190px, 26vw, 300px)",
+          height: "clamp(190px, 26vw, 300px)",
           background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.30), transparent 55%), ${member.bg}`,
         }}
       >
@@ -87,7 +89,7 @@ function TeamCard({
             <span className="h-1 w-1 rounded-full bg-[#Ff914d] shrink-0" />
           </span>
           <p
-            className="text-[#68628e] leading-relaxed mt-1"
+            className="text-[#68628e] leading-relaxed mt-1 whitespace-pre-line"
             style={{ fontSize: "clamp(0.65rem, 1.8vw, 0.78rem)" }}
           >
             {member.description}

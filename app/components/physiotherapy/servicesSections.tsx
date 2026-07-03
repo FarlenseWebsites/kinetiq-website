@@ -8,22 +8,22 @@ const nerveConditions = [
   {
     title: "Sciatic Nerve Pain",
     description: "Pain radiating from the lower back through the hip and into the leg. Treatment focuses on relieving nerve compression, reducing inflammation, and improving mobility. Combines manual therapy, targeted exercise, and postural correction for lasting relief.",
-    image: "/joint1.png",
+    image: "/sciatic.avif",
   },
   {
     title: "Cervical Radiculopathy",
     description: "Nerve compression in the neck causing arm pain, tingling, or numbness. Treatment targets the source of compression to relieve symptoms and restore cervical function. Combines manual therapy, traction techniques, and corrective exercise for effective management.",
-    image: "/cervical.webp",
+    image: "/cervical.avif",
   },
   {
     title: "Lumbar Radiculopathy",
     description: "Nerve-related lower back pain that radiates into the legs. Focuses on reducing nerve irritation, decompressing affected structures, and restoring movement. Managed through a combination of manual therapy, exercise, and functional rehabilitation.",
-    image: "/lumbar.png",
+    image: "/lumbar.avif",
   },
   {
     title: "Neuropathic Pain",
     description: "Chronic nerve pain presenting as burning, tingling, or sharp recurrent sensations. Includes conditions such as migraines and peripheral neuropathy managed through targeted therapy. Treatment focuses on reducing sensitization, improving function, and preventing recurrence.",
-    image: "/neuropathic1.png",
+    image: "/neuropathic1.avif",
   },
 ]
 

@@ -29,19 +29,19 @@ const upcomingEvents: EventCard[] = [
     id: 4,
     title: "Menopause Wellness Program",
     date: "June 2026",
-    media: { type: "image", src: "/menopause.png", alt: "Summer fitness camp" },
+    media: { type: "image", src: "/menopause.avif", alt: "Summer fitness camp" },
   },
   {
     id: 5,
     title: "Master class for Athletes",
     date: "June 2026",
-    media: { type: "image", src: "/masterclass.png", alt: "Sports recovery workshop" },
+    media: { type: "image", src: "/masterclass.avif", alt: "Sports recovery workshop" },
   },
   {
     id: 6,
     title: "Summer Fitness Camp",
     date: "June 2026",
-    media: { type: "image", src: "/summer.png", alt: "Community rehab drive" },
+    media: { type: "image", src: "/summer.avif", alt: "Community rehab drive" },
   },
 ]
 

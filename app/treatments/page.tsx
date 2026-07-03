@@ -83,7 +83,7 @@ const painAndInjury = [
     title: "Electrotherapy",
     description:
       "Therapeutic electrical stimulation to reduce pain, promote tissue repair, and improve muscle activation. Includes TENS, interferential, and neuromuscular stimulation protocols adapted to individual clinical presentation.",
-    image: "/treatmenttable.avif",
+    image: "/electro.jpg",
   },
   {
     title: "Class IV Laser Therapy",

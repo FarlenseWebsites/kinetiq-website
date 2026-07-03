@@ -68,15 +68,15 @@ function TeamCard({
       <div
         className="flex items-center justify-center rounded-full overflow-hidden"
         style={{
-          width: "clamp(190px, 26vw, 300px)",
-          height: "clamp(190px, 26vw, 300px)",
+          width: "clamp(250px, 30vw, 300px)",
+          height: "clamp(250px, 30vw, 300px)",
           background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.30), transparent 55%), ${member.bg}`,
         }}
       >
         <div className="flex flex-col items-center justify-center gap-2 px-8 text-center">
           <h3
             className="text-[#373355] leading-tight whitespace-nowrap"
-            style={{ fontSize: "clamp(1.1rem, 3vw, 1.4rem)" }}
+            style={{ fontSize: "clamp(0.9rem, 3vw, 1.4rem)" }}
           >
             {member.name}
           </h3>
@@ -102,7 +102,7 @@ function TeamCard({
 
 export default function TeamSection() {
   return (
-    <section id="about-team" className="relative overflow-hidden bg-[#F4f4f4] py-20 px-5 scroll-mt-32">
+    <section id="about-team" className="relative overflow-hidden bg-[#F4f4f4] pb-10">
 
       <style>{`
         @keyframes cardReveal {

@@ -71,7 +71,7 @@ export default function NewLanding() {
         {/* LAYER 3 (z-20): Foreground Transparent Cutout */}
         <div className="absolute inset-0 z-20 pointer-events-none">
           <img
-            src="/nl3.svg" 
+            src="/nl4.svg" 
             alt="Therapist and Patient Cutout"
             className="w-full h-full object-cover object-center"
           />
@@ -94,12 +94,12 @@ export default function NewLanding() {
               <span className="text-[#68628E]">Needs</span>
             </h1>
 
-            <p className="text-[#2F295C]/95 text-base sm:text-lg md:text-2xl lg:text-xl xl:text-[1.1vw] leading-relaxed mb-6 xl:mb-[1.8vw] font-normal max-w-full">
+            <p className="text-[#2F295C]/95 text-base sm:text-[3.5vw] md:text-xl lg:text-xl xl:text-[1.1vw] leading-relaxed mb-6 xl:mb-[1.8vw] font-normal max-w-full">
               We combine movement science, hands-on physiotherapy and personalized care to make you feel, move better and feel stronger.
             </p>
 
             <div className="flex flex-col items-center md:items-end w-full">
-              <BookConsultationButton className="shadow-lg border-black w-full md:w-auto px-6 py-3 md:px-10 md:py-5 lg:px-8 lg:py-4 xl:px-[2vw] xl:py-[0.7vw] text-base md:text-xl lg:text-lg xl:text-[1.1vw] rounded-lg xl:rounded-[0.5vw] bg-[#68628e] text-white font-normal hover:bg-white hover:text-[#373355] transition-all duration-300" />
+              <BookConsultationButton className="shadow-lg border-none w-full md:w-auto px-6 py-3 md:px-10 md:py-5 lg:px-8 lg:py-4 xl:px-[2vw] xl:py-[0.7vw] text-base md:text-xl lg:text-lg xl:text-[1.1vw] rounded-lg xl:rounded-[0.5vw] bg-[#68628e] text-white font-normal hover:bg-white hover:text-[#373355] transition-all duration-300" />
             </div>
             
           </div>

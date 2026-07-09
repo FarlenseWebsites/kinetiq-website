@@ -44,11 +44,12 @@ export default function NewLanding() {
 
         {/* LAYER 2 (z-10): Animated Focus Spiral (DESKTOP ONLY) */}
         {/* hidden lg:flex ensures this completely vanishes on phones and tablets */}
-        <div className="hidden lg:flex absolute z-10 pointer-events-none items-center justify-center 
-            top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-            lg:w-[280px] lg:h-[280px] lg:mt-[22vh] lg:ml-[-100px]
-            xl:w-[35vw] xl:h-[35vw] xl:mt-[15vh] xl:ml-[-2vw]"
-        >
+       <div className="hidden lg:flex absolute z-10 pointer-events-none items-center justify-center 
+              top-[70%] left-[43%] -translate-x-1/2 -translate-y-1/2
+              lg:w-[25vw] lg:h-[25vw]
+              xl:w-[22vw] xl:h-[22vw]
+              2xl:w-[18vw] 2xl:h-[18vw]"
+          >
           <motion.div
             animate={{
               scale: [0.9, 1.1, 0.9],
@@ -87,9 +88,9 @@ export default function NewLanding() {
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-[4.5vw] font-medium leading-[1.1] xl:leading-[1.05] tracking-tight mb-4 xl:mb-[1.2vw]">
               <span className="text-[#68628E]">Rehab </span>
-              <span className="text-white">and</span>
+              <span className="text-[#ff914d]">and</span>
               <br />
-              <span className="text-white">Fitness </span>
+              <span className="text-[#ff914d]">Fitness </span>
               <span className="text-[#68628E]">Needs</span>
             </h1>
 
@@ -98,7 +99,7 @@ export default function NewLanding() {
             </p>
 
             <div className="flex flex-col items-center md:items-end w-full">
-              <BookConsultationButton className="shadow-lg border-black w-full md:w-auto px-6 py-3 md:px-10 md:py-5 lg:px-8 lg:py-4 xl:px-[2vw] xl:py-[0.7vw] text-base md:text-xl lg:text-lg xl:text-[1.1vw] rounded-lg xl:rounded-[0.5vw] bg-white text-[#373355] font-normal hover:bg-[#68628e] hover:text-white transition-all duration-300" />
+              <BookConsultationButton className="shadow-lg border-black w-full md:w-auto px-6 py-3 md:px-10 md:py-5 lg:px-8 lg:py-4 xl:px-[2vw] xl:py-[0.7vw] text-base md:text-xl lg:text-lg xl:text-[1.1vw] rounded-lg xl:rounded-[0.5vw] bg-[#68628e] text-white font-normal hover:bg-white hover:text-[#373355] transition-all duration-300" />
             </div>
             
           </div>

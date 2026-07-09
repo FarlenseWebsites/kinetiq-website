@@ -40,7 +40,7 @@ export default function PhysioHero() {
           <div className="flex flex-col items-center justify-center text-[#373355] text-center  h-full w-full px-[12%]">
             
             {/* Pure vw for text so it scales identically with the circles */}
-            <span className="text-[1.5vw] leading-[1.3] font-medium">
+            <span className="text-[1.9vw] leading-[1.3] font-medium">
               Recovery shouldn&apos;t be rigid.
               <br />
               At KinetiQ, your treatment moves with you

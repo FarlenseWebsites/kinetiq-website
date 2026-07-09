@@ -21,7 +21,7 @@ export default function AboutIntro() {
 
       {/* Bottom section: aspect-ratio drives height from width at every breakpoint */}
       <div
-        className="relative w-full aspect-3/4 sm:aspect-4/3 md:aspect-video lg:aspect-2/1"
+        className="relative bg-[#f4f4f4]w-full aspect-3/4 sm:aspect-4/3 md:aspect-video lg:aspect-2/1"
         style={{
           background: "linear-gradient(160deg, #f5f5f8 0%, #948FAF 88%, #68628E 100%)",
         }}

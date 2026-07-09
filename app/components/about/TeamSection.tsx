@@ -12,7 +12,7 @@ const team = [
     bg: "#F5EFE4",
   },
   {
-    name: "Dr Akshay Arora",
+    name: "Dr. Akshay Arora",
     role: "Founder HEAD - CLINICAL",
     description:
       "- 15 yrs global experience; trained in UK,Finland & Spain.\n - MSK + posture specialist; blends physio with nutrition + coaching."
@@ -68,15 +68,15 @@ function TeamCard({
       <div
         className="flex items-center justify-center rounded-full overflow-hidden"
         style={{
-          width: "clamp(250px, 30vw, 300px)",
-          height: "clamp(250px, 30vw, 300px)",
+          width: "clamp(260px, 28vw, 300px)",
+          height: "clamp(260px, 28vw, 300px)",
           background: `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.30), transparent 55%), ${member.bg}`,
         }}
       >
         <div className="flex flex-col items-center justify-center gap-2 px-8 text-center">
           <h3
             className="text-[#373355] leading-tight whitespace-nowrap"
-            style={{ fontSize: "clamp(0.9rem, 3vw, 1.4rem)" }}
+            style={{ fontSize: "clamp(0.9rem, 2.8vw, 1.4rem)" }}
           >
             {member.name}
           </h3>

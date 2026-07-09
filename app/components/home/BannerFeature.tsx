@@ -4,10 +4,15 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 
 // 1. Extract images into a clean array
+// const banners = [
+//     { id: 1, src: "/rehabbanner.avif", alt: "Rehab banner" },
+//     { id: 2, src: "/posturebanner.avif", alt: "Posture banner" },
+//     { id: 3, src: "/fitnessbanner.avif", alt: "Fitness banner" },
+// ]
 const banners = [
-    { id: 1, src: "/rehabbanner.avif", alt: "Rehab banner" },
-    { id: 2, src: "/posturebanner.avif", alt: "Posture banner" },
-    { id: 3, src: "/fitnessbanner.avif", alt: "Fitness banner" },
+    { id: 1, src: "/rb.jpg", alt: "Rehab banner" },
+    { id: 2, src: "/pb.jpg", alt: "Posture banner" },
+    { id: 3, src: "/fb.jpg", alt: "Fitness banner" },
 ]
 
 export default function RehabFeature() {
@@ -27,7 +32,7 @@ export default function RehabFeature() {
 
     return (
         <section className="w-full border-0 bg-[#F4F4F4]">
-            <div className="relative w-full aspect-[21/9] overflow-hidden">
+            <div className="relative w-full aspect-[21/11] overflow-hidden">
 
                 {/* Slides - Mapped from array */}
                 {banners.map((banner, index) => (

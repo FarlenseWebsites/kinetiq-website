@@ -58,7 +58,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:h-full">
 
         {/* LEFT — image */}
-        <div className="relative w-full h-94 lg:h-full overflow-hidden">
+        <div className="relative w-full h-100 lg:h-full overflow-hidden">
           <Image
             src="/contactform.avif"
             alt="Physiotherapy session"
@@ -76,7 +76,7 @@ export default function ContactForm() {
         </div>
 
         {/* RIGHT — form */}
-        <div className="flex flex-col justify-center max-w-5xl items-center gap-5 px-8 lg:px-12 py-10 lg:py-6">
+        <div className="flex flex-col justify-center max-w-5xl items-center gap-5 px-8 lg:px-12 py-5 lg:py-6">
           <div className="">
              <h1 className="text-[#373355] font-medium text-[clamp(1.45rem,4vw,2.5rem)] mt-8 leading-tight">
                 We&apos;d love to hear from you

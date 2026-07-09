@@ -31,7 +31,7 @@ export default function ValuesSection() {
     <section
       id="about-values"
       // Added md:aspect-[21/9] so it only restricts aspect ratio on desktop
-      className="w-full bg-[#f4f4f4] relative scroll-mt-32 overflow-hidden"
+      className="w-full bg-[#f4f4f4] relative pt-10 overflow-hidden"
     >
       {/* Main layout container: 
         Mobile: Stacked column (flex-col) 

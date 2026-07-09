@@ -11,12 +11,6 @@ interface TreatmentCardProps {
 
 const ORANGE = "#FF914D";
 
-// D-shape: flat left, semicircular bump right
-// Center (435, 300), radius 200 — two quarter-arcs form a perfect semicircle
-// strokeWidth = 8, so inset = 4
-// D-shape: flat left, semicircular bump right
-// Center (435, 300), radius 200 — two quarter-arcs form a perfect semicircle
-// strokeWidth = 8, so inset = 4
 const NORMAL_PATH = `
   M 4 104
   H 435

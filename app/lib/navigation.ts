@@ -15,22 +15,22 @@ export const physiotherapyLinks = {
   lumbar: "/physiotherapy#lumbar-radiculopathy",
   neuropathic: "/physiotherapy#neuropathic-pain",
   posturalImbalance: "/physiotherapy#postural-imbalance",
-  muscleImbalances: "/physiotherapy#muscle-tightness-imbalances",
+  muscleImbalances: "/physiotherapy#muscle-tightness-and-imbalances",
   repetitiveStrain: "/physiotherapy#repetitive-strain-injuries",
-  ergonomicWorkplace: "/physiotherapy#ergonomic-workplace-dysfunction",
+  ergonomicWorkplace: "/physiotherapy#ergonomic-and-workplace-optimisation",
 } as const
 
 export const treatmentLinks = {
   posturalCorrectionPrograms: "/treatments#postural-correction-programs",
-  ergonomicAssessment: "/treatments#ergonomic-assessment-workplace-therapy",
-  mobilityCorrectiveExercise: "/treatments#mobility-corrective-exercise-therapy",
-  breathingRespiratory: "/treatments#breathing-respiratory-therapy",
+  ergonomicAssessment: "/treatments#ergonomic-assessment-and-workstation-therapy",
+  mobilityCorrectiveExercise: "/treatments#mobility-and-corrective-exercise-therapy",
+  breathingRespiratory: "/treatments#breathing-and-respiratory-therapy",
   emgBiofeedback: "/treatments#emg-biofeedback",
-  jointMobilization: "/treatments#joint-mobilization",
+  jointMobilization: "/treatments#joint-mobilisation",
   myofascialRelease: "/treatments#myofascial-release",
   triggerPointTherapy: "/treatments#trigger-point-therapy",
   lymphaticDrainage: "/treatments#lymphatic-drainage-therapy",
-  anfTherapy: "/treatments#anf-therapy",
+  anfTherapy: "/treatments#anf-therapy-amino-neuro-frequency",
   electrotherapy: "/treatments#electrotherapy",
   classIVLaser: "/treatments#class-iv-laser-therapy",
   shockwaveTherapy: "/treatments#shockwave-therapy",
@@ -40,18 +40,18 @@ export const treatmentLinks = {
   cuppingTherapy: "/treatments#cupping-therapy",
   vibrationPlate: "/treatments#vibration-plate-therapy",
   blazepodTraining: "/treatments#blazepod-training",
-  bobaProTraining: "/treatments#boba-pro-training",
+  boboProTraining: "/treatments#bobo-pro-training",
   womensHealthPhysio: "/treatments#womens-health-physiotherapy",
   prenatalPhysio: "/treatments#prenatal-physiotherapy",
   postnatalPhysio: "/treatments#postnatal-physiotherapy",
-  pelvicFloorRehab: "/treatments#pelvic-floor-rehabilitation",
+  pelvicFloorRehab: "/treatments#pelvic-floor-therapy",
 } as const
 
 export const sessionLinks = {
   inCentre: "/kinetiqSessions#in-centre-treatment",
   homeVisits: "/kinetiqSessions#home-visits",
-  online: "/kinetiqSessions#online-physiotherapy",
-  corporate: "/kinetiqSessions#corporate",
+  online: "/kinetiqSessions#online-sessions",
+  corporate: "/kinetiqSessions#corporate-wellness",
 } as const
 
 export const aboutLinks = {

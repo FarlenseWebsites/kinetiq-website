@@ -103,7 +103,7 @@ const treatmentMegaMenu = [
       { label: "Cupping Therapy", href: treatmentLinks.cuppingTherapy },
       { label: "Vibration Plate Therapy", href: treatmentLinks.vibrationPlate },
       { label: "BlazePod Training", href: treatmentLinks.blazepodTraining },
-      { label: "Boba Pro Training", href: treatmentLinks.bobaProTraining },
+      { label: "Bobo Pro Training", href: treatmentLinks.boboProTraining },
     ],
   },
   {
@@ -129,7 +129,7 @@ const aboutMenu = [
   { label: "About KinetiQ", href: aboutLinks.hero },
   { label: "Clinical Excellence", href: aboutLinks.intro },
   { label: "The KinetiQ Foundation", href: aboutLinks.values },
-  { label: "KinetiQ Community", href: aboutLinks.events },
+  { label: "KinetiQ Methods", href: aboutLinks.method },
 ]
 
 const contactMenu = [
@@ -140,8 +140,15 @@ const contactMenu = [
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [forceCloseDropdown, setForceCloseDropdown] = useState(false)
   const pathname = usePathname()
   const isHomePage = pathname === "/"
+
+  const handleLinkClick = () => {
+    setIsMobileMenuOpen(false)
+    setForceCloseDropdown(true)
+    setTimeout(() => setForceCloseDropdown(false), 150)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -206,12 +213,14 @@ export default function Navbar() {
               // If it's a mega menu, use 'static' so the absolute child targets the main navbar width.
               // If it's a small menu, use 'relative' so it drops straight down from the text.
               className={cn(
-                "group flex items-center h-full",
+                "flex items-center h-full",
+                !forceCloseDropdown && "group",
                 item.isMega ? "static" : "relative"
               )}
             >
               <Link
                 href={item.href}
+                onClick={handleLinkClick}
                 className="
                   inline-block
                   py-4
@@ -255,6 +264,7 @@ export default function Navbar() {
                               <li key={itemIdx}>
                                 <Link
                                   href={subItem.href}
+                                  onClick={handleLinkClick}
                                   className="text-[#9A97A9] hover:text-[#68638E] text-[15px] transition-colors block"
                                 >
                                   {subItem.label}
@@ -293,6 +303,7 @@ export default function Navbar() {
                               <li key={subIdx}>
                                 <Link
                                   href={subItem.href}
+                                  onClick={handleLinkClick}
                                   className="text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-pre-line block"
                                 >
                                   {subItem.label}
@@ -330,6 +341,7 @@ export default function Navbar() {
                         <li key={idx}>
                           <Link
                             href={subItem.href}
+                            onClick={handleLinkClick}
                             className="block text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-nowrap"
                           >
                             {subItem.label}
@@ -360,6 +372,7 @@ export default function Navbar() {
                         <li key={idx}>
                           <Link
                             href={subItem.href}
+                            onClick={handleLinkClick}
                             className="block text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-nowrap"
                           >
                             {subItem.label}
@@ -390,6 +403,7 @@ export default function Navbar() {
                         <li key={idx}>
                           <Link
                             href={subItem.href}
+                            onClick={handleLinkClick}
                             className="block text-[#9A97A9] hover:text-[#986c55] text-[15px] transition-colors whitespace-nowrap"
                           >
                             {subItem.label}

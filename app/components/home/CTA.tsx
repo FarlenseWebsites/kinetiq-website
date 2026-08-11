@@ -7,7 +7,7 @@ export default function CTA() {
   return (
     <section className="flex flex-col bg-[#F4F4F4] items-center w-full py-15">
       {/* Image with overlay and text */}
-      <div className="relative w-full aspect-4/3 sm:aspect-video md:aspect-21/9 overflow-hidden">
+      <div className="relative w-full aspect-21/9 overflow-hidden">
         <Image
           src="/treatmenttable.avif"
           alt="Treatment room background"

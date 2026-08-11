@@ -38,7 +38,7 @@ export default function NewLanding() {
           <img
             src="/nl2.jpg"
             alt="Hero Background"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center "
           />
         </div>
 

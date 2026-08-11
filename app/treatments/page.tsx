@@ -137,7 +137,7 @@ const recoveryPerformance = [
     image: "/blazepod.avif",
   },
   {
-    title: "Boba Pro Training",
+    title: "Bobo Pro Training",
     description:
       "Advanced proprioceptive and stability training using specialised equipment to challenge balance, coordination, and joint control. Progresses systematically from rehabilitation to sport-specific performance enhancement.",
     image: "/bob1.avif",

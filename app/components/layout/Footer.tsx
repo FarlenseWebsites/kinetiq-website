@@ -30,14 +30,14 @@ export default function Footer() {
                 Specialties
               </Link>
               <Link
-                href="/treatment"
+                href="/treatments"
                 className="hover:opacity-70 transition-opacity"
               >
                 Treatment
               </Link>
 
               <Link
-                href="/sessions"
+                href="/kinetiqSessions"
                 className="hover:opacity-70 transition-opacity"
               >
                 Sessions

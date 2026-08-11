@@ -3,77 +3,87 @@
 import { motion } from "framer-motion"
 import ButtonWithTwoDots from "../ui/buttonWithTwodots"
 
+// 1. Move static arrays outside the component to prevent re-renders
 const steps = [
   {
     letter: "F",
     title: "Functional Assessment",
-    description:
-      "Every patient begins with a thorough movement and functional analysis to identify root cause.",
+    description: "Every patient begins with a thorough movement and functional analysis to identify root cause.",
   },
   {
     letter: "O",
     title: "Outcome-Driven Planning",
-    description:
-      "Treatment plans are built around measurable, realistic goals — tailored to your lifestyle, sport, or recovery timeliness.",
+    description: "Treatment plans are built around measurable, realistic goals — tailored to your lifestyle, sport, or recovery timelines.",
   },
   {
     letter: "R",
     title: "Root-Cause Rehabilitation",
-    description:
-      "We combine hands-on manual therapy, evidence-based exercise, and technology-assisted modalities to treat the root cause.",
+    description: "We combine hands-on manual therapy, evidence-based exercise, and technology-assisted modalities to treat the root cause.",
   },
   {
     letter: "M",
     title: "Movement Optimization",
-    description:
-      "Beyond recovery — we help you move better, perform stronger, and stay resilient through a range of fitness programs.",
+    description: "Beyond recovery — we help you move better, perform stronger, and stay resilient through a range of fitness programs.",
   },
+]
+
+const formLetters = [
+  { char: "F", x: -30, y: 0 },
+  { char: ".", x: 0, y: -60 },
+  { char: "O", x: 0, y: -120 },
+  { char: ".", x: 0, y: 60 },
+  { char: "R", x: 120, y: 0 },
+  { char: ".", x: 0, y: -60 },
+  { char: "M", x: 0, y: 120 },
 ]
 
 export default function FormMethod() {
   return (
     <section id="about-method" className="overflow-hidden scroll-mt-32">
       {/* Light strip — button + subtitle */}
-      <div className="bg-[#f4f4f4] w-full flex flex-col items-center pb-10 ">
+      <div className="bg-[#f4f4f4] w-full flex flex-col items-center pb-10">
         <ButtonWithTwoDots label="Our Approach" />
-          <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,3vw,3.5rem)] mt-8 leading-tight">
-           The KinetiQ Method
-          </h1>
+        <h1 className="text-[#373355] font-medium text-[clamp(1.75rem,3vw,3.5rem)] mt-8 leading-tight">
+          The KinetiQ Method
+        </h1>
       </div>
 
       {/* FORM content — full width, no outer margin or padding */}
       <div className="bg-[linear-gradient(180deg,_#948FAF_88%,_#68628E_100%)] w-full">
         <div className="max-w-6xl mx-auto flex flex-col items-center py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
+          
           <div className="text-center">
-            <h2
+            {/* 2. Set up the Parent Trigger here */}
+            <motion.h2
               className="font-bold tracking-[0.2em] text-white inline-flex items-center gap-0"
               style={{ fontSize: "clamp(3rem, 8vw + 0.5rem, 7rem)" }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }} // Triggers when 20% of the h2 is in view
             >
-              {[
-                { char: "F", x: -30, y: 0 },
-                { char: ".", x: 0, y: -60 },
-                { char: "O", x: 0, y: -120 },
-                { char: ".", x: 0, y: 60 },
-                { char: "R", x: 120, y: 0 },
-                { char: ".", x: 0, y: -60 },
-                { char: "M", x: 0, y: 120 },
-              ].map(({ char, x, y }, i) => (
+              {formLetters.map(({ char, x, y }, i) => (
                 <motion.span
                   key={i}
-                  initial={{ opacity: 0, x, y }}
-                  whileInView={{ opacity: 1, x: 0, y: 0 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{
-                    duration: 0.7,
-                    delay: i * 0.3,
-                    ease: [0.22, 1, 0.36, 1],
+                  // 3. Children listen to the parent's "hidden" and "visible" states via variants
+                  variants={{
+                    hidden: { opacity: 0, x, y },
+                    visible: {
+                      opacity: 1,
+                      x: 0,
+                      y: 0,
+                      transition: {
+                        duration: 0.7,
+                        delay: i * 0.3,
+                        ease: [0.22, 1, 0.36, 1],
+                      },
+                    },
                   }}
                   className="inline-block"
                 >
                   {char}
                 </motion.span>
               ))}
-            </h2>
+            </motion.h2>
           </div>
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
@@ -82,7 +92,7 @@ export default function FormMethod() {
                 key={step.letter}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
+                viewport={{ once: true, amount: 0.1 }} // Replaced negative margin with an amount threshold
                 transition={{
                   duration: 0.6,
                   delay: i * 0.1,
@@ -113,6 +123,7 @@ export default function FormMethod() {
               </motion.div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

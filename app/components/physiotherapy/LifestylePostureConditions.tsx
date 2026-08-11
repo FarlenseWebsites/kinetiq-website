@@ -23,7 +23,7 @@ const conditions = [
   {
     title: "Ergonomic & Workplace Optimisation",
     description: "Addresses posture-related strain from daily habits, work setups, and lifestyle patterns. Applicable across all age groups — from children to working professionals and the elderly. Improves spinal alignment, reduces pain, and enhances overall movement efficiency.",
-    image: "/ergo.avif",
+    image: "/ergonew.png",
   },
 ]
 

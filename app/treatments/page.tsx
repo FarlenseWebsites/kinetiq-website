@@ -22,7 +22,7 @@ const coreAssessment = [
     title: "Ergonomic Assessment & Workstation Therapy",
     description:
       "Comprehensive evaluation of your work environment to identify postural risks and strain patterns. Personalised recommendations and corrective strategies reduce injury risk and enhance long-term musculoskeletal health.",
-    image: "/ergo.avif",
+    image: "/ergonew.png",
   },
   {
     title: "Mobility & Corrective Exercise Therapy",

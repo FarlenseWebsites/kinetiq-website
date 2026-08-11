@@ -14,11 +14,12 @@ export default function Footer() {
 
           {/* Section 1: Quick Links */}
           <div className="md:col-span-3">
-            <h4 className="text-[#ff914D]  text-lg font-medium mb-6">
+            <h4 className="text-[#ff914D] text-lg font-medium mb-6">
               Quick Links
             </h4>
 
-            <nav className="flex flex-col gap-4  font-light text-[14px] sm:text-[15px]">
+            {/* UPDATED: Changed flex-col to flex-wrap for mobile, added md:flex-col for desktop */}
+            <nav className="flex flex-wrap md:flex-col gap-x-6 gap-y-3 md:gap-4 font-light text-[14px] sm:text-[15px]">
               <Link href="/" className="hover:opacity-70 transition-opacity">
                 Home
               </Link>
@@ -59,7 +60,7 @@ export default function Footer() {
             </nav>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-5 mt-10">
+            <div className="flex items-center gap-5 mt-8 md:mt-10">
               
               <Link
                 href="https://www.instagram.com/kinetiqphysiotherapy"
@@ -75,13 +76,12 @@ export default function Footer() {
                 target="_blank"
               >
                 <FaLinkedin size={22} />
-
               </Link>
             </div>
           </div>
 
           {/* Section 2: Contact Info */}
-          <div className="md:col-span-5 flex flex-col gap-8  font-light text-[14px] sm:text-[15px] pt-1">
+          <div className="md:col-span-5 flex flex-col gap-8 font-light text-[14px] sm:text-[15px] pt-1">
 
             {/* Address 1 */}
             <div className="flex gap-4">

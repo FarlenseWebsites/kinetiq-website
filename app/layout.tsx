@@ -30,8 +30,11 @@ export const metadata: Metadata = {
     "Movement Science",
     "KinetiQ",
   ],
-    verification: {
-    google: "gAfiyvmnWOzkvsXJBMgyP720oX-OaNdKmtIRZXEWOVQ",
+     verification: {
+    google: [
+      "gAfiyvmnWOzkvsXJBMgyP720oX-OaNdKmtIRZXEWOVQ",
+      "lAQ3CLj-8stlBJyEWSSNkGMzB837swSEXlp0KfMaMZM",
+    ],
   },
 };
 

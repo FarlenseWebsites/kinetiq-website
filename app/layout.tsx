@@ -50,8 +50,8 @@ export default function RootLayout({
       className={`${inter.variable} scroll-smooth`}
     >
       <body className="min-h-screen overflow-x-hidden bg-[#F8F8FA] text-[#2F295C] antialiased">
-                <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-C63WYBPJN2"
+                       <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-32WDMC4B11"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -59,7 +59,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-C63WYBPJN2');
+            gtag('config', 'G-32WDMC4B11');
           `}
         </Script>
         <FlowbiteInit />

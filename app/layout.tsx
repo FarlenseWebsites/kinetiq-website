@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -29,6 +30,9 @@ export const metadata: Metadata = {
     "Movement Science",
     "KinetiQ",
   ],
+    verification: {
+    google: "gAfiyvmnWOzkvsXJBMgyP720oX-OaNdKmtIRZXEWOVQ",
+  },
 };
 
 export default function RootLayout({
@@ -43,6 +47,18 @@ export default function RootLayout({
       className={`${inter.variable} scroll-smooth`}
     >
       <body className="min-h-screen overflow-x-hidden bg-[#F8F8FA] text-[#2F295C] antialiased">
+                <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-C63WYBPJN2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-C63WYBPJN2');
+          `}
+        </Script>
         <FlowbiteInit />
         
         {/* subtle background grid */}

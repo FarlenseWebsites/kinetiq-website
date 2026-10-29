@@ -8,6 +8,9 @@ import Footer from "./components/layout/Footer";
 import FlowbiteInit from "./components/layout/FlowbiteInit";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa6";
+import JsonLd from "./components/seo/JsonLd";
+import { siteSchema } from "./lib/schema";
+import { SITE_URL } from "./lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,6 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL(SITE_URL),
   title: {
     default: "KinetiQ Physiotherapy",
     template: "%s | KinetiQ Physiotherapy",
@@ -45,11 +49,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-IN"
       suppressHydrationWarning
       className={`${inter.variable} scroll-smooth`}
     >
       <body className="min-h-screen overflow-x-hidden bg-[#F8F8FA] text-[#2F295C] antialiased">
+                <JsonLd data={siteSchema} />
                        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-32WDMC4B11"
           strategy="afterInteractive"

@@ -1,0 +1,24 @@
+# KinetiQ Physiotherapy
+
+> KinetiQ Physiotherapy is a physiotherapy, rehab and fitness provider in Gurugram, Haryana, India. It combines movement science, hands-on physiotherapy and personalised care for working professionals, sportspersons, children and teens, post-surgical patients, geriatric clients, and schools and academies. Care is available in-centre, at home, online and through corporate wellness programs.
+
+Key facts:
+- Locations: DLF Phase 1 (Golf Course Road, Sector 27) and AIPL Joy Central Mall (Sector 65), Gurugram
+- Phone / WhatsApp: +91 9319606763
+- Email: info@kinetiqphysiotherapy.com
+- Booking: https://www.kinetiqphysiotherapy.com/book/
+
+## Core Pages
+
+- [Home](https://www.kinetiqphysiotherapy.com/): Overview of KinetiQ, who the programs are for, and session types
+- [Specialties](https://www.kinetiqphysiotherapy.com/physiotherapy/): Orthopaedic, sports, neurological, paediatric, geriatric, cardiopulmonary, post-surgical, women's health, prenatal/postnatal, pelvic floor, nerve pain (sciatica, radiculopathy, neuropathic), postural and workplace conditions
+- [Treatments](https://www.kinetiqphysiotherapy.com/treatments/): Postural correction, ergonomic assessment, corrective exercise, EMG biofeedback, manual therapy, electrotherapy, Class IV laser, shockwave, dry needling, kinesio taping, cupping, sports recovery, BlazePod and Bobo Pro training
+- [Sessions](https://www.kinetiqphysiotherapy.com/kinetiqSessions/): In-centre treatment, home visits, online physiotherapy, corporate wellness
+- [About](https://www.kinetiqphysiotherapy.com/about/): Clinical approach, values and methods
+- [Contact](https://www.kinetiqphysiotherapy.com/contact/): Centre addresses and enquiry form
+- [Book a Consultation](https://www.kinetiqphysiotherapy.com/book/): Appointment booking
+
+## Optional
+
+- [Instagram](https://www.instagram.com/kinetiqphysiotherapy)
+- [LinkedIn](https://www.linkedin.com/company/kinetiq-physiotherapy/)

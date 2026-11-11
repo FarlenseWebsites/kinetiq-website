@@ -153,7 +153,7 @@ export default function Footer() {
       {/* Copyright Section */}
       <div className="mt-16 w-full bg-[#373355] px-4 py-5 text-center text-[12px] sm:text-[13px] md:text-[14px] font-light tracking-[0.06em] text-white/80">
         <p>
-          Copyright ©️ KINETIQ VENTURES PRIVATE LIMITED 2026 - {new Date().getFullYear()}. All Rights Reserved.
+          Copyright ©️ KINETIQ VENTURES PRIVATE LIMITED - {new Date().getFullYear()}. All Rights Reserved.
           <span className="mx-2 text-white/40">|</span>
           <a
             href="/Kinetiq%20Privacy%20policy.pdf"

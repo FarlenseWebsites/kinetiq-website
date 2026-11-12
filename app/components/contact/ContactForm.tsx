@@ -7,9 +7,11 @@ import { BsBuilding, BsFileText } from "react-icons/bs"
 import { TbTargetArrow } from "react-icons/tb"
 import emailjs from "@emailjs/browser"
 
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+// NOTE: NEXT_PUBLIC_* values are baked in at BUILD time.
+// They must be set in .env.local (local) AND in Cloudflare build variables (production).
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? ""
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? ""
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ""
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -30,6 +32,18 @@ export default function ContactForm() {
 
   async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault()
+
+    // Keys missing at build time → show which one in the browser console
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      console.error("[ContactForm] EmailJS env vars missing at build time:", {
+        NEXT_PUBLIC_EMAILJS_SERVICE_ID: !!EMAILJS_SERVICE_ID,
+        NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: !!EMAILJS_TEMPLATE_ID,
+        NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: !!EMAILJS_PUBLIC_KEY,
+      })
+      setStatus("error")
+      return
+    }
+
     setStatus("sending")
     try {
       await emailjs.send(
@@ -44,11 +58,14 @@ export default function ContactForm() {
           message: form.description,
           to_email: "info@kinetiqphysiotherapy.com",
         },
-        EMAILJS_PUBLIC_KEY
+        { publicKey: EMAILJS_PUBLIC_KEY }
       )
       setStatus("success")
       setForm({ name: "", organisation: "", email: "", enquiryType: "", contact: "", description: "" })
-    } catch {
+    } catch (err) {
+      // EmailJS returns { status, text } — exact reason shows in the browser console
+      const e = err as { status?: number; text?: string }
+      console.error("[ContactForm] EmailJS send failed:", e?.status, e?.text ?? err)
       setStatus("error")
     }
   }
@@ -95,6 +112,7 @@ export default function ContactForm() {
                 name="name"
                 value={form.name}
                 onChange={handleChange}
+                required
               />
               <InputField
                 icon={<BsBuilding className="text-[#E07B45]" />}
@@ -114,6 +132,7 @@ export default function ContactForm() {
                 type="email"
                 value={form.email}
                 onChange={handleChange}
+                required
               />
               {/* Enquiry dropdown */}
               <div className="flex items-center gap-3 bg-[#f4f4f4] border border-[#E07B45] rounded-xl px-4 py-3 shadow-md">
@@ -146,6 +165,7 @@ export default function ContactForm() {
               value={form.contact}
               onChange={handleChange}
               fullWidth
+              required
             />
 
             {/* Textarea */}
@@ -186,9 +206,10 @@ type InputFieldProps = {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
   type?: string
   fullWidth?: boolean
+  required?: boolean
 }
 
-function InputField({ icon, placeholder, name, value, onChange, type = "text", fullWidth }: InputFieldProps) {
+function InputField({ icon, placeholder, name, value, onChange, type = "text", fullWidth, required }: InputFieldProps) {
   return (
     <div className={`flex items-center gap-3 bg-[#f4f4f4] border border-[#E07B45] rounded-xl px-4 py-2 w-full shadow-md ${fullWidth ? "col-span-full" : ""}`}>
       <span className="text-lg shrink-0">{icon}</span>
@@ -198,6 +219,7 @@ function InputField({ icon, placeholder, name, value, onChange, type = "text", f
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        required={required}
         className="flex-1 bg-transparent text-[#373355] text-sm outline-none border-0 focus:outline-none placeholder:text-[#68628e] w-full min-w-0"
       />
     </div>

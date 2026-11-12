@@ -164,6 +164,7 @@ export default function Footer() {
             Privacy Policy
           </a>
         </p>
+        
       </div>
     </footer>
   );

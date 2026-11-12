@@ -118,7 +118,12 @@ export default function Footer() {
                 size={20}
               />
 
-              <p>+91 9319606763</p>
+              <a
+                  href="tel:+919319606763"
+                  className="hover:text-[#ff914D] transition-colors"
+                >
+                  +91 9319606763
+                </a>
             </div>
 
             {/* Email */}
@@ -128,9 +133,12 @@ export default function Footer() {
                 size={20}
               />
 
-              <p className="break-all sm:break-normal">
-                info@kinetiqphysiotherapy.com
-              </p>
+             <a
+  href="mailto:info@kinetiqphysiotherapy.com"
+  className="break-all sm:break-normal hover:text-[#ff914D] transition-colors"
+>
+  info@kinetiqphysiotherapy.com
+</a>
             </div>
           </div>
 

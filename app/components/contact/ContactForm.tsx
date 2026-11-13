@@ -23,6 +23,8 @@ export default function ContactForm() {
     description: "",
   })
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle")
+  // Exact reason for a failure, shown under the button so it can be fixed without opening DevTools
+  const [errorMsg, setErrorMsg] = useState("")
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -40,10 +42,12 @@ export default function ContactForm() {
         NEXT_PUBLIC_EMAILJS_TEMPLATE_ID: !!EMAILJS_TEMPLATE_ID,
         NEXT_PUBLIC_EMAILJS_PUBLIC_KEY: !!EMAILJS_PUBLIC_KEY,
       })
+      setErrorMsg("Form setup error: EmailJS keys are missing in this build. Add them to .env.local / Cloudflare build variables and rebuild.")
       setStatus("error")
       return
     }
 
+    setErrorMsg("")
     setStatus("sending")
     try {
       await emailjs.send(
@@ -66,6 +70,18 @@ export default function ContactForm() {
       // EmailJS returns { status, text } — exact reason shows in the browser console
       const e = err as { status?: number; text?: string }
       console.error("[ContactForm] EmailJS send failed:", e?.status, e?.text ?? err)
+      const reasons: Record<number, string> = {
+        400: "Service ID or Template ID is wrong.",
+        403: "This domain is not allowed in EmailJS (Account → Security).",
+        412: "The email service in EmailJS is disconnected — reconnect it.",
+        426: "EmailJS monthly limit is used up.",
+        429: "Too many requests — wait a minute and try again.",
+      }
+      setErrorMsg(
+        `Could not send (${e?.status ?? "network"}). ${
+          (e?.status && reasons[e.status]) || e?.text || "Please call or WhatsApp us instead."
+        }`
+      )
       setStatus("error")
     }
   }
@@ -191,6 +207,11 @@ export default function ContactForm() {
                 {status === "sending" ? "Sending…" : status === "success" ? "Message Sent!" : status === "error" ? "Failed — Try Again" : "Submit"}
               </span>
             </button>
+            {status === "error" && errorMsg && (
+              <p role="alert" className="text-center text-sm text-red-600">
+                {errorMsg}
+              </p>
+            )}
           </form>
         </div>
       </div>

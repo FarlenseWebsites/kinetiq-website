@@ -204,9 +204,32 @@ export default function ContactForm() {
               className="flex items-center justify-between bg-[#68628e] hover:bg-[#3d3a7a] disabled:opacity-70 disabled:cursor-not-allowed transition-colors text-white font-semibold text-base rounded-full px-8 py-4 w-full"
             >
               <span className="flex-1 text-center">
-                {status === "sending" ? "Sending…" : status === "success" ? "Message Sent!" : status === "error" ? "Failed — Try Again" : "Submit"}
+                {status === "sending" ? "Sending…" : status === "success" ? "Message Sent ✓" : status === "error" ? "Failed — Try Again" : "Submit"}
               </span>
             </button>
+            {status === "success" && (
+              <div
+                role="status"
+                className="flex items-start gap-3 rounded-2xl border border-green-300 bg-green-50 px-5 py-4 text-left"
+              >
+                <span aria-hidden className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-green-600 text-sm font-bold text-white">
+                  ✓
+                </span>
+                <div>
+                  <p className="font-semibold text-green-800">Thank you! Your message has been sent.</p>
+                  <p className="mt-1 text-sm text-green-700">
+                    Our team will get back to you shortly. For anything urgent, call or WhatsApp us on +91 93196 06763.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setStatus("idle")}
+                    className="mt-2 text-sm font-semibold text-green-800 underline underline-offset-2"
+                  >
+                    Send another message
+                  </button>
+                </div>
+              </div>
+            )}
             {status === "error" && errorMsg && (
               <p role="alert" className="text-center text-sm text-red-600">
                 {errorMsg}

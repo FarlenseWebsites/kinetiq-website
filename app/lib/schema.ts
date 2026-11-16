@@ -22,7 +22,7 @@ const golfCourseAddress = {
   streetAddress: "Fl 2A, F, 16-17, Golf Course Rd, DLF Phase 1, Sector 27",
   addressLocality: "Gurugram",
   addressRegion: "Haryana",
-  postalCode: "122009",
+  postalCode: "122002",
   addressCountry: "IN",
 }
 
@@ -121,7 +121,7 @@ export const siteSchema = {
 
 export const HOME_TITLE = "Best Physiotherapy Clinic in Gurgaon | KinetiQ Physiotherapy"
 export const HOME_DESCRIPTION =
-  "Looking for the best physiotherapy clinic in Gurgaon? KinetiQ offers expert physiotherapists, advanced treatment & faster recovery. Book your appointment today!"
+    "Looking for a physiotherapy clinic in Gurgaon? KinetiQ offers experienced physiotherapists, advanced treatments and personalised care. Book your appointment today!"
 
 /** Homepage-only WebPage node. */
 export const homePageSchema = {
@@ -135,4 +135,80 @@ export const homePageSchema = {
   about: { "@id": ORG_ID },
   mainEntity: { "@id": ORG_ID },
   inLanguage: "en-IN",
+}
+
+
+
+
+/* ------------------------------------------------------------------ */
+/* Service pages (muscle strain, sports, female physio …)              */
+/* WebPage + Service + BreadcrumbList + FAQPage, linked to the         */
+/* Organization / clinic nodes from siteSchema above.                  */
+/* ------------------------------------------------------------------ */
+type ServiceSchemaInput = {
+  path: string
+  metaTitle: string
+  metaDescription: string
+  breadcrumb: string
+  serviceName: string
+  heroImage: string
+  faqs: { q: string; a: string }[]
+}
+
+// Strip the [text](href) link markup used in page content.
+const plain = (s: string) => s.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+
+export function buildServicePageSchema(p: ServiceSchemaInput) {
+  const url = `${SITE_URL}${p.path}`
+  const graph: object[] = [
+    {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+      url,
+      name: p.metaTitle,
+      description: p.metaDescription,
+      isPartOf: { "@id": WEBSITE_ID },
+      about: { "@id": `${url}#service` },
+      breadcrumb: { "@id": `${url}#breadcrumb` },
+      primaryImageOfPage: `${SITE_URL}${p.heroImage}`,
+      inLanguage: "en-IN",
+    },
+    {
+      "@type": "Service",
+      "@id": `${url}#service`,
+      name: p.serviceName,
+      serviceType: p.serviceName,
+      description: p.metaDescription,
+      url,
+      provider: [
+        { "@id": `${BASE}#location-golf-course-road` },
+        { "@id": `${BASE}#location-sector-65` },
+      ],
+      brand: { "@id": ORG_ID },
+      areaServed: { "@type": "City", name: "Gurugram" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+        { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/physiotherapy/` },
+        { "@type": "ListItem", position: 3, name: p.breadcrumb, item: url },
+      ],
+    },
+  ]
+
+  if (p.faqs.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: p.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: plain(f.a) },
+      })),
+    })
+  }
+
+  return { "@context": "https://schema.org", "@graph": graph }
 }

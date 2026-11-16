@@ -10,4 +10,7 @@ export const siteRoutes = [
   { path: "/book/", priority: 0.8, changeFrequency: "monthly" },
   { path: "/about/", priority: 0.7, changeFrequency: "monthly" },
   { path: "/contact/", priority: 0.7, changeFrequency: "yearly" },
+  { path: "/physiotherapy-for-muscle-strain/", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/best-sports-physiotherapist-in-gurgaon/", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/best-female-physiotherapist-in-gurgaon/", priority: 0.8, changeFrequency: "monthly" },
 ] as const

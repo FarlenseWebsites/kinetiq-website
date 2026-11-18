@@ -14,7 +14,7 @@ function RichText({ text }: { text: string }) {
         const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
         if (!m) return <span key={i}>{part}</span>
         return (
-          <Link key={i} href={m[2]} className="font-medium text-[#E07B45] underline underline-offset-2 hover:text-[#373355]">
+          <Link key={i} href={m[2]} className="font-semibold text-[#67618C] underline decoration-[#FF914D] underline-offset-2 hover:text-black">
             {m[1]}
           </Link>
         )
@@ -29,10 +29,10 @@ const wrap = "mx-auto w-full max-w-6xl px-5 sm:px-8"
 function SectionHead({ label, heading, intro }: { label: string; heading: string; intro?: string }) {
   return (
     <div className="mb-8 max-w-3xl">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#E07B45]">{label}</p>
-      <h2 className="mt-2 text-[clamp(1.5rem,3.2vw,2.25rem)] font-semibold leading-tight text-[#373355]">{heading}</h2>
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#67618C]">{label}</p>
+      <h2 className="mt-2 text-[clamp(1.5rem,3.2vw,2.25rem)] font-semibold leading-tight text-[#67618C]">{heading}</h2>
       {intro && (
-        <p className="mt-3 text-base leading-7 text-[#5b5677]">
+        <p className="mt-3 text-base leading-7 text-black/80">
           <RichText text={intro} />
         </p>
       )}
@@ -43,16 +43,16 @@ function SectionHead({ label, heading, intro }: { label: string; heading: string
 function Card({ item, tone }: { item: CardItem; tone: "white" | "soft" }) {
   return (
     <div
-      className={`h-full rounded-2xl border border-[#E7E2F0] p-5 shadow-sm ${tone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
+      className={`h-full rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${tone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
     >
-      <h3 className="text-base font-semibold text-[#373355]">{item.title}</h3>
+      <h3 className="text-base font-semibold text-[#67618C]">{item.title}</h3>
       {item.body && (
-        <p className="mt-2 text-sm leading-6 text-[#5b5677]">
+        <p className="mt-2 text-sm leading-6 text-black/80">
           <RichText text={item.body} />
         </p>
       )}
       {item.bullets && (
-        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-[#5b5677]">
+        <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-black/80">
           {item.bullets.map((b) => (
             <li key={b}>
               <RichText text={b} />
@@ -74,7 +74,7 @@ const colClass = {
 function RenderSection({ section, index }: { section: Section; index: number }) {
   // alternate backgrounds so sections read as separate blocks
   const soft = index % 2 === 0
-  const bg = soft ? "bg-[#F4F4F4]" : "bg-white"
+  const bg = soft ? "bg-[#F5EFE4]" : "bg-white"
   const cardTone = soft ? "white" : "soft"
 
   switch (section.kind) {
@@ -89,7 +89,7 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
               ))}
             </div>
             {section.note && (
-              <p className="mt-5 text-sm leading-6 text-[#5b5677]">
+              <p className="mt-5 text-sm leading-6 text-black/80">
                 <RichText text={section.note} />
               </p>
             )}
@@ -106,14 +106,14 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
               {section.items.map((item, i) => (
                 <li
                   key={item.title}
-                  className={`rounded-2xl border border-[#E7E2F0] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
+                  className={`rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
                 >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#373355] text-sm font-semibold text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#67618C] text-sm font-semibold text-white">
                     {i + 1}
                   </span>
-                  <h3 className="mt-3 text-base font-semibold text-[#373355]">{item.title}</h3>
+                  <h3 className="mt-3 text-base font-semibold text-[#67618C]">{item.title}</h3>
                   {item.body && (
-                    <p className="mt-2 text-sm leading-6 text-[#5b5677]">
+                    <p className="mt-2 text-sm leading-6 text-black/80">
                       <RichText text={item.body} />
                     </p>
                   )}
@@ -149,10 +149,10 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
               {section.reviews.map((r) => (
                 <figure
                   key={r.name}
-                  className={`rounded-2xl border border-[#E7E2F0] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
+                  className={`rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
                 >
-                  <blockquote className="text-sm leading-6 text-[#373355]">&ldquo;{r.text}&rdquo;</blockquote>
-                  <figcaption className="mt-3 text-sm font-semibold text-[#E07B45]">{r.name}</figcaption>
+                  <blockquote className="text-sm leading-6 text-[#67618C]">&ldquo;{r.text}&rdquo;</blockquote>
+                  <figcaption className="mt-3 text-sm font-semibold text-[#67618C]">{r.name}</figcaption>
                 </figure>
               ))}
             </div>
@@ -169,20 +169,20 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
               {CLINICS.map((c) => (
                 <div
                   key={c.name}
-                  className={`rounded-2xl border border-[#E7E2F0] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
+                  className={`rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
                 >
-                  <h3 className="text-base font-semibold text-[#373355]">{c.name}</h3>
-                  <p className="mt-2 flex gap-2 text-sm leading-6 text-[#5b5677]">
-                    <FiMapPin className="mt-1 shrink-0 text-[#E07B45]" /> {c.address}
+                  <h3 className="text-base font-semibold text-[#67618C]">{c.name}</h3>
+                  <p className="mt-2 flex gap-2 text-sm leading-6 text-black/80">
+                    <FiMapPin className="mt-1 shrink-0 text-[#FF914D]" /> {c.address}
                   </p>
-                  <p className="mt-1 flex gap-2 text-sm leading-6 text-[#5b5677]">
-                    <FiClock className="mt-1 shrink-0 text-[#E07B45]" /> {c.timings}
+                  <p className="mt-1 flex gap-2 text-sm leading-6 text-black/80">
+                    <FiClock className="mt-1 shrink-0 text-[#FF914D]" /> {c.timings}
                   </p>
                   <a
                     href={c.map}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#E07B45] hover:text-[#373355]"
+                    className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#67618C] hover:text-black"
                   >
                     Get directions <FiChevronRight />
                   </a>
@@ -203,13 +203,13 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
                 <details
                   key={f.q}
                   open={i === 0}
-                  className={`group rounded-2xl border border-[#E7E2F0] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
+                  className={`group rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-[#373355]">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-[#67618C]">
                     <h3>{f.q}</h3>
-                    <FiChevronRight className="shrink-0 text-[#E07B45] transition-transform group-open:rotate-90" />
+                    <FiChevronRight className="shrink-0 text-[#FF914D] transition-transform group-open:rotate-90" />
                   </summary>
-                  <p className="mt-3 text-sm leading-6 text-[#5b5677]">
+                  <p className="mt-3 text-sm leading-6 text-black/80">
                     <RichText text={f.a} />
                   </p>
                 </details>
@@ -224,23 +224,23 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
 /* ---------- page ---------- */
 export default function ServicePage({ data }: { data: ServicePageData }) {
   return (
-    <div className="bg-[#F4F4F4]">
+    <div className="bg-[#F5EFE4]">
       {/* Breadcrumb */}
       <nav aria-label="Breadcrumb" className="bg-white pt-20 sm:pt-24">
-        <ol className={`${wrap} flex flex-wrap items-center gap-1 py-3 text-xs text-[#5b5677]`}>
-          <li><Link href="/" className="hover:text-[#E07B45]">Home</Link></li>
+        <ol className={`${wrap} flex flex-wrap items-center gap-1 py-3 text-xs text-black/80`}>
+          <li><Link href="/" className="hover:text-[#FF914D]">Home</Link></li>
           <li aria-hidden>›</li>
-          <li><Link href="/physiotherapy/" className="hover:text-[#E07B45]">Services</Link></li>
+          <li><Link href="/physiotherapy/" className="hover:text-[#FF914D]">Services</Link></li>
           <li aria-hidden>›</li>
-          <li aria-current="page" className="font-medium text-[#373355]">{data.breadcrumb}</li>
+          <li aria-current="page" className="font-medium text-[#67618C]">{data.breadcrumb}</li>
         </ol>
       </nav>
 
       {/* Hero */}
-      <section className="bg-[#373355] py-12 sm:py-16">
+      <section className="bg-[#67618C] py-12 sm:py-16">
         <div className={`${wrap} grid grid-cols-1 items-center gap-10 lg:grid-cols-2`}>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#F4A26F]">{data.hero.label}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#F5EFE4]">{data.hero.label}</p>
             <h1 className="mt-3 text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-[1.1] text-white">{data.hero.title}</h1>
             <p className="mt-4 max-w-xl text-base leading-7 text-white/85">
               <RichText text={data.hero.intro} />
@@ -248,7 +248,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href={BOOK_URL}
-                className="inline-flex items-center justify-center rounded-full bg-[#E07B45] px-6 py-3 font-semibold text-white shadow-md transition-colors hover:bg-[#c9663a]"
+                className="inline-flex items-center justify-center rounded-full bg-[#FF914D] px-6 py-3 font-semibold text-black shadow-md transition-colors hover:bg-[#F5EFE4]"
               >
                 Book a Consultation
               </Link>
@@ -256,7 +256,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[#373355]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[#67618C]"
               >
                 <FaWhatsapp /> WhatsApp Us
               </a>
@@ -276,7 +276,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       ))}
 
       {/* Final CTA */}
-      <section className="bg-[#373355] py-14 sm:py-16">
+      <section className="bg-[#67618C] py-14 sm:py-16">
         <div className={`${wrap} text-center`}>
           <h2 className="mx-auto max-w-3xl text-[clamp(1.5rem,3.5vw,2.4rem)] font-semibold leading-tight text-white">{data.cta.heading}</h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/85">
@@ -297,7 +297,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link
               href={BOOK_URL}
-              className="inline-flex items-center justify-center rounded-full bg-[#E07B45] px-7 py-3 font-semibold text-white shadow-md transition-colors hover:bg-[#c9663a]"
+              className="inline-flex items-center justify-center rounded-full bg-[#FF914D] px-7 py-3 font-semibold text-black shadow-md transition-colors hover:bg-[#F5EFE4]"
             >
               Book a Consultation
             </Link>
@@ -305,7 +305,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 px-7 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[#373355]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 px-7 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[#67618C]"
             >
               <FaWhatsapp /> WhatsApp Us
             </a>

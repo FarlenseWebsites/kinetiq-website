@@ -6,7 +6,7 @@ import type { CardItem, Section, ServicePageData } from "../../lib/service-pages
 import { BOOK_URL, CLINICS, WHATSAPP_URL } from "../../lib/service-pages/clinics"
 
 /* ---------- inline [text](href) links ---------- */
-function RichText({ text }: { text: string }) {
+function RichText({ text, onDark = false }: { text: string; onDark?: boolean }) {
   const parts = text.split(/(\[[^\]]+\]\([^)]+\))/g)
   return (
     <>
@@ -14,7 +14,7 @@ function RichText({ text }: { text: string }) {
         const m = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
         if (!m) return <span key={i}>{part}</span>
         return (
-          <Link key={i} href={m[2]} className="font-semibold text-[#67618C] underline decoration-[#FF914D] underline-offset-2 hover:text-black">
+          <Link key={i} href={m[2]} className={`font-medium underline decoration-[#FF914D] underline-offset-2 ${onDark ? "text-white hover:text-[#FF914D]" : "text-[#67618C] hover:text-black"}`}>
             {m[1]}
           </Link>
         )
@@ -29,8 +29,8 @@ const wrap = "mx-auto w-full max-w-6xl px-5 sm:px-8"
 function SectionHead({ label, heading, intro }: { label: string; heading: string; intro?: string }) {
   return (
     <div className="mb-8 max-w-3xl">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#67618C]">{label}</p>
-      <h2 className="mt-2 text-[clamp(1.5rem,3.2vw,2.25rem)] font-semibold leading-tight text-[#67618C]">{heading}</h2>
+      <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#67618C]">{label}</p>
+      <h2 className="mt-2 text-[clamp(1.5rem,3.2vw,2.25rem)] font-medium leading-tight text-[#67618C]">{heading}</h2>
       {intro && (
         <p className="mt-3 text-base leading-7 text-black/80">
           <RichText text={intro} />
@@ -45,7 +45,7 @@ function Card({ item, tone }: { item: CardItem; tone: "white" | "soft" }) {
     <div
       className={`h-full rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${tone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
     >
-      <h3 className="text-base font-semibold text-[#67618C]">{item.title}</h3>
+      <h3 className="text-base font-medium text-[#67618C]">{item.title}</h3>
       {item.body && (
         <p className="mt-2 text-sm leading-6 text-black/80">
           <RichText text={item.body} />
@@ -108,10 +108,10 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
                   key={item.title}
                   className={`rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
                 >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#67618C] text-sm font-semibold text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#67618C] text-sm font-medium text-white">
                     {i + 1}
                   </span>
-                  <h3 className="mt-3 text-base font-semibold text-[#67618C]">{item.title}</h3>
+                  <h3 className="mt-3 text-base font-medium text-[#67618C]">{item.title}</h3>
                   {item.body && (
                     <p className="mt-2 text-sm leading-6 text-black/80">
                       <RichText text={item.body} />
@@ -152,7 +152,7 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
                   className={`rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
                 >
                   <blockquote className="text-sm leading-6 text-[#67618C]">&ldquo;{r.text}&rdquo;</blockquote>
-                  <figcaption className="mt-3 text-sm font-semibold text-[#67618C]">{r.name}</figcaption>
+                  <figcaption className="mt-3 text-sm font-medium text-[#67618C]">{r.name}</figcaption>
                 </figure>
               ))}
             </div>
@@ -171,7 +171,7 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
                   key={c.name}
                   className={`rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
                 >
-                  <h3 className="text-base font-semibold text-[#67618C]">{c.name}</h3>
+                  <h3 className="text-base font-medium text-[#67618C]">{c.name}</h3>
                   <p className="mt-2 flex gap-2 text-sm leading-6 text-black/80">
                     <FiMapPin className="mt-1 shrink-0 text-[#FF914D]" /> {c.address}
                   </p>
@@ -182,7 +182,7 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
                     href={c.map}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-[#67618C] hover:text-black"
+                    className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[#67618C] hover:text-black"
                   >
                     Get directions <FiChevronRight />
                   </a>
@@ -205,7 +205,7 @@ function RenderSection({ section, index }: { section: Section; index: number }) 
                   open={i === 0}
                   className={`group rounded-2xl border border-[#EBEBEB] p-5 shadow-sm ${cardTone === "white" ? "bg-white" : "bg-[#F5EFE4]"}`}
                 >
-                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-[#67618C]">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-[#67618C]">
                     <h3>{f.q}</h3>
                     <FiChevronRight className="shrink-0 text-[#FF914D] transition-transform group-open:rotate-90" />
                   </summary>
@@ -240,15 +240,15 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       <section className="bg-[#67618C] py-12 sm:py-16">
         <div className={`${wrap} grid grid-cols-1 items-center gap-10 lg:grid-cols-2`}>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#F5EFE4]">{data.hero.label}</p>
-            <h1 className="mt-3 text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-[1.1] text-white">{data.hero.title}</h1>
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#F5EFE4]">{data.hero.label}</p>
+            <h1 className="mt-3 text-[clamp(2rem,5vw,3.25rem)] font-medium leading-[1.1] text-white">{data.hero.title}</h1>
             <p className="mt-4 max-w-xl text-base leading-7 text-white/85">
-              <RichText text={data.hero.intro} />
+              <RichText text={data.hero.intro} onDark />
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link
                 href={BOOK_URL}
-                className="inline-flex items-center justify-center rounded-full bg-[#FF914D] px-6 py-3 font-semibold text-black shadow-md transition-colors hover:bg-[#F5EFE4]"
+                className="inline-flex items-center justify-center rounded-full bg-[#FF914D] px-6 py-3 font-medium text-black shadow-md transition-colors hover:bg-[#F5EFE4]"
               >
                 Book a Consultation
               </Link>
@@ -256,7 +256,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[#67618C]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 px-6 py-3 font-medium text-white transition-colors hover:bg-white hover:text-[#67618C]"
               >
                 <FaWhatsapp /> WhatsApp Us
               </a>
@@ -276,28 +276,28 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
       ))}
 
       {/* Final CTA */}
-      <section className="bg-[#67618C] py-14 sm:py-16">
+      <section className="bg-[#F5EFE4] py-14 sm:py-16">
         <div className={`${wrap} text-center`}>
-          <h2 className="mx-auto max-w-3xl text-[clamp(1.5rem,3.5vw,2.4rem)] font-semibold leading-tight text-white">{data.cta.heading}</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/85">
+          <h2 className="mx-auto max-w-3xl text-[clamp(1.5rem,3.5vw,2.4rem)] font-medium leading-tight text-[#67618C]">{data.cta.heading}</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-black/80">
             <RichText text={data.cta.body} />
           </p>
           {data.cta.bullets && (
-            <ul className="mx-auto mt-4 max-w-md space-y-1 text-left text-base text-white/85 sm:text-center">
+            <ul className="mx-auto mt-4 max-w-md space-y-1 text-left text-base text-black/80 sm:text-center">
               {data.cta.bullets.map((b) => (
                 <li key={b}>✓ {b}</li>
               ))}
             </ul>
           )}
           {data.cta.footer && (
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-white/85">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-black/80">
               <RichText text={data.cta.footer} />
             </p>
           )}
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link
               href={BOOK_URL}
-              className="inline-flex items-center justify-center rounded-full bg-[#FF914D] px-7 py-3 font-semibold text-black shadow-md transition-colors hover:bg-[#F5EFE4]"
+              className="inline-flex items-center justify-center rounded-full bg-[#FF914D] px-7 py-3 font-medium text-black shadow-md transition-colors hover:bg-[#67618C] hover:text-white"
             >
               Book a Consultation
             </Link>
@@ -305,7 +305,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/60 px-7 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-[#67618C]"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#67618C] px-7 py-3 font-medium text-[#67618C] transition-colors hover:bg-[#67618C] hover:text-white"
             >
               <FaWhatsapp /> WhatsApp Us
             </a>

@@ -4,6 +4,7 @@ import AboutIntro from "../components/about/AboutIntro"
 import ValuesSection from "../components/about/ValuesSection"
 import TeamSection from "../components/about/TeamSection"
 import FormMethod from "../components/about/FormMethod"
+import PoshSection from "../components/about/PoshSection"
 import EventsSection from "../components/about/EventsSection"
 import CTA from "../components/home/CTA"
 import TvvideoSection from "../components/about/Video"
@@ -24,6 +25,7 @@ export default function AboutPage() {
       <TvvideoSection />
       <TeamSection />
       <FormMethod />
+      <PoshSection />
       <CTA />
     </>
   )
